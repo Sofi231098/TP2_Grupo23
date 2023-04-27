@@ -1,0 +1,70 @@
+/*@charset "ISO-8859-1";*/
+*{
+	margin:0px;
+	padding:0px;
+	
+}
+/* Cuerpo de la pagina */
+body{
+	background-color: #EDE2DB;
+}
+/* Encabezado y menu*/
+.menu{
+	font-family:'Gorditas', sans-serif;
+	color:#734d26;
+	background:#ccad99;
+	text-align:left;
+	background-size: contain;
+}
+.menu{
+	width:100%;
+}
+img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0;
+
+}
+h1{
+	display: inline-block;
+  	vertical-align: baseline;
+  	background:#ccad99;
+  	height:150px;
+  	
+}
+
+/* Menu */
+
+
+nav{
+	position: absolute;
+  	top: 35px;
+  	right: 0;
+	height:100px;
+	border-bottom: 1px;
+	
+}
+
+ul li{
+	float: left;
+	list-style: none;
+	margin: 10px;
+	line-height: 50px;
+	list-style: none;
+ 	padding: 0;
+ 	display: flex;
+}
+
+a{
+	font-family: 'Urbanist', sans-serif;
+	font-size: 25px;
+	font-style:inherit;
+	color:#64483c;
+
+	text-decoration:none;
+}
+
+a:hover{
+	color:#f0e7db;
+	text-decoration: underline;
+}
