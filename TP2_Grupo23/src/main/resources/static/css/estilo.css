@@ -50,9 +50,8 @@ body{
 	list-style: none;
 	margin: 10px;
 	line-height: 50px;
-	list-style: none;
- 	padding: 0;
- 	display: flex;
+	padding: 0;
+
 }
 
 .menu a{
@@ -60,11 +59,102 @@ body{
 	font-size: 20px;
 	font-style:inherit;
 	color:#64483c;
-
 	text-decoration:none;
 }
 
 .menu a:hover{
 	color:#f0e7db;
 	text-decoration: underline;
+}
+/* Menu Productos: Naima */
+
+.menuProductos{
+/* Adapata el menu al tamaño de la pantalla */
+	background-size: contain;
+    width: 950px;
+	margin:0 auto;
+    padding: 50px;
+}
+.menuProductos ul li{
+	margin: 10px;
+	line-height: 50px;
+	list-style: none;
+ 	padding: 0;
+ 	display: flex;
+	list-style: none;
+    text-align:center;
+    width: 100%;
+}
+.menuProductos a {
+	font-family:'Urbanist', sans-serif;
+	font-size: 30px;
+	text-decoration: none;
+	color:#64483c;
+	width:100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: #ccad99;
+    border: 2px solid #64483c;
+    
+}
+.menuProductos li a:hover{
+	border-color: #bc9d8f;
+    width: 150%;
+}
+.menuProductos h2{
+	font-family:'Gorditas', sans-serif;
+	text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    color:#64483c
+}
+/* lista de articulos */
+.articulos li{
+ 	display: inline-table;
+ 	width:20%;
+    margin: 0 1.5%;
+    padding:40px 30px 10px;
+    box-sizing: border-box;
+
+}
+.articulos h2{
+	font-family:'Gorditas', sans-serif;
+	text-align:	center;
+	margin-top:10px;
+	color:#64483c;
+	line-height: 20px;
+}
+.articulos p{
+	font-family:'Urbanist', sans-serif;
+	color:#64483c;
+}
+ .articulos strong{
+ 	text-align:left;
+	font-size: 20px;
+	font-family:'Urbanist', sans-serif;
+	color:#64483c;
+ }
+#asidep{
+	text-align: center;
+	clear:both;
+	border-radius: 30px;
+	background:#975942;
+	padding: 40px;
+}
+#asidep h4{
+	font-family:'Gorditas', sans-serif;
+	color:#f0e7db;
+	font-size: 30px;
+}
+#asidep p{
+	font-family: 'Urbanist', sans-serif;
+	
+	font-size: 20px;
+	
+}
+#footerInicio{
+	text-align: center;
+	clear:both;
+	padding: 40px;
 }

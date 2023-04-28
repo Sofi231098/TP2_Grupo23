@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Alimento para gato</title>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title>Alimento para gato</title>
+		<link rel="styLesheet" href="../static/css/estilo.css">
+		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
+	</head>
 <body>
-<header>
-		<h1>Alimento para gato</h1>
-		<img src="../static/images/comidadegato.png" width="100" title="Alimento para gato" alt="ADG">
-		<p>Marcas de alimento seleccionadas especialmente para cuidar a tu mejor amigo, las necesidades pueden variar de acuerdo a la raza, edad y nivel de actividad de tu gatito.</p>		
+	<header>
+		<div class='menu'>
+			<h1>Alimento para gato</h1>
+			<img src="../static/images/comidadegato.png" width="100" title="Alimento para gato" alt="ADG">
+				<nav>
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li> <a href="productos.html">Productos</a> </li> 
+						<li> <a href="Alimentoparaperros.html">Alimento para perros</a> </li>
+						<li> <a href="Accesorios.html">Accesorios</a> </li>
+					</ul>
+				</nav>
+		</div>
   </header>
    
-
-		<ul>
-			<li> <a href="productos.html">Productos</a> </li> 
-			<li> <a href="Alimentoparaperros.html">Alimento para perros</a> </li>
-			<li> <a href="Accesorios.html">Accesorios</a> </li>
-		</ul>	
-	<ul>
+	<ul class='articulos'>
 		<li><h2>Whiskas Adulto</h2>
 		<img src="../static/images/wiskasA.png" width="150" title="Gato adulto" alt="gato">
 	 	<p>Nueva receta, cuidadosamente preparada para satisfacer las necesidades nutricionales de su gato, apoya el funcionamiento gastrointestinal, contribuyendo a la formación de heces firmes y fáciles de limpiar.</p>
@@ -28,7 +34,7 @@
 	 	<strong>$6.500</strong></li>
 	</ul>
  
-	<ul>
+	<ul class='articulos'>
 		<li><h2>Purina Cat Chow (gato adulto)</h2>
 	 	<img src="../static/images/cat1.png" width="150" title="Gato Adulto" alt="gato">
 	 	<p>Una buena nutrición es fundamental para proteger la salud de los gatos, elaborado con una selección de ingredientes naturales y mejorado, con la inclusión de un prebiótico natural.</p>
@@ -39,7 +45,7 @@
 	 	<strong>$5.200</strong></li>
 	</ul>
  
-	<ul>
+	<ul class='articulos'>
 		<li><h2>Raza Gato Adulto</h2>
 	 	<img src="../static/images/razag1.png" width="150" title="Gato adulto" alt="gato">
 	 	<p>El alimento Raza Adulto logra promover la flora bacteriana benéfica, contiene nucleótidos que son necesarios para la multiplicación y función normal de las células epiteliales de la mucosa intestinal.</p>
@@ -53,7 +59,7 @@
 	 <br> 
 	 <br>
 	
-	<footer>
+	<footer id="footerInicio">
       <p align ="center"> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>
    </footer>
 
