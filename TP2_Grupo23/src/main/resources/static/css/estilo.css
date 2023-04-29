@@ -68,3 +68,188 @@ body{
 	color:#f0e7db;
 	text-decoration: underline;
 }
+
+
+/* aside, footer y section - Sofi */
+
+.content{
+	width:calc(80% - 40px);
+	float:left;
+	min-height:400px;
+	padding:20px;
+	border-radius: 35px;
+    background:#E9D5A2;
+}
+
+.content h2,h3{
+	font-family:'Gorditas', sans-serif;
+	font-size: 35px;
+	color:#734d26;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.content p{
+	text-align:justify;
+	font-size: 20px;
+	font-family: 'Urbanist', sans-serif;
+	color:#734d26;
+}
+.objetivos{
+	font-family: 'Urbanist', sans-serif;
+	font-size: 20px;
+	color:#734d26;
+	margin-left: 20px;
+	
+}
+
+.content2{
+	width:calc(20% - 30px);
+	float:left;
+	background:#975942;
+	min-height:400px;
+	padding: 15px;
+	padding-bottom: 25px;
+	border-radius: 35px;
+	
+}
+
+.content2 h3{
+	text-align: center;
+	font-size: 18px;
+	font-family:'Gorditas', sans-serif;
+	color:#f0e7db;
+	margin-top:15px;
+}
+
+.content2 p{
+	font-family: 'Urbanist', sans-serif;
+	font-size:18px;
+	color: #f0e7db;
+	margin-bottom:20px;
+}
+
+p.imgcentrado{
+	text-align: center;
+	
+}
+
+#footerInicio{
+	font-family: 'Urbanist', sans-serif;
+	font-size: 20px;
+	text-align: center;
+	clear:both;
+	background: #EDE2DB;
+	padding: 30px;
+	height: 50px;
+	line-height: 50px;
+	border-radius: 30px;
+	color:#734d26;
+}
+
+/* FORMULARIO - SOFI*/
+
+.sectionForm{
+	
+	width:60;
+	display: flex;
+}
+
+.contactenos{
+	background:#ccad99;
+	padding: 25px;
+	margin:25px;
+	border-radius: 20px;
+	margin-left: 120px;
+
+}
+
+.parte1 h2{
+	font-family:'Gorditas', sans-serif;
+	font-size: 40px;
+	color:#734d26;
+	text-align:center;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.parte1 p{
+	font-family: 'Urbanist', sans-serif;
+	font-size:23px;
+	color:#734d26 ;
+}
+
+p.imgForm{
+	text-align: center;
+}
+
+.parte2 .label{
+	font-family: 'Urbanist', sans-serif;
+	font-size:20px;
+	color:#734d26 ;
+}
+
+.parte2 .inputForm{
+	font-family: 'Urbanist', sans-serif;
+	font-size:20px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	padding:12px;
+	background-color: #EDE2DB;
+	border: 1px solid #734d26;
+	border: 1px solid #734d26;
+    outline: none;
+}
+
+
+.parte2 .boton{
+	width: 100%;
+	border-radius: 10px;
+	border: 1px solid #734d26;
+	padding:5px;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 18px;
+    color:#734d26 ;
+    background:#EDE2DB;
+}
+
+.paginas{
+	font-size: 40px; 
+	text-align: center;
+	padding:30px 10px;
+	
+}
+
+.logos{
+	color:#734d26 ;
+	padding: 10px;
+}
+
+.asideForm{
+	width:45%;
+	min-height:80px;
+	border-radius: 25px;
+	background:#ccad99;
+	margin-left: 120px;
+}
+
+.asideForm h4{
+	font-family: 25px;
+	font-family:'Gorditas', sans-serif;
+	color:#734d26 ;
+	text-align: center;
+	padding: 10px;	
+}
+
+
+.asideForm p{
+	  font-family: 'Urbanist', sans-serif;
+	  text-align: center;
+	  color:#734d26 ;
+	  padding:10px;
+	  font-size: 18px;
+}
+
+p.imgForm2{
+	text-align: center;
+}
