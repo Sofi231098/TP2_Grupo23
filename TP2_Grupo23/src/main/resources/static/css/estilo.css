@@ -35,7 +35,6 @@ body{
 
 /* Menu */
 
-
 .menu nav{
 	position: absolute;
   	top: 35px;
@@ -71,7 +70,8 @@ body{
 
   /*servicio de paseo*/
 .paseo h2{
-	font-family: 'Urbanist', sans-serif;
+	font-family: 'Gorditas', sans-serif;
+	color:#734d26;
 	font-size: 30px;
 	text-align: center;	
 }
@@ -99,32 +99,3 @@ p.centrado {
   text-align: center;
 } 
 
-
-/*fin de servicio de paseo */
-
-
-#aside{
-	text-align: center;
-	clear:both;
-	padding: 40px;
-}
-#aside h4{
-	font-family:'Gorditas', sans-serif;
-	color:#64483c;
-	font-size: 30px;
-}
-#aside p{
-	font-family: 'Urbanist', sans-serif;
-	font-size: 20px;
-}
-
-#footerInicio{
-	font-family: 'Urbanist', sans-serif;
-	font-size: 20px;
-	text-align: center;
-	clear:both;
-	background:#EDE2DB;
-	padding: 30px;
-	height: 50px;
-	line-height: 50px;
-}
