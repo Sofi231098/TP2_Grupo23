@@ -15,6 +15,7 @@ body{
 	background:#ccad99;
 	text-align:left;
 	background-size: contain;
+	
 }
 .menu{
 	width:100%;
@@ -30,6 +31,7 @@ body{
   	vertical-align: baseline;
   	background:#ccad99;
   	height:150px;
+  	margin-left: 15px;
   	
 }
 
@@ -152,9 +154,4 @@ body{
 	
 	font-size: 20px;
 	
-}
-#footerInicio{
-	text-align: center;
-	clear:both;
-	padding: 40px;
 }
