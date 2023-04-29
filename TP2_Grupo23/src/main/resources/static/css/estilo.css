@@ -1,157 +1,184 @@
-/*@charset "ISO-8859-1";*/
-*{
-	margin:0px;
-	padding:0px;
-	
+
+/*ASIDE,SECTION Y FOOTER DE INICIO - SOFI */
+
+.content{
+	width:calc(80% - 40px);
+	float:left;
+	min-height:400px;
+	padding:20px;
+	border-radius: 35px;
+    background:#E9D5A2;
 }
-/* Cuerpo de la pagina */
-body{
-	background-color: #EDE2DB;
-}
-/* Encabezado y menu*/
-.menu{
+
+.content h2,h3{
 	font-family:'Gorditas', sans-serif;
+	font-size: 35px;
 	color:#734d26;
-	background:#ccad99;
-	text-align:left;
-	background-size: contain;
-	
-}
-.menu{
-	width:100%;
-}
-.menu img {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0;
-
-}
-.menu h1{
-	display: inline-block;
-  	vertical-align: baseline;
-  	background:#ccad99;
-  	height:150px;
-  	margin-left: 15px;
-  	
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
-/* Menu */
-
-
-.menu nav{
-	position: absolute;
-  	top: 35px;
-  	right: 0;
-	height:100px;
-	border-bottom: 1px;
-	
+.content p{
+	text-align:justify;
+	font-size: 20px;
+	font-family: 'Urbanist', sans-serif;
+	color:#734d26;
 }
-
-.menu ul li{
-	float: left;
-	list-style: none;
-	margin: 10px;
-	line-height: 50px;
-	padding: 0;
-
-}
-
-.menu a{
+.objetivos{
 	font-family: 'Urbanist', sans-serif;
 	font-size: 20px;
-	font-style:inherit;
-	color:#64483c;
-	text-decoration:none;
+	color:#734d26;
+	margin-left: 20px;
+	
 }
 
-.menu a:hover{
-	color:#f0e7db;
-	text-decoration: underline;
+.content2{
+	width:calc(20% - 30px);
+	float:left;
+	background:#975942;
+	min-height:400px;
+	padding: 15px;
+	padding-bottom: 25px;
+	border-radius: 35px;
+	
 }
-/* Menu Productos: Naima */
 
-.menuProductos{
-/* Adapata el menu al tamaño de la pantalla */
-	background-size: contain;
-    width: 950px;
-	margin:0 auto;
-    padding: 50px;
-}
-.menuProductos ul li{
-	margin: 10px;
-	line-height: 50px;
-	list-style: none;
- 	padding: 0;
- 	display: flex;
-	list-style: none;
-    text-align:center;
-    width: 100%;
-}
-.menuProductos a {
-	font-family:'Urbanist', sans-serif;
-	font-size: 30px;
-	text-decoration: none;
-	color:#64483c;
-	width:100%;
-    padding: 30px 20px;
-    box-sizing: border-box;
-    border-radius: 20px;
-    background-color: #ccad99;
-    border: 2px solid #64483c;
-    
-}
-.menuProductos li a:hover{
-	border-color: #bc9d8f;
-    width: 150%;
-}
-.menuProductos h2{
-	font-family:'Gorditas', sans-serif;
+.content2 h3{
 	text-align: center;
-    font-size: 60px;
-    font-weight: bold;
-    color:#64483c
-}
-/* lista de articulos */
-.articulos li{
- 	display: inline-table;
- 	width:20%;
-    margin: 0 1.5%;
-    padding:40px 30px 10px;
-    box-sizing: border-box;
-
-}
-.articulos h2{
+	font-size: 18px;
 	font-family:'Gorditas', sans-serif;
-	text-align:	center;
-	margin-top:10px;
-	color:#64483c;
-	line-height: 20px;
+	color:#f0e7db;
+	margin-top:15px;
 }
-.articulos p{
-	font-family:'Urbanist', sans-serif;
-	color:#64483c;
+
+.content2 p{
+	font-family: 'Urbanist', sans-serif;
+	font-size:18px;
+	color: #f0e7db;
+	margin-bottom:20px;
 }
- .articulos strong{
- 	text-align:left;
+
+p.imgcentrado{
+	text-align: center;
+	
+}
+
+#footerInicio{
+	font-family: 'Urbanist', sans-serif;
 	font-size: 20px;
-	font-family:'Urbanist', sans-serif;
-	color:#64483c;
- }
-#asidep{
 	text-align: center;
 	clear:both;
+	background: #EDE2DB;
+	padding: 30px;
+	height: 50px;
+	line-height: 50px;
 	border-radius: 30px;
-	background:#975942;
-	padding: 40px;
+	color:#734d26;
 }
-#asidep h4{
+
+/* FORMULARIO - SOFI*/
+
+.sectionForm{
+	
+	width:60;
+	display: flex;
+}
+
+.contactenos{
+	background:#ccad99;
+	padding: 25px;
+	margin:25px;
+	border-radius: 20px;
+	margin-left: 120px;
+
+}
+
+.parte1 h2{
 	font-family:'Gorditas', sans-serif;
-	color:#f0e7db;
-	font-size: 30px;
+	font-size: 40px;
+	color:#734d26;
+	text-align:center;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
-#asidep p{
+
+.parte1 p{
 	font-family: 'Urbanist', sans-serif;
+	font-size:23px;
+	color:#734d26 ;
+}
+
+p.imgForm{
+	text-align: center;
+}
+
+.parte2 .label{
+	font-family: 'Urbanist', sans-serif;
+	font-size:20px;
+	color:#734d26 ;
+}
+
+.parte2 .inputForm{
+	font-family: 'Urbanist', sans-serif;
+	font-size:20px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	padding:12px;
+	background-color: #EDE2DB;
+	border: 1px solid #734d26;
+	border: 1px solid #734d26;
+    outline: none;
+}
+
+
+.parte2 .boton{
+	width: 100%;
+	border-radius: 10px;
+	border: 1px solid #734d26;
+	padding:5px;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 18px;
+    color:#734d26 ;
+    background:#EDE2DB;
+}
+
+.paginas{
+	font-size: 40px; 
+	text-align: center;
+	padding:30px 10px;
 	
-	font-size: 20px;
-	
+}
+
+.logos{
+	color:#734d26 ;
+	padding: 10px;
+}
+
+.asideForm{
+	width:45%;
+	min-height:80px;
+	border-radius: 25px;
+	background:#ccad99;
+	margin-left: 120px;
+}
+
+.asideForm h4{
+	font-family: 25px;
+	font-family:'Gorditas', sans-serif;
+	color:#734d26 ;
+	text-align: center;
+	padding: 10px;	
+}
+
+
+.asideForm p{
+	  font-family: 'Urbanist', sans-serif;
+	  text-align: center;
+	  color:#734d26 ;
+	  padding:10px;
+	  font-size: 18px;
+}
+
+p.imgForm2{
+	text-align: center;
 }
