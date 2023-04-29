@@ -1,70 +1,38 @@
 /*@charset "ISO-8859-1";*/
-*{
-	margin:0px;
-	padding:0px;
-	
-}
-/* Cuerpo de la pagina */
-body{
-	background-color: #EDE2DB;
-}
-/* Encabezado y menu*/
-.menu{
+
+/* Pag Sucursal*/
+
+#subtsuc{
 	font-family:'Gorditas', sans-serif;
 	color:#734d26;
-	background:#ccad99;
-	text-align:left;
-	background-size: contain;
-}
-.menu{
-	width:100%;
-}
-.menu img {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0;
-
-}
-.menu h1{
-	display: inline-block;
-  	vertical-align: baseline;
-  	background:#ccad99;
-  	height:150px;
-  	
+	text-align: center;
 }
 
-/* Menu */
-
-
-.menu nav{
-	position: absolute;
-  	top: 35px;
-  	right: 0;
-	height:100px;
-	border-bottom: 1px;
-	
-}
-
-.menu ul li{
-	float: left;
-	list-style: none;
-	margin: 10px;
-	line-height: 50px;
-	list-style: none;
- 	padding: 0;
- 	display: flex;
-}
-
-.menu a{
+#infosuc{
 	font-family: 'Urbanist', sans-serif;
-	font-size: 20px;
-	font-style:inherit;
-	color:#64483c;
-
-	text-decoration:none;
+	color:#734d26;
+	text-align: center;
+	font-size: 18px;
+}
+	
+#boximg{
+	box-sizing: border-box;
+    border: 2px solid #734d26;
+    border-radius: 10px;
+    
 }
 
-.menu a:hover{
-	color:#f0e7db;
-	text-decoration: underline;
+p.parrafimg{
+	text-align: center;
 }
+
+.articlesuc{
+	font-family: 'Urbanist', sans-serif;
+	text-align: center;
+}
+
+b{
+	color:#734d26;
+}
+
+/*----------------*/
