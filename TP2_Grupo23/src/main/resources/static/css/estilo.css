@@ -1,6 +1,78 @@
+/*@charset "ISO-8859-1";*/
+*{
+	margin:0px;
+	padding:0px;
+	
+}
+/* Cuerpo de la pagina */
+body{
+	background-color: #EDE2DB;
+}
+/* Encabezado y menu principal 
+	Trabajo en equipo desde linea 13 hasta 68 */
+.menu{
+	font-family:'Gorditas', sans-serif;
+	color:#734d26;
+	background:#ccad99;
+	text-align:left;
+	background-size: contain;
+}
+.menu{
+	width:100%;
+}
+.menu img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0;
 
-/*ASIDE,SECTION Y FOOTER DE INICIO - SOFI */
+}
+.menu h1{
+	display: inline-block;
+  	vertical-align: baseline;
+  	background:#ccad99;
+  	height:150px;
+  	margin-left: 20px
+ 	
+}
 
+.menu nav{
+	position: absolute;
+  	top: 35px;
+  	right: 0;
+	height:100px;
+	border-bottom: 1px;
+	
+}
+
+.menu ul li{
+	float: left;
+	list-style: none;
+	margin: 10px;
+	line-height: 50px;
+	list-style: none;
+ 	padding: 0;
+ 	display: flex;
+}
+
+.menu a{
+	font-family: 'Urbanist', sans-serif;
+	font-size: 20px;
+	font-style:inherit;
+	color:#64483c;
+
+	text-decoration:none;
+}
+
+.menu a:hover{
+	color:#f0e7db;
+	text-decoration: underline;
+}
+
+/* Realizado por: Sofia Trinida Yañez
+   Usuario git: Sofi231098
+   Trabajo: desde linea 75 hasta linea 148 */
+
+/* ASIDE,SECTION Y FOOTER DE INICIO */
 .content{
 	width:calc(80% - 40px);
 	float:left;
@@ -75,6 +147,239 @@ p.imgcentrado{
 	border-radius: 30px;
 	color:#734d26;
 }
+
+/* Realizado por: Naima Blanca Farja
+   Usuario git: NaimaFarja
+   Trabajo: desde linea 153 hasta linea 237 */
+
+.menuProductos{
+/* Adapata el menu al tamaño de la pantalla */
+	background-size: contain;
+    width: 950px;
+	margin:0 auto;
+    padding: 50px;
+}
+.menuProductos ul li{
+	margin: 10px;
+	line-height: 50px;
+	list-style: none;
+ 	padding: 0;
+ 	display: flex;
+	list-style: none;
+    text-align:center;
+    width: 100%;
+}
+.menuProductos a {
+
+	font-family:'Urbanist', sans-serif;
+	font-size: 30px;
+	text-decoration: none;
+	color:#64483c;
+	width:100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: #ccad99;
+    border: 2px solid #64483c;
+    
+}
+.menuProductos li a:hover{
+	border-color: #bc9d8f;
+    width: 150%;
+}
+.menuProductos h2{
+	font-family:'Gorditas', sans-serif;
+	text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    color:#64483c
+}
+/* lista de articulos */
+.articulos li{
+ 	display: inline-table;
+ 	width:20%;
+    margin: 0 1.5%;
+    padding:40px 30px 10px;
+    box-sizing: border-box;
+
+}
+.articulos h2{
+	font-family:'Gorditas', sans-serif;
+	text-align:	center;
+	margin-top:10px;
+	color:#64483c;
+	line-height: 20px;
+}
+.articulos p{
+	font-family:'Urbanist', sans-serif;
+	color:#64483c;
+}
+ .articulos strong{
+ 	text-align:left;
+	font-size: 20px;
+	font-family:'Urbanist', sans-serif;
+	color:#64483c;
+ }
+#asidep{
+	text-align: center;
+	clear:both;
+	border-radius: 30px;
+	background:#975942;
+	padding: 40px;
+}
+#asidep h4{
+	font-family:'Gorditas', sans-serif;
+	color:#f0e7db;
+	font-size: 30px;
+}
+#asidep p{
+	font-family: 'Urbanist', sans-serif;
+	
+	font-size: 20px;	
+}
+
+/* Realizado por: Luis Alberto Guerrero Erazo
+   Usuario git: Lguerrero2023
+   Trabajo: desde linea 243 hasta linea 301 */
+
+#consejos{
+	width: 85%;
+	display:inline-table;
+}
+#titulo {
+	font-family:'Gorditas', sans-serif;
+	color:#734d26;
+	text-align: center;
+	font-size: 40px;
+	margin-top: 0px;
+}
+#parrafo {
+	font-family: 'Urbanist', sans-serif;
+	font-size: 17px;
+	text-align: center;
+}
+#consejos p{
+	font-family: 'Urbanist', sans-serif;
+	font-size: 17px;
+	text-align: center;
+}
+
+#consejos h2{
+	font-family:'Gorditas', sans-serif;
+	color:#734d26;
+	text-align: left;
+	font-size: 30px;
+	padding: 50px;
+}
+
+#consejos p{
+	background-color: #ccad99;
+	height:150px;
+	border-radius:50px;
+	border: 5px solid #64483c;
+	
+	width: 80%;
+	display: flex;
+	align-items: center;
+	
+	position: relative;
+ 
+	bottom:200px;
+	right:0px;
+	left:200px;
+	text-align: justify;
+	padding:20px 6px 10px 20px ;
+	margin-left: 60px;
+	margin-bottom:-150px;
+}
+#consejos  img{
+	
+	padding: 50px ;
+}
+hr{
+	height: 2px;
+	background-color: #64483c;
+	border-color: #64483c;
+}
+/* Realizado por: Fabricio Alfredo Flores
+   Usuario git: Flores-Fabricio-Alfredo
+   Trabajo: desde linea 306 hasta linea 335 */
+
+  /*servicio de paseo*/
+.paseo h2{
+	font-family: 'Gorditas', sans-serif;
+	color:#734d26;
+	font-size: 30px;
+	text-align: center;	
+}
+.paseo p{
+ 	font-family: 'Urbanist', sans-serif;
+	font-size: 20px;
+	text-align: center;	
+}
+table {
+	margin: 0 auto;
+	font-family: 'Urbanist', sans-serif;
+	border-collapse: collapse;
+	width: 90%;
+}
+th{
+	font-size: 25px;
+	padding: 40px;
+	background-color: #ccad99;
+}
+td{
+	font-size: 16px;
+	padding: 0 20px ;
+}
+p.centrado {
+  text-align: center;
+} 
+
+/* Realizado por: Marisol Patricia castillo
+   Usuario git: marisolpatri77
+   Trabajo: desde linea 341 hasta linea 374 */
+
+/* Pag Sucursal*/
+
+#subtsuc{
+	font-family:'Gorditas', sans-serif;
+	color:#734d26;
+	text-align: center;
+}
+
+#infosuc{
+	font-family: 'Urbanist', sans-serif;
+	color:#734d26;
+	text-align: center;
+	font-size: 18px;
+}
+	
+#boximg{
+	box-sizing: border-box;
+    border: 2px solid #734d26;
+    border-radius: 10px;
+    
+}
+
+p.parrafimg{
+	text-align: center;
+}
+
+.articlesuc{
+	font-family: 'Urbanist', sans-serif;
+	text-align: center;
+}
+
+b{
+	color:#734d26;
+}
+
+/* ---------------- */
+
+/* Realizado por: Sofia Trinida Yañez
+   Usuario git: Sofi231098
+   Trabajo: desde linea 382 hasta linea 487 */
 
 /* FORMULARIO - SOFI*/
 
