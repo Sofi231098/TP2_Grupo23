@@ -5,12 +5,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+
 import ar.edu.unju.fi.controller.form.FormLogin;
 
 
 @Controller
 public class LoginController {
-	
 	@GetMapping("/login") 
 	public String  login(Model model) {
 		FormLogin formlogin = new FormLogin();
@@ -20,6 +20,7 @@ public class LoginController {
 	
 	@PostMapping("/login")
 	public String validar(Model model, FormLogin formLogin) {
+
 		if(formLogin.getUsuario().equals("ajax") && formLogin.getPassword().equals("123")) {
 			model.addAttribute("usuario", formLogin.getUsuario());
 			return "index";

@@ -5,6 +5,7 @@
 <title>Login</title>
 </head>
 <body>
+
 	<form th:action="@{/login}" th:object="${formlogin}" method="post">
 		<label>Usuario</label>
 		<input type="text" th:field="*{usuario}">
