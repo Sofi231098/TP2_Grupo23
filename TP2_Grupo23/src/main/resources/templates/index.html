@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Inicio</title>
-		<link rel="styLesheet" th:href="@{../static/css/estilo.css}">
+		<link rel="styLesheet" th:href="@{/css/estilo.css}">
 		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
 	</head>
@@ -11,7 +11,7 @@
 	<header>
 		<div class='menu'>
 			<h1>Littlest Pets Shop</h1> 
-			<img src="../static/images/logor.png" width="150" title="LogoLittlest" alt="perrito kawaii">
+			<img th:src="@{/images/logor.png}" width="150" title="LogoLittlest" alt="perrito kawaii">
 				<nav >
 					<ul>
 						<li><a href="index.html">Inicio</a></li>
@@ -19,7 +19,7 @@
 						<li><a href="consejos.html">Consejos de salud</a></li>
 						<li><a href="serviciosDePaseo.html">Servicios de paseos</a></li>
 						<li><a href="sucursales.html">Sucursales</a></li>
-						<li><a href="contacto-form.html">Contactanos</a></li>
+						<li><a th:href="@{/contacto}">Contactanos</a></li>
 					</ul>
 				</nav>
 		</div>
@@ -28,7 +28,7 @@
 		<article >
 			<h2>Conócenos</h2>
 			<p>
-				¡Hola!. Bienvenido/a a Littlest Pet Shop, en esta página encontrarás
+				¡Hola! <span th:text="${usuario}"></span> Bienvenido/a a Littlest Pet Shop, en esta página encontrarás
 				los mejores productos para tu mascota. <br> Tenemos alimentos
 				de todos los precios y calidad, juguetes, ropa y accesorios de todos
 				los colores, tamaños y muchos más. Hacemos Envíos gratis a
@@ -57,7 +57,7 @@
 			dientes de leche. A partir de los 3 meses empiezan a
 			cambiarlos por los dientes definitivos.
 		</p>
-		<p class="imgcentrado"><img src="../static/images/perrito.png" width="150" title="Perrito kawaii" alt="perrito kawaii"></p>
+		<p class="imgcentrado"><img th:src="@{/images/perrito.png}" width="150" title="Perrito kawaii" alt="perrito kawaii"></p>
 		
 	</aside> 
 	<br>
