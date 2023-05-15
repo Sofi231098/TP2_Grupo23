@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Contáctanos</title>
-		<link rel="styLesheet" th:href="@{../static/css/estilo.css}">
+		<link rel="styLesheet" th:href="@{/css/estilo.css}">
 		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
 		<link rel="styLesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,7 +13,7 @@
 	<header>
 		<div class='menu'>
 			<h1>Littlest Pets Shop</h1> 
-			<img src="../static/images/logor.png" width="150" title="LogoLittlest" alt="perrito kawaii">
+			<img th:src="@{/images/logor.png}" width="150" title="LogoLittlest" alt="perrito kawaii">
 				<nav >
 					<ul>
 						<li><a href="index.html">Inicio</a></li>
@@ -31,7 +31,7 @@
 		<div class="contactenos">
 			<div class="parte1">
 				<h2>Contáctenos</h2>
-				<p class="imgForm"><img src="../static/images/contacto.png" width="150"
+				<p class="imgForm"><img th:src="@{/images/contacto.png}" width="150"
 					title="Perrito contacto" alt="perrito"></p>
 				<article>
 					<p>

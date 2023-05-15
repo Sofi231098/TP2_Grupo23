@@ -12,7 +12,7 @@ public class FormLogin {
 		super();
 		this.usuario = usuario;
 		this.password = password;
-	}
+	} 
 
 	public String getUsuario() {
 		return usuario;
