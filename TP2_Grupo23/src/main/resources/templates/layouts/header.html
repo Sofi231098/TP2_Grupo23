@@ -4,9 +4,10 @@
 		<meta charset="UTF-8">
 	</head>
 <body>
-		<header	th:fragment="header">
+	<header	th:fragment="header">
+	 <div class='menu'>
 		<h1>Littlest Pets Shop</h1> 
-		<img src="../static/images/logor.png" width="150" title="LogoLittlest" alt="perrito kawaii">		
+		<img th:src="@{/images/logor.png}" width="150" title="LogoLittlest" alt="perrito kawaii">		
 			<nav >
 				<ul>
 					<li><a href="index.html">Inicio</a></li>
@@ -17,6 +18,7 @@
 					<li><a href="contacto-form.html">Contactanos</a></li>
 				</ul>
 			</nav>
+		</div>
 	</header>
 </body>
 </html>
