@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
@@ -8,8 +8,9 @@
 		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
 	</head>
 <body>
-	<header>
-		<div class='menu'>
+	<header th:replace = "~{layouts/header :: header}"> 
+	   <!-- <div class='menu'>
+		
 			<h1>Littlest Pets Shop</h1> 
 			<img th:src="@{/images/logor.png}" width="150" title="LogoLittlest" alt="perrito kawaii">
 				<nav >
@@ -21,8 +22,9 @@
 						<li><a href="sucursales.html">Sucursales</a></li>
 						<li><a th:href="@{/contacto}">Contactanos</a></li>
 					</ul>
-				</nav>
-		</div>
+				</nav> 
+		</div>   -->
+		
 	</header>
 	<section class="content">
 		<article >
@@ -60,9 +62,9 @@
 		<p class="imgcentrado"><img th:src="@{/images/perrito.png}" width="150" title="Perrito kawaii" alt="perrito kawaii"></p>
 		
 	</aside> 
-	<br>
-	<footer id="footerInicio">
-		<p>&copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>
+	<br>   
+	<footer th:replace="~{layouts/footer :: footer}" id="footerInicio">
+	  <!-- <p>&copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p> -->
 	</footer>
 </body>
 </html>

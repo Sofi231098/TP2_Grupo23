@@ -3,13 +3,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Alimento para gato</title>
-		<link rel="styLesheet" th:href="@{../static/css/estilo.css}">
+		<link rel="styLesheet" th:href="@{/css/estilo.css}">
 		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
 	</head>
 <body>
-<header>
-<div class='menu'>
+	<header>
+		<div class='menu'>
 			<h1>Alimento para gato</h1>
 			<img src="../static/images/comidadegato.png" width="100" title="Alimento para gato" alt="ADG">
 				<nav>
@@ -21,7 +21,9 @@
 					</ul>
 				</nav>
 		</div>
-  </header>
+		
+		
+  	</header>
    
 	<ul class='articulos'>
 		<li><h2>Whiskas Adulto</h2>
@@ -59,8 +61,8 @@
 	 <br> 
 	 <br>
 	
-	<footer id="footerInicio">
-      <p align ="center"> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>
+	<footer th:replace="{layouts/footer :: footer}"id="footerInicio">
+	 <!--<p align ="center"> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>-->
    </footer>
 
 </body>

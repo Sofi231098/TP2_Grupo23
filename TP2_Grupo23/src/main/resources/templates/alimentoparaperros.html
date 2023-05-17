@@ -8,7 +8,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
 	</head>
 <body>
-<header>
+	<header>
+		
 		<div class='menu'>
 			<h1>Alimento para Perro</h1>
 			<img src="../static/images/comidadeperro.png" width="100" title="comida para perro" alt="ADP">
@@ -21,8 +22,6 @@
 					</ul>
 				</nav>
 		</div>
-		
-		
   	</header>
    
 	<ul class='articulos'>
@@ -63,8 +62,8 @@
 	<br> 
 	<br>
 	
-	<footer id="footerInicio">
-      <p align ="center"> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>
+	<footer th:repalce="~{layouts/footer :: footer}"id="footerInicio">
+	<!-- <p align ="center"> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p> -->
     </footer>
    
 </body>

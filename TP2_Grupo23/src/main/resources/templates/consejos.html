@@ -8,8 +8,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
 	</head>
 <body>
-	<header>
-		<div class='menu'>
+	<header th:replace="~{layouts/header :: header}">
+		<!-- <div class='menu'>
 			<h1>Littlest Pets Shop</h1> 
 			<img src="../static/images/logor.png" width="150" title="LogoLittlest" alt="perrito kawaii">
 				<nav >
@@ -22,7 +22,8 @@
 						<li><a href="contacto-form.html">Contactanos</a></li>
 					</ul>
 				</nav>
-		</div>
+		</div> -->
+		
 	</header>	
 	
 			<h2 id= titulo >Consejos de salud para tu mascota</h2> 
@@ -147,9 +148,8 @@
 	  <br>
 	  <br>
 	  
-	<footer id="footerInicio">
-		
-      <p align= "center"> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>
+	<footer th:replace="~{layouts/footer :: footer}" id="footerInicio">
+	   <!-- <p align= "center"> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>-->
     </footer>
 	  
 </body>
