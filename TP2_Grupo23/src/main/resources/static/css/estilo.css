@@ -445,6 +445,19 @@ p.imgForm{
     font-size: 18px;
     color:#734d26 ;
     background:#EDE2DB;
+    cursor: pointer;
+}
+
+.parte2 .boton:hover{
+	width: 100%;
+	border-radius: 10px;
+	border: 1px solid #EDE2DB;
+	padding:5px;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 18px;
+    color:#EDE2DB;
+    background:#734d26;
+    cursor: pointer;
 }
 
 .paginas{
