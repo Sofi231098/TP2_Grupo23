@@ -500,3 +500,79 @@ p.imgForm{
 p.imgForm2{
 	text-align: center;
 }
+
+/* Estilo login*/
+.formLogin{
+	background:#ccad99 ;
+	text-align: center;
+	margin-top: 150px;
+	margin-left: 500px;
+	margin-right: 500px;
+	padding: 50px;
+	border-radius: 20px;
+}
+.labelLogin{
+	font-family: 25px;
+	font-family:'Gorditas', sans-serif;
+	color:#734d26 ;
+}
+.inputLogin{
+	font-family: 'Urbanist', sans-serif;
+	font-size:20px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	padding:12px;
+	background-color: #EDE2DB;
+	border: 1px solid #734d26;
+	border: 1px solid #734d26;
+    outline: none;
+    color:#734d26 ;
+}
+.errorLogin{
+	font-family: 25px;
+	font-family:'Urbanist', sans-serif;
+	color:#734d26 ;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.objForm{
+	background:#ccad99 ;
+	text-align: center;
+	margin-top: 50px;
+	margin-left: 400px;
+	margin-right: 400px;
+	padding: 50px;
+	border-radius: 20px;
+}
+.labelObj{
+	font-size: 20px;
+	font-family:'Urbanist', sans-serif;
+	color:#734d26 ;
+	padding: 20px;
+}
+
+.inputObj{
+	font-family: 'Urbanist', sans-serif;
+	font-size:15px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	padding:12px;
+	background-color: #EDE2DB;
+	border: 1px solid #734d26;
+	border: 1px solid #734d26;
+    outline: none;
+    color:#734d26 ;
+}
+.button{
+	font-family: 'Urbanist', sans-serif;
+	font-size:15px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	padding:12px;
+	background-color: #EDE2DB;
+	border: 1px solid #734d26;
+	border: 1px solid #734d26;
+    outline: none;
+    color:#734d26 ;
+}
