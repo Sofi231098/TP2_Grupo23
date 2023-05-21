@@ -375,6 +375,65 @@ b{
 	color:#734d26;
 }
 
+.txt{
+	text-align: center;
+}
+
+.form {
+	 width: 100%;
+	 max-width: 300px;
+  	 margin: 0 auto;
+	 justify-content: center;
+	 align-items: center;
+}
+
+.titnuevsuc {
+	text-align: center;
+}
+
+.form{
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+.form input{
+  width: 60%;
+  height: 20px;
+  margin: .5rem
+}
+
+.form select {
+	width: 60%;
+  height: 20px;
+  margin: .5rem
+}
+
+.form-element {
+  display: block;
+  width: 20%;
+   height: 40px;
+  margin: 1rem auto;
+  font-family: 'Urbanist', sans-serif;
+  color:#734d26;
+  font-size: 15px;
+}
+
+.form label {
+	font-family: 'Urbanist', sans-serif;
+	color:#734d26;
+	font-size: 18px;
+}
+
+
+.link {
+	margin-left: 80px;
+}
+
 /* ---------------- */
 
 /* Realizado por: Sofia Trinida Yañez
