@@ -29,12 +29,34 @@
 			 	<article>
 					<h2>Servicio de Paseo</h2>
 					<p class="centrado">
-					<img src="../static/images/paseo1.png" width="150" title="Littlest paseo" alt="Imagen del paseador">
+					<img th:src="@{/images/paseo1.png}" width="150" title="Littlest paseo" alt="Imagen del paseador">
 					</p>
 				</article>
-			
-				<article>
+				
+				<article >
+				<p class="centrado"><a th:href="@{/servicios/nuevo}">Nuevo Paseador</a><p>
 					<table border ="1" > 
+					<tr>
+						<th>Paseador</th>
+						<th>Telefono</th>
+						<th>Dias</th>
+						<th>Horarios</th>
+						<th>Adiciones</th>
+					</tr>
+					<tr th:each="serv: ${servicios}">
+						<td th:text = "${serv.paseador}"></td>
+						<td th:text = "${serv.telefono}"></td>
+						<td th:text = "${serv.dias}"></td>
+						<td th:text = "${serv.horarios}"></td>
+						<td>
+							<a th:href="@{/servicios/modificar/}+${serv.paseador}">Editar</a>
+							<a th:href="@{/servicios/eliminar/}+${serv.paseador}">Eliminar</a>
+						</td>
+						
+					</tr>
+					</table>
+					
+					<!--<table border ="1" > 
 						<tr>
 						 	<th>Dias</th>
 						 	<th>Lunes</th>
@@ -62,10 +84,10 @@
 							<td>Melanie A. Quevedo</td>
 							<td>Angel E. Gallardo</td>
 						</tr>
-					</table>
+					</table>-->
 					<br>
 					<p class="centrado">
-						<img src="../static/images/paseo2.png" width="150" title="Littlest paseo" alt="Imagen del paseador">
+						<img th:src="@{/images/paseo2.png}" width="150" title="Littlest paseo" alt="Imagen del paseador">
 					</p>
 				</article>
 				<article>
@@ -79,7 +101,7 @@
 					</p>
 					<br>
 					<p class="centrado">
-						<img src="../static/images/paseo3.png" width="150" title="Littlest paseo" alt="Imagen del paseador">
+						<img th:src="@{/images/paseo3.png}" width="150" title="Littlest paseo" alt="Imagen del paseador">
 					</p>
 					<br>
 					<br>
@@ -94,7 +116,7 @@
 				</p>	
 				<br>	
 			</aside>
-			<footer th:repalce="~{layouts/footer :: footer}" id="footerInicio">
+			<footer th:replace="~{layouts/footer :: footer}" id="footerInicio">
 				<!-- <p> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>  -->
 		   </footer>
 	</body>
