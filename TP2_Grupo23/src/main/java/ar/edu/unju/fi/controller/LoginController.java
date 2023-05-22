@@ -13,22 +13,22 @@ import ar.edu.unju.fi.controller.form.FormLogin;
 public class LoginController {
 	@GetMapping("/login") 
 	public String  login(Model model) {
-		FormLogin formlogin = new FormLogin();
-		model.addAttribute("formlogin", formlogin);
+		FormLogin formLogin = new FormLogin();
+		model.addAttribute("formLogin", formLogin);
 		return "login";
 	}
 	
 	@PostMapping("/login")
 	public String validar(Model model, FormLogin formLogin) {
 
-		if(formLogin.getUsuario().equals("ajax") && formLogin.getPassword().equals("123")) {
+		if(formLogin.getUsuario().equals("admin") && formLogin.getPassword().equals("123")) {
 			model.addAttribute("usuario", formLogin.getUsuario());
 			return "index";
-		}else{
-			model.addAttribute("error", "acceso incorrecto");
-			return "login";
 		}
 		
+		  
+		   model.addAttribute("error", "Acceso incorrecto"); 
+			return "login";
 	}
 	
 }
