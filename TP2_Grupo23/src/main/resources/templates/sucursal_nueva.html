@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Nueva Sucursal</title>
+		<link rel="styLesheet" th:href="@{/css/estilo.css}">
+		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
+	</head>
+ <body>
+
+	<header th:replace="~{layouts/header :: header}">
+	 	<!-- <div class='menu'>
+			<h1>Littlest Pets Shop</h1> 
+			<img src="../static/images/logor.png" width="150" title="LogoLittlest" alt="perrito kawaii">
+				<nav >
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="productos.html">Productos</a></li>
+						<li><a href="consejos.html">Consejos de salud</a></li>
+						<li><a href="serviciosDePaseo.html">Servicios de paseos</a></li>
+						<li><a th:href="@{/sucursales/listado}" >Sucursales</a></li>
+						<li><a href="contacto-form.html">Contactanos</a></li>
+					</ul>
+				</nav>
+		</div> -->
+		
+	</header>
+	
+	<section>
+	
+		<h3 class="titnuevsuc" th:text="${edicion}?'Modificar Sucursal':'Nueva Sucursal'"></h3> <br>
+		<!--  >p class="parraf">NOTA: Al modificar una Sucursal NO se debe cambiar ni Código Sucursal ni Nombre.</p--><br>
+		<form class="form" th:action="${edicion}?@{/sucursales/modificar}:@{/sucursales/guardar}" th:object="${sucursal}" method="post">
+		
+			<label for="codigo sucursal">Código Sucursal</label><br>
+			<input type="text" id="codigosucursal" name="sucursal_codigo" th:field="*{codigo}"  th:readonly="${edicion}?'readonly'"><br><br>
+			<label for="nombre">Nombre</label><br>
+			<input type="text" id="nombre" name="sucursal_nombre" th:field="*{nombre}" th:readonly="${edicion}?'readonly'"><br><br>
+			<label for="provinvia">Provincia</label><br>
+			<select  id="provincia" name="sucursal_provincia" th:field="*{provincia}">
+				<option value="JUJUY">Jujuy</option>
+				<option value="SALTA">Salta</option>
+				<option value="TUCUMAN">Tucumán</option>
+			</select><br><br>
+			<label for="direccion">Dirección</label><br>
+			<input type="text" id="direccion" name="sucursal_direccion" th:field="*{direccion}"><br><br>
+			<label for="telefono">Teléfono</label><br>
+			<input type="text" id="telefono" name="sucursal_telefono" th:field="*{telefono}"><br><br>
+			<label for="horario de atencion">Horario de Atención</label><br>
+			<input type="text" id="horariodeatencion" name="sucursal_horario" th:field="*{horario}"><br><br>
+			<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
+			<!-- <p><input type="submit" class="button" value="Guardar"></p> -->
+			
+		</form>
+	
+	</section>
+	
+	<footer th:repleace = "~{layouts/footer :: footer}"id="footerInicio">
+		<!-- <p> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>-->
+   </footer>
+	
+	
+ </body>
+</html>

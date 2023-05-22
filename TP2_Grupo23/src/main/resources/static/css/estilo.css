@@ -375,6 +375,65 @@ b{
 	color:#734d26;
 }
 
+.txt{
+	text-align: center;
+}
+
+.form {
+	 width: 100%;
+	 max-width: 300px;
+  	 margin: 0 auto;
+	 justify-content: center;
+	 align-items: center;
+}
+
+.titnuevsuc {
+	text-align: center;
+}
+
+.form{
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+.form input{
+  width: 60%;
+  height: 20px;
+  margin: .5rem
+}
+
+.form select {
+	width: 60%;
+  height: 20px;
+  margin: .5rem
+}
+
+.form-element {
+  display: block;
+  width: 20%;
+   height: 40px;
+  margin: 1rem auto;
+  font-family: 'Urbanist', sans-serif;
+  color:#734d26;
+  font-size: 15px;
+}
+
+.form label {
+	font-family: 'Urbanist', sans-serif;
+	color:#734d26;
+	font-size: 18px;
+}
+
+
+.link {
+	margin-left: 80px;
+}
+
 /* ---------------- */
 
 /* Realizado por: Sofia Trinida Yañez
@@ -445,6 +504,19 @@ p.imgForm{
     font-size: 18px;
     color:#734d26 ;
     background:#EDE2DB;
+    cursor: pointer;
+}
+
+.parte2 .boton:hover{
+	width: 100%;
+	border-radius: 10px;
+	border: 1px solid #EDE2DB;
+	padding:5px;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 18px;
+    color:#EDE2DB;
+    background:#734d26;
+    cursor: pointer;
 }
 
 .paginas{
@@ -486,4 +558,80 @@ p.imgForm{
 
 p.imgForm2{
 	text-align: center;
+}
+
+/* Estilo login*/
+.formLogin{
+	background:#ccad99 ;
+	text-align: center;
+	margin-top: 150px;
+	margin-left: 500px;
+	margin-right: 500px;
+	padding: 50px;
+	border-radius: 20px;
+}
+.labelLogin{
+	font-family: 25px;
+	font-family:'Gorditas', sans-serif;
+	color:#734d26 ;
+}
+.inputLogin{
+	font-family: 'Urbanist', sans-serif;
+	font-size:20px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	padding:12px;
+	background-color: #EDE2DB;
+	border: 1px solid #734d26;
+	border: 1px solid #734d26;
+    outline: none;
+    color:#734d26 ;
+}
+.errorLogin{
+	font-family: 25px;
+	font-family:'Urbanist', sans-serif;
+	color:#734d26 ;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.objForm{
+	background:#ccad99 ;
+	text-align: center;
+	margin-top: 50px;
+	margin-left: 400px;
+	margin-right: 400px;
+	padding: 50px;
+	border-radius: 20px;
+}
+.labelObj{
+	font-size: 20px;
+	font-family:'Urbanist', sans-serif;
+	color:#734d26 ;
+	padding: 20px;
+}
+
+.inputObj{
+	font-family: 'Urbanist', sans-serif;
+	font-size:15px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	padding:12px;
+	background-color: #EDE2DB;
+	border: 1px solid #734d26;
+	border: 1px solid #734d26;
+    outline: none;
+    color:#734d26 ;
+}
+.button{
+	font-family: 'Urbanist', sans-serif;
+	font-size:15px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	padding:12px;
+	background-color: #EDE2DB;
+	border: 1px solid #734d26;
+	border: 1px solid #734d26;
+    outline: none;
+    color:#734d26 ;
 }

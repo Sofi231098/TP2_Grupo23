@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
 		<title>Accesorios</title>
-		<link rel="styLesheet" href="../static/css/estilo.css">
+		<link rel="styLesheet" th:href="@{/css/estilo.css}">
 		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
 	</head>
 <body>
-<header>
-<div class='menu'>
+	<header>
+		<div class='menu'>
 			<h1>Accesorios</h1>
 			<img src="../static/images/accesorios.png" width="150" title="perro" alt="ADP">
 			<nav>
@@ -21,10 +21,8 @@
 				</ul>
 			</nav>
 		</div>
-
->
 		
-  </header>
+  	</header>
 	
 	<ul class='articulos'>
 		<li><h2>Hueso</h2>
@@ -67,8 +65,8 @@
 	 <br> 
 	 <br>
 	
-	<footer id="footerInicio">
-      <p align ="center"> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>
+	<footer th:replace="~{layouts/footer :: footer}" id="footerInicio">
+	 <!--<p align ="center"> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>-->
    </footer>
 </body>
 </html>
