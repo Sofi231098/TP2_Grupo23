@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nuevo Consejo</title>
+</head>
+<body>
+	<form th:action="@{/consejo/nuevoConsejo}" th:object="${formConsejo}" method="post">
+		<label>Titulo: </label>
+		<input type="text" th:field="*{titulo}"/>
+		<label>Consejo: </label>
+		<input type="text" th:field="*{consejo}"/>
+		<input type="submit" value="Ingresar"/>
+	</form>
+</body>
+</html>
