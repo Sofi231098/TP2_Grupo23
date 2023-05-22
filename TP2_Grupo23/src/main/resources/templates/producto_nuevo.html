@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="styLesheet" th:href="@{/css/estilo.css}">
+		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
+	</head>
+<body>
+	<header th:replace ="~{layouts/header :: header}">
+		 <!-- <div class='menu'>
+			<h1>Littlest Pets Shop</h1> 
+			<img src="../static/images/logor.png" width="150" title="LogoLittlest" alt="perrito kawaii">
+				<nav >
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="productos.html">Productos</a></li>
+						<li><a href="consejos.html">Consejos de salud</a></li>
+						<li><a href="serviciosDePaseo.html">Servicios de paseos</a></li>
+						<li><a href="sucursales.html">Sucursales</a></li>
+						<li><a href="contacto-form.html">Contactanos</a></li>
+					</ul>
+				</nav>
+		</div> -->
+	</header>
+	<div class="contactenos">
+	
+		<h3 th:text="${edicion}?'Modificar Producto' : 'Producto Nuevos'">PRODUCTOS NUEVOS</h3>
+	<section>
+		<form th:action="${edicion}?@{/productos/modificar}:@{/productos/guardar}" th:object="${productos}" method="post">			
+			<label for="codigo">Codigo Articulo</label>
+			<input type="number" id="codigo" name="producto_codigo" th:field="*{codigo}"><br><br>
+			<label for="nombre">Nombre articulo</label>
+			<input type="text" id="nombre" name="prducto_nombre" th:field="*{nombre}"><br><br>
+			<label for="precio">Precio</label>
+			<input type="number" id="precio" name="producto_precio" th:field="*{precio}"><br><br>
+			<label for="descuento">Descuento</label>
+			<input type="number" id="descuento" name="producto_descuento" th:field="*{descuento}"><br><br>
+			<label for="categoria">Categoria</label>
+			<select id="categoria" name="Categoria" th:field="*{categoria}">
+				<option value="Alimento perro adulto">Alimento perro adulto</option>
+				<option value="Alimento gato adulto">Alimento gato adulto</option>
+				<option value="Alimento para cachorro">Alimento perro cachorro</option>
+				<option value="Alimento gato cachorro">Alimento gato chachorro</option>
+				<option value="Accesorios">Accesorios</option>
+				<option value="Cuidados">Cuidados</option>
+				<option value="Juguetes">Juguetes</option>
+				<option value="Vestimenta">Vestimenta</option>
+				
+			</select> <br><br>
+			<p><input type="submit" class="button" th:value="${edicion}? Modificar : 'Guardar'"></p>
+						
+		</form>
+	</section>
+	</div>
+	
+
+	<footer th:replace="~{layouts/footer :: footer}" id="footerInicio">
+	 <!--<p align ="center"> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>-->
+   </footer>
+
+</body>
+
+</html>	
