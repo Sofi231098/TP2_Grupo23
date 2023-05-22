@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Nuevo Paseador</title>
+		<link rel="styLesheet" th:href="@{/css/estilo.css}">
+		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header th:replace="~{layouts/header :: header}"> </header>
+			
+			<section class ="formLogin">
+				<h3 th:text="${edicion}?'Modificar Paseador' : 'Nuevo Paseador'"></h3> <br><br>
+					<form th:action= "${edicion}?@{/servicios/modificar}:@{/servicios/guardar}" th:object="${servicio}" method="post">
+						<label for= "paseador"> Nombre Del Paseador</label>
+						<input type="text" id="paseador" name="servicio_paseador" th:field="*{paseador}"><br><br>
+						
+						<label for= "telefono"> Telefono</label>
+						<input type="text" id="telefono" name="servicio_telefono" th:field="*{telefono}"><br><br>
+						
+						<label for= "dias"> Dias</label>
+						<select id="dias" name="servicio_dias" th:field="*{dias}">
+								<option value="Lunes">Lunes</option>
+								<option value="Martes">Martes</option>
+								<option value="Miercoles">Miercoles</option>
+								<option value="Jueves">Jueves</option>
+								<option value="Viernes">Viernes</option>
+								<option value="Sabado">Sabado</option>
+								<option value="Domingo">Domingo</option>
+						</select><br><br>
+						
+						<label for= "horarios"> Horarios</label>
+						<input type="text" id="horarios" name="servicio_horarios" th:field="*{horarios}"><br><br>
+						<p><input type = "submit" class = "button" th:value="${edicion}?'Modificar':'Guardar'"><p>
+					</form>
+			</section>
+			<br><br><br><br><br>
+		
+			
+		<footer th:replace="~{layouts/footer :: footer}" id="footerInicio"></footer>
+	</body>
+</html>
