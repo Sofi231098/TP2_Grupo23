@@ -19,7 +19,7 @@
 						<li><a href="productos.html">Productos</a></li>
 						<li><a href="consejos.html">Consejos de salud</a></li>
 						<li><a href="serviciosDePaseo.html">Servicios de paseos</a></li>
-						<li><a href="sucursales.html">Sucursales</a></li>
+						<li><a th:href="@{/sucursales/listado}" >Sucursales</a></li>
 						<li><a href="contacto-form.html">Contactanos</a></li>
 					</ul>
 				</nav>
@@ -36,106 +36,43 @@
 			locales en total ubicados en Jujuy, Salta y Tucumán y, seguiremos
 			creciendo con nuevas aperturas en el área y en el resto del país.</h4>
 			<br>
-
-		<article class="articlesuc">
-			<p class="parrafimg"><img id="boximg" height="150px" width="800px" alt="sucursal Jujuy" src="../static/images/Jujuy1.png"></p>
-			<br>
-			<p>
-				<b>SUCURSAL CENTRO</b>
-			</p>
-			<p>
-				Dirección: Independencia esq. Alberdi<br> Teléfono: 3886439281<br>
-				Horario de Atención: Lunes a Sábado de 9 a 21hs
-			</p> <br>
-			<p>
-				<b>SUCURSAL PALPALÁ</b>
-			</p>
-			<p>
-				Dirección: Avenida Libertad 1090<br> Teléfono: 3885398765<br>
-				Horario de Atención: Lunes a Sabado de 9 a 21hs
-			</p><br>
-			<p>
-				<b>SUCURSAL PERICO</b>
-			</p>
-			<p>
-				Dirección: Avenida Congreso 130<br> Teléfono: 3888563823<br>
-				Horario de Atención: Lunes a Sábado de 9 a 21hs
-			</p><br>
-			<p>
-				<b>SUCURSAL SAN PEDRO</b>
-			</p>
-			<p>
-				Dirección: Rogelio Leach 152<br> Teléfono: 3883475284<br>
-				Horario de Atención: Lunes a Sábado de 9 a 21hs
-			</p>
-		</article>
-		
-		<br>
-		<article class="articlesuc">
-			<p class="parrafimg"><img id="boximg" height="150px" width="800px" alt="sucursal Salta"
-				src="../static/images/Salta1.png"></p>
-			<br>
-			<p>
-				<b>SUCURSAL SALTA CAPITAL</b>
-			</p>
-			<p>
-				Dirección: Casero 676<br> Teléfono: 3876542029<br> Horario
-				de Atencion: Lunes a Sábado de 9 a 21hs
-			</p><br>
-
-			<p>
-				<b>SUCURSAL GUEMES</b>
-			</p>
-			<p>
-				Dirección: Leandro N. Alem 645<br> Teléfono: 3876542093<br>
-				Horario de Atención: Lunes a Sábado de 9 a 21hs
-			</p><br>
-
-			<p>
-				<b>SUCURSAL ORÁN</b>
-			</p>
-			<p>
-				Dirección: Avenida Vicente López y Planes 437<br> Teléfono:
-				3874359870<br> Horario de Atención: Lunes a Sábado de 9 a 21hs
-			</p>
-		</article>
-		
-		<br>
-		<article class="articlesuc">
-			<p class="parrafimg"> <img id="boximg" height="150px" width="800px" alt="sucursal Tucumán"
-				src="../static/images/Tucuman1.png"></p>
-			<br>
-			<p>
-				<b>SUCURSAL SAN MIGUEL</b>
-			</p>
-			<p>
-				Dirección: Avenida Ejército del Norte 1662<br> Teléfono:
-				3816283949<br> Horarios de Atención: Lunes a Sábado de 9 a 21hs
-			</p>
-		</article>
-		<br>
-		<article class="articlesuc">
-			<p>
-				<b>SUCURSAL YERBA BUENA</b>
-			</p>
-			<p>
-				Dirección: Avenida Aconquija 2016<br> Teléfono: 3817362983<br>
-				Horarios de Atención: Lunes a Sábado de 9 a 21hs
-			</p>
-		</article>
-		<br>
-		<article class="articlesuc">
-			<p>
-				<b>SUCURSAL TAFI VIEJO</b>
-			</p>
-			<p>
-				Dirección: Gral. Jose de San Martin 271<br> Teléfono:
-				3817629012<br> Horarios de Atención: Lunes a Sábado de 9 a 21hs
-			</p>
-			<br> <br>
-
-		</article>
 	</section>
+	
+	<section class="paseo">
+		<a class="link" th:href="@{/sucursales/nuevo}">Nueva Sucursal</a>
+		<table border=1>
+			<tr>
+				<th>Código Sucursal</th>
+				<th>Sucursal</th>
+				<th>Provincia</th>
+				<th>Dirección</th>
+				<th>Teléfono</th>
+				<th>Horario de atención</th>
+				<th>Acciones</th>
+				
+			</tr>
+			<tr  th:each="suc: ${sucursales}">
+			
+				<td class="txt" th:text="${suc.codigo}"></td>
+				<td class="txt" th:text="${suc.nombre}"></td>
+				<td class="txt" th:text="${suc.provincia}"></td>
+				<td class="txt" th:text="${suc.direccion}"></td>
+				<td class="txt" th:text="${suc.telefono}"></td>
+				<td class="txt" th:text="${suc.horario}"></td>
+				<td>
+					<a th:href="@{/sucursales/modificar/}+${suc.codigo}">Editar</a>
+					<a th:href="@{/sucursales/eliminar/}+${suc.codigo}">Eliminar</a>
+				</td>
+				
+			</tr>
+		</table>
+	</section>
+	
+	
+	<br>
+	<br>
+	
+	
 	<aside id="asidep">
 			<h4>¿SABÍAS QUÉ tu perro es capaz de echarte de menos?</h4>
 		<p>Sí, y aprenden nuestras rutinas y hábitos, por lo que pueden calcular cuándo es
