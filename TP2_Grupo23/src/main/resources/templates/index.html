@@ -27,8 +27,8 @@
 			<h3>Nuestros Objetivos</h3>
 			<ul class="objetivos" th:each= "obj: ${index}" >
 				<li th:text = "${obj.objetivos}"></li>
-				<li> <a th:href="@{/inicio/modificar/}+${obj.id}">Editar</a> </li>
-				<li> <a th:href="@{/inicio/eliminar/}+${obj.id}">Eliminar</a> </li>
+				<li> <a class= "EditElim" th:href="@{/inicio/modificar/}+${obj.id}">Editar</a> </li>
+				<li> <a class= "EditElim" th:href="@{/inicio/eliminar/}+${obj.id}">Eliminar</a> </li>
 			</ul>
 			
 		</article>

@@ -7,20 +7,19 @@ public class Producto {
     private String nombre;
     private double precio;
     private int descuento;
-    private double preciodescuento;
     private String  categoria;
     
     public Producto() {
 		// TODO Auto-generated constructor stub
 	}
     
-	public Producto(int codigo, String nombre, double precio, int descuento, double preciodescuento, String categoria) {
+	public Producto(int codigo, String nombre, double precio, int descuento, String categoria) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.precio = precio;
 		this.descuento = descuento;
-		this.preciodescuento = preciodescuento;
+		getPreciodescuento();
 		this.categoria = categoria;
 	}
 	
@@ -49,15 +48,16 @@ public class Producto {
 		this.descuento = descuento;
 	}
 	public double getPreciodescuento() {
-		if (descuento > 0 && descuento > 50) {
+		if (descuento >= 0 || descuento <= 50) {
 			
-			return preciodescuento = (precio * descuento)/100;
+			return (precio -(precio * descuento)/100);
 			
-		}			
-		return preciodescuento;
+		}else {			
+			
+		return precio;
+		}
 	}
 	public void setPreciodescuento(double preciodescuento) {
-		this.preciodescuento = preciodescuento;
 	}
 	public String getCategoria() {
 		return categoria;

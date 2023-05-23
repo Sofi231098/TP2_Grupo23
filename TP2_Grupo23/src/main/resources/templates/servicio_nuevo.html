@@ -10,9 +10,9 @@
 	<body>
 		<header th:replace="~{layouts/header :: header}"> </header>
 			
-			<section class ="formLogin">
-				<h3 th:text="${edicion}?'Modificar Paseador' : 'Nuevo Paseador'"></h3> <br><br>
-					<form th:action= "${edicion}?@{/servicios/modificar}:@{/servicios/guardar}" th:object="${servicio}" method="post">
+			<section>
+				<h3 class="titnuevsuc" th:text="${edicion}?'Modificar Paseador' : 'Nuevo Paseador'"></h3> <br><br>
+					<form class="form" th:action= "${edicion}?@{/servicios/modificar}:@{/servicios/guardar}" th:object="${servicio}" method="post">
 						<label for= "paseador"> Nombre Del Paseador</label>
 						<input type="text" id="paseador" name="servicio_paseador" th:field="*{paseador}"><br><br>
 						
@@ -32,7 +32,7 @@
 						
 						<label for= "horarios"> Horarios</label>
 						<input type="text" id="horarios" name="servicio_horarios" th:field="*{horarios}"><br><br>
-						<p><input type = "submit" class = "button" th:value="${edicion}?'Modificar':'Guardar'"><p>
+						<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
 					</form>
 			</section>
 			<br><br><br><br><br>

@@ -23,11 +23,11 @@
 				</nav>
 		</div> -->
 	</header>
-	<div class="contactenos">
+	<div>
 	
-		<h3 th:text="${edicion}?'Modificar Producto' : 'Producto Nuevos'">PRODUCTOS NUEVOS</h3>
+		<h3 class="titnuevsuc" th:text="${edicion}?'Modificar Producto' : 'Producto Nuevos'">PRODUCTOS NUEVOS</h3>
 	<section>
-		<form th:action="${edicion}?@{/productos/modificar}:@{/productos/guardar}" th:object="${productos}" method="post">			
+		<form class="formprod" th:action="${edicion}?@{/productos/modificar}:@{/productos/guardar}" th:object="${productos}" method="post">			
 			<label for="codigo">Codigo Articulo</label>
 			<input type="number" id="codigo" name="producto_codigo" th:field="*{codigo}"><br><br>
 			<label for="nombre">Nombre articulo</label>
@@ -47,8 +47,9 @@
 				<option value="Juguetes">Juguetes</option>
 				<option value="Vestimenta">Vestimenta</option>
 				
-			</select> <br><br>
-			<p><input type="submit" class="button" th:value="${edicion}? Modificar : 'Guardar'"></p>
+			</select>
+			
+			<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
 						
 		</form>
 	</section>
