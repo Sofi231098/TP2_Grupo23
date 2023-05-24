@@ -23,15 +23,17 @@
 				</nav>
 		</div> -->
 	</header>
-		<form class="formprod" th:action="${edicion}?@{/consejos/modificar}:@{/consejos/guardar}" th:object="${consejos}" method="post">
+		<section class="formprod">
 			<h3 th:text="${edicion}?'Modificar Consejo' : 'Nuevos Consejos'">CONSEJOS NUEVOS</h3>	
-				<label>Titulo: </label>
-				<input type="text" th:field="*{titulo}"/>
-				<label>Consejo:</label>
-				<input type="text" th:field="*{consejo}"/>
-				<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
-		</form>
-
+			<form  th:action="${edicion}?@{/consejos/modificar}:@{/consejos/guardar}" th:object="${consejos}" method="post">
+					<label>Titulo: </label>
+					<input type="text" th:field="*{titulo}">
+					<label>Consejo:</label>
+					<textarea class="inputForm" rows="5" cols="37" th:field="*{consejo}"></textarea> 
+					
+					<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
+			</form>
+		</section>
 		
 	<footer th:replace="~{layouts/footer :: footer}" id="footerInicio">
 	 <!--<p align ="center"> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>-->

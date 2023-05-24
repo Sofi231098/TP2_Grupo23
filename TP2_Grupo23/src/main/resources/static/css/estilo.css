@@ -279,9 +279,17 @@ p.imgcentrado{
 	font-family:'Gorditas', sans-serif;
 	color:#734d26;
 	text-align: center;
+	font-size: 25px;
+	margin-top: 0px;
+}
+.tituloconsejo{
+	font-family:'Gorditas', sans-serif;
+	color:#734d26;
+	text-align: center;
 	font-size: 40px;
 	margin-top: 0px;
 }
+
 #parrafo {
 	font-family: 'Urbanist', sans-serif;
 	font-size: 17px;
@@ -330,6 +338,19 @@ hr{
 	background-color: #64483c;
 	border-color: #64483c;
 }
+
+.inputForm{
+	font-family: 'Urbanist', sans-serif;
+	font-size:20px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	padding:12px;
+	background-color: #EDE2DB;
+	border: 1px solid #734d26;
+	border: 1px solid #734d26;
+    outline: none;
+}
+
 /* Realizado por: Fabricio Alfredo Flores
    Usuario git: Flores-Fabricio-Alfredo
    Trabajo: desde linea 306 hasta linea 335 */
