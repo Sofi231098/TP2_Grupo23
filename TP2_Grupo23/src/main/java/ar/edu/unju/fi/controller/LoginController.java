@@ -4,14 +4,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import ar.edu.unju.fi.controller.form.FormLogin;
 
 
 @Controller
+@RequestMapping("/")
 public class LoginController {
-	@GetMapping("/login") 
+	@GetMapping("/") 
 	public String  login(Model model) {
 		FormLogin formLogin = new FormLogin();
 		model.addAttribute("formLogin", formLogin);
@@ -23,7 +24,7 @@ public class LoginController {
 
 		if(formLogin.getUsuario().equals("admin") && formLogin.getPassword().equals("123")) {
 			model.addAttribute("usuario", formLogin.getUsuario());
-			return "index";
+			return "redirect:/inicio/lisInicio";
 		}
 		
 		  
