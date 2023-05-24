@@ -636,6 +636,8 @@ p.imgForm2{
 	margin-right: 500px;
 	padding: 50px;
 	border-radius: 20px;
+	font-family:'Gorditas', sans-serif;
+	color:#734d26 ;
 }
 .labelLogin{
 	font-family: 25px;
@@ -653,6 +655,13 @@ p.imgForm2{
 	border: 1px solid #734d26;
     outline: none;
     color:#734d26 ;
+}
+
+.inputLogin:hover{
+	 background:#e6ccb3;
+     cursor: pointer;
+     color:#ffffff;
+    
 }
 .errorLogin{
 	font-family: 25px;
