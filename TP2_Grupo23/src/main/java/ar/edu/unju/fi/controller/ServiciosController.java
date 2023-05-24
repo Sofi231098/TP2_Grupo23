@@ -58,7 +58,7 @@ public class ServiciosController {
 	}
 	
 	@PostMapping("/modificar")
-	public String modificarServicio(@ModelAttribute("servico")Servicios servicio) {
+	public String modificarServicio(@ModelAttribute("servicio")Servicios servicio) {
 		for( Servicios serv: listaServicios.getServicios()) {
 			if(serv.getPaseador().equals(servicio.getPaseador())) {
 				serv.setTelefono(servicio.getTelefono());

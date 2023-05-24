@@ -39,7 +39,7 @@
 	</section>
 	
 	<section class="paseo">
-		<a class="link" th:href="@{/sucursales/nuevo}">Nueva Sucursal</a>
+		<p class = "centrado"><a class="link" th:href="@{/sucursales/nuevo}">Nueva Sucursal</a></p>
 		<table border=1>
 			<tr>
 				<th>Código Sucursal</th>
@@ -60,8 +60,8 @@
 				<td class="txt" th:text="${suc.telefono}"></td>
 				<td class="txt" th:text="${suc.horario}"></td>
 				<td>
-					<a th:href="@{/sucursales/modificar/}+${suc.codigo}">Editar</a>
-					<a th:href="@{/sucursales/eliminar/}+${suc.codigo}">Eliminar</a>
+					<a class ="EditElim" th:href="@{/sucursales/modificar/}+${suc.codigo}">Editar</a>
+					<a class ="EditElim" th:href="@{/sucursales/eliminar/}+${suc.codigo}">Eliminar</a>
 				</td>
 				
 			</tr>
@@ -80,7 +80,7 @@
 		  perros actúan de forma diferente cuando sus dueños se ausentaban por períodos de tiempo distintos.</p>
 	</aside>
 	<br>
-	<footer th:repleace = "~{layouts/footer :: footer}"id="footerInicio">
+	<footer th:replace = "~{layouts/footer :: footer}"id="footerInicio">
 		<!-- <p> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>-->
    </footer>
 	

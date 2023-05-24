@@ -64,12 +64,13 @@ public class ProductosController {
 	@PostMapping("/productos/modificar")
 	public String modificarProductos(@ModelAttribute("productos") Producto producto) {
 		for (Producto prod: listaProductos.getProductos()) {
-			if(prod.getNombre().equals(producto.getNombre()));
+			if(prod.getNombre().equals(producto.getNombre())) {
     		prod.setCodigo(producto.getCodigo());
     		prod.setPrecio(producto.getPrecio());
     		prod.setDescuento(producto.getDescuento());
     		prod.setCategoria(producto.getCategoria());
     		break;
+			}
 		}
 		return "redirect:/productos/lista";
 		}
@@ -87,7 +88,3 @@ public class ProductosController {
 		
 	}
 	}
-	
-	
-
-

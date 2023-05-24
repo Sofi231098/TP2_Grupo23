@@ -152,8 +152,8 @@ p.imgcentrado{
    Usuario git: NaimaFarja
    Trabajo: desde linea 153 hasta linea 237 */
 
-.menuProductos{
-/* Adapata el menu al tamaño de la pantalla */
+/*.menuProductos{
+/* Adapata el menu al tamaño de la pantalla 
 	background-size: contain;
     width: 950px;
 	margin:0 auto;
@@ -193,7 +193,7 @@ p.imgcentrado{
     font-size: 60px;
     font-weight: bold;
     color:#64483c
-}
+}*/
 /* lista de articulos */
 .articulos li{
  	display: inline-table;
@@ -204,11 +204,27 @@ p.imgcentrado{
 
 }
 .articulos h2{
+	display:flex;
+	box-sizing: border-box;
+    border-radius: 20px;
+    background-color: #64483c;
+    border: 2px solid ;
 	font-family:'Gorditas', sans-serif;
+	font-size:30px;
+	align-items:center;
+	justify-content:center;
+	text-align:	center;
+	margin-top:10px;
+	height:50px;
+	color:#f0e7db;
+	line-height: 20px;
+}
+.articulos h3{
+	font-family:'Gorditas', sans-serif;
+	font-size:20px;
 	text-align:	center;
 	margin-top:10px;
 	color:#64483c;
-	line-height: 20px;
 }
 .articulos p{
 	font-family:'Urbanist', sans-serif;
@@ -218,7 +234,20 @@ p.imgcentrado{
  	text-align:left;
 	font-size: 20px;
 	font-family:'Urbanist', sans-serif;
+	display:flex;
+	box-sizing: border-box;
+    border-radius: 20px;
+    background-color: #f0e7db;
+    border: 2px solid ;
+	font-size:20px;
+	align-items:center;
+	justify-content:center;
+	text-align:	center;
+	margin-top:10px;
+	height:30px;
 	color:#64483c;
+	line-height: 20px;
+    
  }
 #asidep{
 	text-align: center;
@@ -250,9 +279,17 @@ p.imgcentrado{
 	font-family:'Gorditas', sans-serif;
 	color:#734d26;
 	text-align: center;
+	font-size: 25px;
+	margin-top: 0px;
+}
+.tituloconsejo{
+	font-family:'Gorditas', sans-serif;
+	color:#734d26;
+	text-align: center;
 	font-size: 40px;
 	margin-top: 0px;
 }
+
 #parrafo {
 	font-family: 'Urbanist', sans-serif;
 	font-size: 17px;
@@ -301,6 +338,19 @@ hr{
 	background-color: #64483c;
 	border-color: #64483c;
 }
+
+.inputForm{
+	font-family: 'Urbanist', sans-serif;
+	font-size:20px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	padding:12px;
+	background-color: #EDE2DB;
+	border: 1px solid #734d26;
+	border: 1px solid #734d26;
+    outline: none;
+}
+
 /* Realizado por: Fabricio Alfredo Flores
    Usuario git: Flores-Fabricio-Alfredo
    Trabajo: desde linea 306 hasta linea 335 */
@@ -317,24 +367,35 @@ hr{
 	font-size: 20px;
 	text-align: center;	
 }
-table {
+.paseo table {
 	margin: 0 auto;
 	font-family: 'Urbanist', sans-serif;
+	font-size:16;
 	border-collapse: collapse;
 	width: 90%;
 }
-th{
-	font-size: 25px;
+.paseo th{
+	font-size: 20px;
 	padding: 40px;
 	background-color: #ccad99;
 }
-td{
+.paseo td{
 	font-size: 16px;
-	padding: 0 20px ;
+	padding:  20px ;
 }
 p.centrado {
   text-align: center;
 } 
+
+p.centrado a{
+	font-family: 'Gorditas', sans-serif;
+	font-size: 25px;
+	color:#734d26;
+	text-decoration:blink;
+	
+}
+
+
 
 /* Realizado por: Marisol Patricia castillo
    Usuario git: marisolpatri77
@@ -431,7 +492,13 @@ b{
 
 
 .link {
-	margin-left: 80px;
+	margin-left: 65px;
+	font-family:'Gorditas', sans-serif;
+	font-size: 20px;
+	font-style:inherit;
+	color:#64483c;
+
+	
 }
 
 /* ---------------- */
@@ -634,4 +701,65 @@ p.imgForm2{
 	border: 1px solid #734d26;
     outline: none;
     color:#734d26 ;
+}
+
+/*Estilo de tablas*/
+.EditElim{
+	font-family: 'Urbanist', sans-serif;
+	font-size:15px;
+	color:#734d26;
+	text-decoration: none;
+	list-style-type: none;
+}
+
+/*Formulario Productos*/
+.formprod{
+	background:#ccad99 ;
+	text-align: center;
+	margin-top: 50px;
+	margin-left: 400px;
+	margin-right: 400px;
+	padding: 50px;
+	border-radius: 20px;
+}
+
+
+.formprod input{
+	font-family: 'Urbanist', sans-serif;
+	font-size:15px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	padding:12px;
+	background-color: #EDE2DB;
+	border: 1px solid #734d26;
+	border: 1px solid #734d26;
+    outline: none;
+    color:#734d26 ;
+}
+
+.formprod select {
+	width: 60%;
+  height: 20px;
+  margin: .5rem;
+  background-color: #EDE2DB;
+	border: 1px solid #734d26;
+	border: 1px solid #734d26;
+    outline: none;
+    color:#734d26 ;
+}
+
+.formprod-element {
+  display: block;
+  width: 20%;
+   height: 40px;
+  margin: 1rem auto;
+  font-family: 'Urbanist', sans-serif;
+  color:#734d26;
+  font-size: 15px;
+}
+
+.formprod label {
+	font-family: 'Urbanist', sans-serif;
+	color:#734d26;
+	font-size: 18px;
 }

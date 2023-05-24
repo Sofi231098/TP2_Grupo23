@@ -49,8 +49,8 @@
 						<td th:text = "${serv.dias}"></td>
 						<td th:text = "${serv.horarios}"></td>
 						<td>
-							<a th:href="@{/servicios/modificar/}+${serv.paseador}">Editar</a>
-							<a th:href="@{/servicios/eliminar/}+${serv.paseador}">Eliminar</a>
+							<a class= "EditElim" th:href="@{/servicios/modificar/}+${serv.paseador}">Editar</a>
+							<a class= "EditElim" th:href="@{/servicios/eliminar/}+${serv.paseador}">Eliminar</a>
 						</td>
 						
 					</tr>

@@ -26,16 +26,9 @@
 		
 	</header>	
 	
-			<h2 id= titulo >Consejos de salud para tu mascota</h2> 
-	  		<p id= parrafo>Aquí encontraras algunos consejos utiles para el cuidado de tu mascota. </p>  
+			<h2 class="tituloconsejo" >Consejos de salud para tu mascota</h2> 
+	  		<p id= "parrafo">Aquí encontraras algunos consejos utiles para el cuidado de tu mascota. </p>  
 	<section  id ="consejos">
-		<a th:href="@{/consejos/nuevoConsejo}">Nuevo Consejo</a>
-		<table>
-			<tr>
-			<th>Titulo</th>
-			<th>Consejo</th>
-			</tr>
-		</table>
 		<article >
 		
 			<h2> 1.- Bañar a tu perro. </h2>
@@ -144,6 +137,28 @@
 	  	</article>
 	  	
 	</section>
+	<section class="paseo">
+	  		<p class="centrado" ><a th:href="@{/nuevoConsejo}">Consejos Nuevos</a></p>
+		  		<table border=1>
+		  			<tr>
+		  				<th>Tiitulo</th>
+		  				<th>Consejos</th>
+		  				<th>Acciones</th>
+		  			</tr>
+		  			<tr th:each = "cons: ${consejos}">
+		  				<td th:text="${cons.titulo}"></td>
+		  				<td th:text="${cons.consejo}">
+		  				<td>
+		  					<a class="EditElim" th:href="@{/consejos/modificar/}+${cons.titulo}">Editar</a>
+		  					<a class="EditElim" th:href="@{/consejos/eliminar/}+${cons.titulo}">Eliminar</a>
+		  				</td>
+		
+		  			</tr>
+		  			
+		  		</table>
+		  		<br><br>
+  		  		
+  	</section>
 	  
 	  <aside id = "asidep">
 	  	<h4>¿SABIAS QUE algunos perros no ladran?</h4>
