@@ -15,7 +15,8 @@
 			<label class="labelLogin">Password</label>
 			<input class="inputLogin" type="password" th:field="*{password}"><br>
 			<input class="inputLogin" type="submit" value="Ingresar">
+			<p class="parrafoLogin" th:if="${error}" th:text="${error}"></p>
 		</form>
-		<p class="parrafoLogin" th:if="${error}" th:text="${error}"></p>
+		
 	</body>
 </html>
