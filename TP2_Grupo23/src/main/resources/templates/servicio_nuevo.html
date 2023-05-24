@@ -12,7 +12,7 @@
 			
 			<section>
 				<h3 class="titnuevsuc" th:text="${edicion}?'Modificar Paseador' : 'Nuevo Paseador'"></h3> <br><br>
-					<form class="form" th:action= "${edicion}?@{/servicios/modificar}:@{/servicios/guardar}" th:object="${servicio}" method="post">
+					<form class="formprod" th:action= "${edicion}?@{/servicios/modificar}:@{/servicios/guardar}" th:object="${servicio}" method="post">
 						<label for= "paseador"> Nombre Del Paseador</label>
 						<input type="text" id="paseador" name="servicio_paseador" th:field="*{paseador}"><br><br>
 						
