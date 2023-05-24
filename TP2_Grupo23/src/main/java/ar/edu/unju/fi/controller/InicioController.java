@@ -58,9 +58,9 @@ public class InicioController {
 	
 	@PostMapping("/modificar")
 	public String modificarObjetivo(@ModelAttribute("objetivo") IndexModel indexModel) { 
-		System.out.println(indexModel.getObjetivos() + indexModel.getId());
+		//System.out.println(indexModel.getObjetivos() + indexModel.getId());
 		for(IndexModel obj: listaIndex.getIndex()) {
-			System.out.println(obj.getObjetivos() + obj.getId() );
+			//System.out.println(obj.getObjetivos() + obj.getId() );
 			if(obj.getId() == indexModel.getId()) {
 				obj.setObjetivos(indexModel.getObjetivos());
 				//System.out.println(obj.getObjetivos());
@@ -72,9 +72,9 @@ public class InicioController {
 	
 	@GetMapping("/eliminar/{objetivos}")
 	public String eliminarObjetivo(@PathVariable(value="objetivos") int objetivos) {
-		System.out.println(objetivos);
+		//System.out.println(objetivos);
 		for(IndexModel obj: listaIndex.getIndex()) {
-			System.out.println(obj.getId() + obj.getObjetivos());
+			//System.out.println(obj.getId() + obj.getObjetivos());
 			if(obj.getId() == objetivos){
 				listaIndex.getIndex().remove(obj);
 			break;
