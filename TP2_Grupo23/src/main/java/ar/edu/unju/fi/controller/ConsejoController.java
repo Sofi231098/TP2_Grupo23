@@ -68,7 +68,7 @@ public class ConsejoController {
 		
 		for (Consejo cons: listaConsejo.getConsejos()) {
 			if(cons.getTitulo().equals(consejo.getTitulo())) {
-			cons.setFechadeingreso(consejo.getFechadeingreso());	
+			cons.setConsejo(consejo.getConsejo());	
 		
 		}
 		}

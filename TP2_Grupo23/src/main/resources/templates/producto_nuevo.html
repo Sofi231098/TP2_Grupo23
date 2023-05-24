@@ -25,9 +25,10 @@
 	</header>
 	<div>
 	
-		<h3 class="titnuevsuc" th:text="${edicion}?'Modificar Producto' : 'Producto Nuevos'">PRODUCTOS NUEVOS</h3>
+
 	<section>
 		<form class="formprod" th:action="${edicion}?@{/productos/modificar}:@{/productos/guardar}" th:object="${productos}" method="post">			
+			<h3 class="titnuevsuc" th:text="${edicion}?'Modificar Producto' : 'Producto Nuevos'">PRODUCTOS NUEVOS</h3>
 			<label for="codigo">Codigo Articulo</label>
 			<input type="number" id="codigo" name="producto_codigo" th:field="*{codigo}"><br><br>
 			<label for="nombre">Nombre articulo</label>

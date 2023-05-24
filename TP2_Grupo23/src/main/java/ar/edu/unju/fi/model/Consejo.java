@@ -1,34 +1,18 @@
 package ar.edu.unju.fi.model;
 
-import java.time.LocalDate;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
-
-
 
 public class Consejo {
-
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private LocalDate fechadeingreso;
 	private String titulo;
+	private String Consejo;
 
 	public Consejo() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Consejo(LocalDate fechadeingreso, String titulo) {
+	public Consejo(String titulo, String consejo) {
 		super();
-		this.fechadeingreso = fechadeingreso;
 		this.titulo = titulo;
-	}
-
-	public LocalDate getFechadeingreso() {
-		return fechadeingreso;
-	}
-
-	public void setFechadeingreso(LocalDate fechadeingreso) {
-		this.fechadeingreso = fechadeingreso;
+		Consejo = consejo;
 	}
 
 	public String getTitulo() {
@@ -38,6 +22,16 @@ public class Consejo {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
+
+	public String getConsejo() {
+		return Consejo;
+	}
+
+	public void setConsejo(String consejo) {
+		Consejo = consejo;
+	}
 	
 	
+	
+
 }

@@ -141,13 +141,12 @@
 	  		<p class="centrado" ><a th:href="@{/nuevoConsejo}">Consejos Nuevos</a></p>
 		  		<table border=1>
 		  			<tr>
-		  				<th>Fecha de creacion</th>
 		  				<th>Tiitulo</th>
 		  				<th>Acciones</th>
 		  			</tr>
 		  			<tr th:each = "cons: ${consejos}">
-		  				<td th:text="${cons.fechadeingreso}"></td>
 		  				<td th:text="${cons.titulo}"></td>
+		  				<td th:text="${cons.consejo}">
 		  				<td>
 		  					<a class="EditElim" th:href="@{/consejos/modificar/}+${cons.titulo}">Editar</a>
 		  					<a class="EditElim" th:href="@{/consejos/eliminar/}+${cons.titulo}">Eliminar</a>

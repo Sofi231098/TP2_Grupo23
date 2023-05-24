@@ -29,10 +29,10 @@
 	
 	<section>
 	
-		<h3 class="titnuevsuc" th:text="${edicion}?'Modificar Sucursal':'Nueva Sucursal'"></h3> <br>
+		
 		<!--  >p class="parraf">NOTA: Al modificar una Sucursal NO se debe cambiar ni Código Sucursal ni Nombre.</p--><br>
 		<form class="formprod" th:action="${edicion}?@{/sucursales/modificar}:@{/sucursales/guardar}" th:object="${sucursal}" method="post">
-		
+			<h3 th:text="${edicion}?'Modificar Sucursal':'Nueva Sucursal'"></h3> <br>
 			<label for="codigo sucursal">Código Sucursal</label><br>
 			<input type="text" id="codigosucursal" name="sucursal_codigo" th:field="*{codigo}"  th:readonly="${edicion}?'readonly'"><br><br>
 			<label for="nombre">Nombre</label><br>

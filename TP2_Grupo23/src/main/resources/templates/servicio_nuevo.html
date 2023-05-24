@@ -11,8 +11,8 @@
 		<header th:replace="~{layouts/header :: header}"> </header>
 			
 			<section>
-				<h3 class="titnuevsuc" th:text="${edicion}?'Modificar Paseador' : 'Nuevo Paseador'"></h3> <br><br>
 					<form class="formprod" th:action= "${edicion}?@{/servicios/modificar}:@{/servicios/guardar}" th:object="${servicio}" method="post">
+						<h3 th:text="${edicion}?'Modificar Paseador' : 'Nuevo Paseador'"></h3> <br><br>
 						<label for= "paseador"> Nombre Del Paseador</label>
 						<input type="text" id="paseador" name="servicio_paseador" th:field="*{paseador}"><br><br>
 						
@@ -31,7 +31,18 @@
 						</select><br><br>
 						
 						<label for= "horarios"> Horarios</label>
-						<input type="text" id="horarios" name="servicio_horarios" th:field="*{horarios}"><br><br>
+						<select id="horarios" name="servicio_dias" th:field="*{horarios}">
+								<option value="08:00 a 09:00">08:00 a 09:00</option>
+								<option value="09:00 a 10:00">09:00 a 10:00</option>
+								<option value="10:00 a 11:00">10:00 a 11:00</option>
+								<option value="11:00 a 12:00">11:00 a 12:00</option>
+								<option value="13:00 a 14:00">13:00 a 14:00</option>
+								<option value="15:00 a 16:00">15:00 a 16:00</option>
+								<option value="17:00 a 18:00">17:00 a 18:00</option>
+								<option value="18:00 a 19:00">18:00 a 19:00</option>
+								<option value="20:00 a 21:00">20:00 a 21:00</option>
+								<option value="22:00 a 23:00">22:00 a 23:00</option>
+						</select><br><br>
 						<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
 					</form>
 			</section>
