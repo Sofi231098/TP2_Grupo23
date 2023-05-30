@@ -2,29 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximun-scale=1, user-scalable=no">
 		<title>Servicio de Paseo</title>
 		<link rel="styLesheet" th:href="@{/css/estilo.css}">
 		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 	</head>
 <body>
-	<header th:replace="~{layouts/header :: header}">
-		<!-- <div class='menu'>
-			<h1>Littlest Pets Shop</h1> 
-			<img src="../static/images/logor.png" width="150" title="LogoLittlest" alt="perrito kawaii">
-				<nav >
-					<ul>
-						<li><a href="index.html">Inicio</a></li>
-						<li><a href="productos.html">Productos</a></li>
-						<li><a href="consejos.html">Consejos de salud</a></li>
-						<li><a href="serviciosDePaseo.html">Servicios de paseos</a></li>
-						<li><a href="sucursales.html">Sucursales</a></li>
-						<li><a href="contacto-form.html">Contactanos</a></li>
-					</ul>
-				</nav>
-		</div> -->
-		
-	</header>		
+	<header th:replace="~{layouts/header :: header}"></header>		
 			 <section class="paseo">
 			 	<article>
 					<h2>Servicio de Paseo</h2>
@@ -56,35 +42,6 @@
 					</tr>
 					</table>
 					
-					<!--<table border ="1" > 
-						<tr>
-						 	<th>Dias</th>
-						 	<th>Lunes</th>
-						 	<th>Martes</th>
-						 	<th>Miercoles</th>
-						 	<th>Jueves</th>
-						 	<th>Viernes</th>
-						 	<th>Sabado</th>
-						</tr>
-						<tr>
-							<th>Horarios</th>
-							<td>9 a 12 - 16 a 20</td>
-							<td>9 a 12 - 16 a 20</td>
-							<td>9 a 12 - 16 a 20</td>
-							<td>9 a 12 - 16 a 20</td>
-							<td>9 a 12 - 16 a 20</td>
-							<td>9 a 12 - 14 a 20</td>
-						</tr>
-						<tr>
-							<th>Paseador</th>
-							<td>Maximiliano  A. Flores </td>
-							<td>Luis G. Panduro</td>
-							<td>Maria Becerra </td>
-							<td>Marcelo Perez</td>
-							<td>Melanie A. Quevedo</td>
-							<td>Angel E. Gallardo</td>
-						</tr>
-					</table>-->
 					<br>
 					<p class="centrado">
 						<img th:src="@{/images/paseo2.png}" width="150" title="Littlest paseo" alt="Imagen del paseador">
@@ -116,8 +73,7 @@
 				</p>	
 				<br>	
 			</aside>
-			<footer th:replace="~{layouts/footer :: footer}" id="footerInicio">
-				<!-- <p> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>  -->
-		   </footer>
+			<footer th:replace="~{layouts/footer :: footer}" id="footerInicio"></footer>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 	</body>
 </html>
