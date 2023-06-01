@@ -1,5 +1,6 @@
 package ar.edu.unju.fi.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +15,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/inicio")
 public class InicioController {
-	ListaIndex listaIndex = new ListaIndex();
+	
+	@Autowired
+	 private ListaIndex listaIndex;
+	@Autowired
+	private IndexModel objetivo;
 	
 	@GetMapping("/lisInicio")
 	public String getIndex(Model model) {
@@ -26,7 +31,7 @@ public class InicioController {
 	@GetMapping("/nuevoobj")
 	public String getNuevoObjetivo(Model model) {
 		boolean edicion = false;
-		model.addAttribute("objetivo", new IndexModel());
+		model.addAttribute("objetivo", objetivo);
 		model.addAttribute("edicion" , edicion);
 		return "nuevoo_objetivo";
 	}
