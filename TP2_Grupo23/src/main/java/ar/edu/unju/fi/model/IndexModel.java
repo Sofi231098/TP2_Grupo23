@@ -1,6 +1,8 @@
 package ar.edu.unju.fi.model;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class IndexModel {
 	private static Integer nextId = 0;
 	private String objetivos;

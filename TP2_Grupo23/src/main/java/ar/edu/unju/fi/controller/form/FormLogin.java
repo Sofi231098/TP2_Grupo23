@@ -1,5 +1,8 @@
 package ar.edu.unju.fi.controller.form;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class FormLogin {
 	private String usuario;
 	private String password;
