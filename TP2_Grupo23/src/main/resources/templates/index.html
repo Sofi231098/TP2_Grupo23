@@ -12,45 +12,50 @@
 	</head>
 <body>
 	<header th:replace = "~{layouts/header :: header}"></header>
-	<section class="content">
-	
-		<article >
-			<h2>Conócenos</h2>
+	<div class="conteiner">
+	   <div class="row">
+	      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-9 col-xxl-9 content">
+	      	<article >
+				<h2>Conócenos</h2>
+				<p>
+					¡Hola! <span th:text="${usuario}"></span> Bienvenido/a a Littlest Pet Shop, en esta página encontrarás
+					los mejores productos para tu mascota. <br> Tenemos alimentos
+					de todos los precios y calidad, juguetes, ropa y accesorios de todos
+					los colores, tamaños y muchos más. Hacemos Envíos gratis a
+					domicilio.<br> Comprá online o en cualquiera de nuestras 10 sucursales.
+					Recibimos pago por transferencia, tarjeta y efectivo.
+				</p>
+			</article>
+			<article class="articulo">
+				<a class="nuevoobj" th:href = "@{/inicio/nuevoobj}">Nuevo objetivo</a>
+				<h3>Nuestros Objetivos</h3>
+				<ul class="objetivos" th:each= "obj: ${index}" >
+					<li th:text = "${obj.objetivos}"></li>
+					<li> <a class= "EditElim" th:href="@{/inicio/modificar/}+${obj.id}">Editar</a> </li>
+					<li> <a class= "EditElim" th:href="@{/inicio/eliminar/}+${obj.id}">Eliminar</a> </li>
+				</ul>
+			</article>
+	      </div>
+	      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-3  col-xxl-3 content2">
+	      		<aside>
+			<h3>¿SABÍAS QUÉ los perros tienen dientes de leche?</h3>
 			<p>
-				¡Hola! <span th:text="${usuario}"></span> Bienvenido/a a Littlest Pet Shop, en esta página encontrarás
-				los mejores productos para tu mascota. <br> Tenemos alimentos
-				de todos los precios y calidad, juguetes, ropa y accesorios de todos
-				los colores, tamaños y muchos más. Hacemos Envíos gratis a
-				domicilio.<br> Comprá online o en cualquiera de nuestras 10 sucursales.
-				Recibimos pago por transferencia, tarjeta y efectivo.
+				Nacen sin dientes pero a las pocas semanas ya les salen los primeros
+				dientes de leche. A partir de los 3 meses empiezan a
+				cambiarlos por los dientes definitivos.
 			</p>
-		</article>
-		<article class="articulo">
-		<a th:href = "@{/inicio/nuevoobj}">Nuevo objetivo</a>
-			<h3>Nuestros Objetivos</h3>
-			<ul class="objetivos" th:each= "obj: ${index}" >
-				<li th:text = "${obj.objetivos}"></li>
-				<li> <a class= "EditElim" th:href="@{/inicio/modificar/}+${obj.id}">Editar</a> </li>
-				<li> <a class= "EditElim" th:href="@{/inicio/eliminar/}+${obj.id}">Eliminar</a> </li>
-			</ul>
+			<p class="imgcentrado"><img th:src="@{/images/perrito.png}" width="150" title="Perrito kawaii" alt="perrito kawaii"></p>
+		</aside> 
+		<br> 
+	      </div>
+	   </div>
+		<section class="content">
 			
-		</article>
-		
-	</section>
-	<aside class="content2">
-		<h3>¿SABÍAS QUÉ los perros tienen dientes de leche?</h3>
-		<p>
-			Nacen sin dientes pero a las pocas semanas ya les salen los primeros
-			dientes de leche. A partir de los 3 meses empiezan a
-			cambiarlos por los dientes definitivos.
-		</p>
-		<p class="imgcentrado"><img th:src="@{/images/perrito.png}" width="150" title="Perrito kawaii" alt="perrito kawaii"></p>
-		
-	</aside> 
-	<br>   
-	
+			
+		</section>
+		  
+	</div>
 	<footer th:replace="~{layouts/footer :: footer}" id="footerInicio"></footer>
 	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-	
 </body>
 </html>

@@ -12,13 +12,19 @@
 	</head>
 <body>
 	<header th:replace = "~{layouts/header :: header}"> </header>
-	<div class="objForm">
+	<div class="objForm container">
 		<h3 th:text="${edicion}? 'Modificar Objetivos' : 'Nuevo Objetivo'"></h3>
 		<form th:action="${edicion}?@{/inicio/modificar}:@{/inicio/guardar}" th:object="${objetivo}" method="post">
-			<label class="labelObj">Nuevo objetivo</label> 
-			<input class="inputObj" type="text" name="objetivo..."  th:field="*{objetivos}" required> <br>
-			<p><input  type="submit" class="button" th:value="${edicion}?'Modificar' : 'Guardar'"></p>
-			<input type="hidden" th:field="*{id}">
+			<div class=row>
+				<div class="col-12">
+					<input class="inputObj" type="text" name="objetivo..."  th:field="*{objetivos}" required> <br>
+				</div>
+				<div class="col-12">
+			    	<p><input  type="submit" class="button" th:value="${edicion}?'Modificar' : 'Guardar'"></p>
+				</div>
+			</div>
+			
+				<input type="hidden" th:field="*{id}">
 		</form>
 	</div>
 	<footer th:replace="~{layouts/footer :: footer}" id="footerInicio"></footer>

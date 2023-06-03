@@ -12,16 +12,24 @@
 	
 	</head>
 	<body style="background-color: #EDE2DB;">
-		<div class="container text-center p-3" style="margin-top: 150px;background:#ccad99;border-radius: 20px;">
+		<div class="custom-container container text-center p-3">
 			<h3>Iniciar Sesión</h3>
 			<form class="" th:action="@{/login}" th:object="${formLogin}" method="post">
-				<div class="mb-1">
-					<label class="labelLogin">Usuario​‎</label>
-					<input class="inputLogin" type="text" th:field="*{usuario}"><br>
+				<div class="row mb-1">	
+					<div class="col-12">
+						<label class="labelLogin">Usuario​‎</label>
+					</div>
+					<div class="col-12">
+						<input class="inputLogin" type="text" th:field="*{usuario}"><br>
+					</div>
 				</div>
-				<div class="mb-1">
-					<label class="labelLogin">Password</label>
-					<input class="inputLogin" type="password" th:field="*{password}"><br>
+				<div class="row mb-1">	
+					<div class="col-12">
+						<label class="labelLogin">Password</label>
+					</div>
+					<div class="col-12">
+						<input class="inputLogin" type="password" th:field="*{password}"><br>
+					</div>
 				</div>
 				<input class="inputLogin" type="submit" value="Ingresar">
 				<p class="labelLogin" th:if="${error}" th:text="${error}"></p>
