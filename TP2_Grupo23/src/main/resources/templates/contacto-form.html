@@ -12,68 +12,55 @@
 		<link th:rel= "stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 	
 	</head>
-<body>
-	<header th:replace="~{layouts/header :: header}"></header>
-	
-<section class="sectionForm">
-		<div class="contactenos">
-			<div class="parte1">
-				<h2>Contáctenos</h2>
-				<p class="imgForm"><img th:src="@{/images/contacto.png}" width="150"
-					title="Perrito contacto" alt="perrito"></p>
-				<article>
-					<p>
-						Independencia esq- Alberdi-Barrio centro 388-6439281 <br>
-						Lunes a viernes: 9:00 a.m. a 8:00 p.m. <br> Sábados a
-						domingos: 9:00 a.m. a 13:00 p.m <br>
-					</p>
-	
-				</article>
-				<article class="paginas">
-					
-						<a class="logos" href="https://www.gmail.com/"><i class="fa-solid fa-envelope"></i></a>
-						<a class="logos" href="https://es-la.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-						<a  class="logos" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-						<a class="logos" href="https://www.twitter.com/"><i class="fa-brands fa-twitter"></i></a>
-					
-				</article>
-			</div>
-				
-
-		</div>	
-			
+	<body>
+		<header th:replace="~{layouts/header :: header}"></header>
+		<div class="container">
 		
-		<div  class="contactenos">
-			<div class="parte2">
-			
-				<form th:action="@{/contacto}"  th:object="${contacto}" method="post">
-					<label class="label">Nombre</label> <br>
-					<input class="inputForm" type="text" name="Ingrese su nombre" placeholder="Ingrese su nombre" th:field="*{usuario}" required> <br>
-					<label class="label">Email</label> <br>
-					<input class="inputForm" type="email" name="Ingrese su Email" placeholder="Ingrese un email válido" th:field="*{emailUsuario}" required> <br>
-					<label class="label">Ciudad</label><br>
-					<input class="inputForm" type="text" name="Ingrese su ciudad" placeholder=" Ingrese su ciudad" th:field="*{ciudadUsuario}" required><br>
-					<label class="label">Mensaje</label> <br>
-					<textarea class="inputForm" rows="2" cols="20" placeholder="Tu mensaje... " th:field="*{mensajeUsuario}"></textarea><br>
-				    <button class="boton" type="submit">Enviar</button>
-				</form>
-				<p class="errorLogin" th:if="${datos}" th:text="${datos}"></p>
+		
+		<div class="row " >
+			<div class="col-12 col-lg-8">
+				<section class="container-fluid mt-4 text-center ms-1" >
+					<div class="parte1">
+						<h2>Contáctenos</h2>
+						<p class="imgForm"><img th:src="@{/images/contacto.png}" width="150"
+							title="Perrito contacto" alt="perrito"></p>
+						<article>
+							<p>
+								Independencia esq- Alberdi-Barrio centro 388-6439281 <br>
+								Lunes a viernes: 9:00 a.m. a 8:00 p.m. <br> Sábados a
+								domingos: 9:00 a.m. a 13:00 p.m <br>
+								Tambien podes llenar nuestro FORMUARIO para contactarnos.!
+							</p>
+						</article>
+						<article class="paginas">
+								<a class="logos" href="https://www.gmail.com/"><i class="fa-solid fa-envelope"></i></a>
+								<a class="logos" href="https://es-la.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+								<a  class="logos" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+								<a class="logos" href="https://www.twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+						</article>
+					</div>
+				</section>
+			</div>
+			<div class="col-12 col-lg-4">
+				<div class="container-fluid parte2 mt-4 mb-3 text-center ">
+						<form th:action="@{/contacto}"  th:object="${contacto}" method="post">
+							<label class="label">Nombre</label> <br>
+							<input class="inputForm" type="text" name="Ingrese su nombre" placeholder="Ingrese su nombre" th:field="*{usuario}" required> <br>
+							<label class="label">Email</label> <br>
+							<input class="inputForm" type="email" name="Ingrese su Email" placeholder="Ingrese un email válido" th:field="*{emailUsuario}" required> <br>
+							<label class="label">Ciudad</label><br>
+							<input class="inputForm" type="text" name="Ingrese su ciudad" placeholder=" Ingrese su ciudad" th:field="*{ciudadUsuario}" required><br>
+							<label class="label">Mensaje</label> <br>
+							<textarea class="inputForm" rows="2" cols="20" placeholder="Tu mensaje... " th:field="*{mensajeUsuario}"></textarea><br>
+							<button class="boton" type="submit" style="width:265px">Enviar</button>
+						</form>
+						<p class="errorLogin" th:if="${datos}" th:text="${datos}"></p>
+				</div>
 			</div>
 		</div>
-			
-	       </section>
-
-	<aside class="asideForm">
-		<h4>¿SABÍAS QUÉ los gatos pueden pasar hasta 14 horas dormidos?</h4>
-		<p>Los gatos domésticos pasan cerca del 70 por ciento del día
-			durmiendo,<br> y 15 por ciento del día acicalándose.</p>
-		<p class="imgForm2"><img th:src="@{/images/gatito.png}" width="150" title="Gatito durmiendo" alt="durmiendo"></p>
-		
-	</aside>
-	<br>
-	<footer th:replace="~{layouts/footer :: footer}" id="footerInicio"></footer>
-	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-	
-
-</body>
+		</div>
+		<br>
+		<footer th:replace="~{layouts/footer :: footer}" id="footerInicio"></footer>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	</body>
 </html>

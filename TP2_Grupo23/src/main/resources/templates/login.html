@@ -11,16 +11,30 @@
 		<link th:rel= "stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 	
 	</head>
-	<body>
-		<form class="formLogin" th:action="@{/login}" th:object="${formLogin}" method="post">
-			<label class="labelLogin">Usuario</label>
-			<input class="inputLogin" type="text" th:field="*{usuario}"><br>
-			<label class="labelLogin">Password</label>
-			<input class="inputLogin" type="password" th:field="*{password}"><br>
-			<input class="inputLogin" type="submit" value="Ingresar">
-			<p class="parrafoLogin" th:if="${error}" th:text="${error}"></p>
-		</form>
+	<body style="background-color: #EDE2DB;">
+		<div class="custom-container container text-center p-3">
+			<h3>Iniciar Sesión</h3>
+			<form class="" th:action="@{/login}" th:object="${formLogin}" method="post">
+				<div class="row mb-1">	
+					<div class="col-12">
+						<label class="labelLogin">Usuario​‎</label>
+					</div>
+					<div class="col-12">
+						<input class="inputLogin" type="text" th:field="*{usuario}"><br>
+					</div>
+				</div>
+				<div class="row mb-1">	
+					<div class="col-12">
+						<label class="labelLogin">Password</label>
+					</div>
+					<div class="col-12">
+						<input class="inputLogin" type="password" th:field="*{password}"><br>
+					</div>
+				</div>
+				<input class="inputLogin" type="submit" value="Ingresar">
+				<p class="labelLogin" th:if="${error}" th:text="${error}"></p>
+			</form>		
+		</div>
 		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-		
 	</body>
 </html>

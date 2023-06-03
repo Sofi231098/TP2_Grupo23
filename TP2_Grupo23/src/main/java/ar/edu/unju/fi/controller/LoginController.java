@@ -16,7 +16,7 @@ public class LoginController {
 	@Autowired
 	private FormLogin formLogin;
 	
-	@GetMapping("/") 
+	@GetMapping({"/","/login"})
 	public String  login(Model model) {
 		//FormLogin formLogin = new FormLogin();
 		model.addAttribute("formLogin", formLogin);

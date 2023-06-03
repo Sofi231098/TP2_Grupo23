@@ -16,11 +16,20 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/inicio")
 public class InicioController {
 	
+	/**
+	 * Declaro mis atributos inyectados
+	 */
+	
 	@Autowired
 	 private ListaIndex listaIndex;
 	@Autowired
 	private IndexModel objetivo;
 	
+	/**
+	 * Controlador GetMapping que me permite devolver la vista '/lisInicio' con el HTML 'index'
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/lisInicio")
 	public String getIndex(Model model) {
 		model.addAttribute("index", listaIndex.getIndex());
@@ -28,6 +37,10 @@ public class InicioController {
 	}
 	
 	
+	/**
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/nuevoobj")
 	public String getNuevoObjetivo(Model model) {
 		boolean edicion = false;
