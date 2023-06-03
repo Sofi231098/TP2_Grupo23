@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
@@ -14,7 +14,7 @@
 	<header th:replace = "~{layouts/header :: header}"></header>
 	<div class="conteiner">
 	   <div class="row">
-	      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-9 col-xxl-9 content">
+	      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-9 col-xxl-9  container-fluid mt-3 border border-solid  content">
 	      	<article >
 				<h2>Conócenos</h2>
 				<p>
@@ -36,7 +36,7 @@
 				</ul>
 			</article>
 	      </div>
-	      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-3  col-xxl-3 content2">
+	        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-3  col-xxl-3 container-fluid mt-3 border  border-solid text-center content2">
 	      		<aside>
 			<h3>¿SABÍAS QUÉ los perros tienen dientes de leche?</h3>
 			<p>
@@ -49,11 +49,6 @@
 		<br> 
 	      </div>
 	   </div>
-		<section class="content">
-			
-			
-		</section>
-		  
 	</div>
 	<footer th:replace="~{layouts/footer :: footer}" id="footerInicio"></footer>
 	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
