@@ -526,7 +526,7 @@ b{
 
 .form{
   width: 100%;
-  max-width: 600px;
+  max-width: 1500px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -556,22 +556,48 @@ b{
   font-size: 15px;
 }
 
-.form label {
+.labelsuc {
 	font-family: 'Urbanist', sans-serif;
 	color:#734d26;
-	font-size: 18px;
+	font-size: 19px;
 }
 
 
 .link {
 	margin-left: 65px;
-	font-family:'Gorditas', sans-serif;
-	font-size: 20px;
+	font-family: 'Urbanist', sans-serif;
+	font-size: 15px;
 	font-style:inherit;
-	color:#64483c;
+	color: #800080;
+}
 
+.tabyform {
+	width: 100%;
+  	max-width: 1300px;
+  	justify-content: center;
+  	align-items: center;
+  	 margin: 0 auto;
+  	display: flex;
+  	font-family: 'Urbanist', sans-serif;
 	
 }
+
+.carrusel {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parraf {
+	text-align: center;
+	font-family: 'Urbanist', sans-serif;
+	background: #ff6666;
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;
+	color: white;
+}
+
 
 /* ---------------- */
 
