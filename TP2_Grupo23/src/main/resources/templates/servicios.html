@@ -12,68 +12,135 @@
 	</head>
 <body>
 	<header th:replace="~{layouts/header :: header}"></header>		
-			 <section class="paseo">
-			 	<article>
-					<h2>Servicio de Paseo</h2>
-					<p class="centrado">
-					<img th:src="@{/images/paseo1.png}" width="150" title="Littlest paseo" alt="Imagen del paseador">
-					</p>
-				</article>
+		<div class="container">
+			<div class="row">
 				
-				<article >
-				<p class="centrado"><a th:href="@{/servicios/nuevo}">Nuevo Paseador</a><p>
-					<table border ="1" > 
-					<tr>
-						<th>Paseador</th>
-						<th>Telefono</th>
-						<th>Dias</th>
-						<th>Horarios</th>
-						<th>Adiciones</th>
-					</tr>
-					<tr th:each="serv: ${servicios}">
-						<td th:text = "${serv.paseador}"></td>
-						<td th:text = "${serv.telefono}"></td>
-						<td th:text = "${serv.dias}"></td>
-						<td th:text = "${serv.horarios}"></td>
-						<td>
-							<a class= "EditElim" th:href="@{/servicios/modificar/}+${serv.paseador}">Editar</a>
-							<a class= "EditElim" th:href="@{/servicios/eliminar/}+${serv.paseador}">Eliminar</a>
-						</td>
+					<section class="paseo">
+				 	<article>
+				 	<div class="text-center" >
+				 		<h2>Servicio de Paseo</h2>
+						<img th:src="@{/images/paseo1.png}" width="150" title="Littlest paseo" alt="Imagen del paseador">
+				 	</div>
 						
-					</tr>
-					</table>
+					</article>
 					
-					<br>
-					<p class="centrado">
-						<img th:src="@{/images/paseo2.png}" width="150" title="Littlest paseo" alt="Imagen del paseador">
-					</p>
-				</article>
-				<article>
-					<p> 
-						Maximiliano  A. Flores - Tel. 388-4265789<br> 
-						Luis G. Panduro - Tel. 388-4256789<br>
-						Marcelo Perez - Tel. 388-4273428<br>
-						Maria Becerra - Tel. 388-4289945<br>
-						Angel. E. Gallardo - Tel. 388-4294577<br>
-						Melanie A. Quevedo - Tel. 388-4304201
-					</p>
-					<br>
-					<p class="centrado">
-						<img th:src="@{/images/paseo3.png}" width="150" title="Littlest paseo" alt="Imagen del paseador">
-					</p>
-					<br>
-					<br>
-				</article>	
-			</section>
-			<aside id="asidep">
-				<h4>¿SABIAS QUE..Sus bigotes le ayudan a ver en la oscuridad?</h4>
-				<p>	
-					No se trata de visión nocturna, claro está. Pero es cierto que gracias a sus bigotes pueden detectar 
-					cambios sutiles en las corrientes de aire, lo que les da información sobre el tamaño, la forma y la velocidad 
-					de las cosas cercanas. Así, pueden percibir mejor la proximidad de algún peligro, aunque sea de noche
-				</p>	
-				<br>	
-			</aside>
+					<article >
+					<div class="text-center">
+						<a th:href="@{/servicios/nuevo}">Nuevo Paseador</a>
+					</div>
+						<table border ="1"  class="table table-striped table-hover"> 
+						<tr>
+							<th>Paseador</th>
+							<th>Telefono</th>
+							<th>Dias</th>
+							<th>Horarios</th>
+							<th>Adiciones</th>
+						</tr>
+						<tr th:each="serv: ${servicios}">
+							<td th:text = "${serv.paseador}"></td>
+							<td th:text = "${serv.telefono}"></td>
+							<td th:text = "${serv.dias}"></td>
+							<td th:text = "${serv.horarios}"></td>
+							<td>
+								<a class= "EditElim" th:href="@{/servicios/modificar/}+${serv.paseador}">Editar</a>
+								<a class= "EditElim" th:href="@{/servicios/eliminar/}+${serv.paseador}">Eliminar</a>
+							</td>
+							
+						</tr>
+						</table>
+						
+						<br>
+						<p class="centrado">
+							<img th:src="@{/images/paseo2.png}" width="150" title="Littlest paseo" alt="Imagen del paseador">
+						</p>
+					</article>
+					<article>
+				<div class="text-center">
+					<h4>Servicios Personalizados </h4>
+				</div>	
+				<div class="card mb-3 d-inline-block" style="max-width: 529px;">
+				  <div class="row g-0">
+				    <div class="col-md-4">
+				      <img th:src="@{/images/paseador1.jpg}"class="img-fluid rounded-start" alt="Imagen del paseador">
+				    </div>
+				    <div class="col-md-8">
+				      <div class="card-body" >
+				        <h5 class="card-title" >Flores Fabricio Alfredo</h5>
+				        <p class="card-text">Servicio de Guarderia: dias Lunes a Viernes de 9:00-13:00 y 15:00-19:00 .</p>
+				        <p class="card-text"><small class="text-muted">388-4367337</small></p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				
+				<div class="card mb-3 d-inline-block" style="max-width: 540px;">
+				  <div class="row g-0">
+				    <div class="col-md-4">
+				      <img th:src="@{/images/paseador2.jpeg}"class="img-fluid rounded-start" alt="Imagen del paseador">
+				    </div>
+				    <div class="col-md-8">
+				      <div class="card-body" >
+				        <h5 class="card-title" >Farja Naima Blaca</h5>
+				        <p class="card-text">Servicio de Veterinaria: vicitas medicas a domicilio consultar horarios disponibles. </p>
+				        <p class="card-text"><small class="text-muted">388-5983744</small></p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				
+				<div class="card mb-3 d-inline-block" style="max-width: 530px;">
+				  <div class="row g-0">
+				    <div class="col-md-4">
+				      <img th:src="@{/images/paseador4.jpeg}"class="img-fluid rounded-start" alt="Imagen del paseador">
+				    </div>
+				    <div class="col-md-8">
+				      <div class="card-body" >
+				        <h5 class="card-title" > Yáñez Sofia Trinidad</h5>
+				        <p class="card-text">Servicio de Veterinaria 24 Horas, Tabien se hacen vicitas medicas a domicilio .</p>
+				        <p class="card-text"><small class="text-muted">388-4056099</small></p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				
+				<div class="card mb-3 d-inline-block" style="max-width: 540px;">
+				  <div class="row g-0">
+				    <div class="col-md-4">
+				      <img th:src="@{/images/paseador3.jpeg}"class="img-fluid rounded-start" alt="Imagen del paseador">
+				    </div>
+				    <div class="col-md-8">
+				      <div class="card-body" >
+				        <h5 class="card-title" >Castillo Marisol Patricia</h5>
+				        <p class="card-text">Servicio de Peluqueria canina. Los dias Lunes de 10:00-13:00 Miercoles de 15:00-20:00 Viernes de 10:00-18:00.</p>
+				        <p class="card-text"><small class="text-muted">388-4550090</small></p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				
+						<br>
+						<p class="centrado">
+							<img th:src="@{/images/paseo3.png}" width="150" title="Littlest paseo" alt="Imagen del paseador">
+						</p>
+					
+					</article>	
+				</section>
+			
+			     	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-3  col-xxl-3 container-fluid mt-3 border  border-solid text-center content">
+
+						<aside >
+							<h3>¿SABIAS QUE..Sus bigotes le ayudan a ver en la oscuridad?</h3>
+								<p>	
+									No se trata de visión nocturna, claro está. Pero es cierto que gracias a sus bigotes pueden detectar 
+									cambios sutiles en las corrientes de aire, lo que les da información sobre el tamaño, la forma y la velocidad 
+									de las cosas cercanas. Así, pueden percibir mejor la proximidad de algún peligro, aunque sea de noche
+								</p>	
+								<br>	
+						</aside>
+					</div>	
+				</div>
+			</div>
+		
 			<footer th:replace="~{layouts/footer :: footer}" id="footerInicio"></footer>
 			<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 			
