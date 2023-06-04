@@ -14,33 +14,87 @@
 
 	<header th:replace="~{layouts/header :: header}"></header>
 	
-	<section>
-	
-		<!--  >p class="parraf">NOTA: Al modificar una Sucursal NO se debe cambiar ni Código Sucursal ni Nombre.</p--><br>
-		<form class="formprod" th:action="${edicion}?@{/sucursales/modificar}:@{/sucursales/guardar}" th:object="${sucursal}" method="post">
-			<h3 th:text="${edicion}?'Modificar Sucursal':'Nueva Sucursal'"></h3> <br>
-			<label for="codigo sucursal">Código Sucursal</label><br>
-			<input type="text" id="codigosucursal" name="sucursal_codigo" th:field="*{codigo}"  th:readonly="${edicion}?'readonly'"><br><br>
-			<label for="nombre">Nombre</label><br>
-			<input type="text" id="nombre" name="sucursal_nombre" th:field="*{nombre}" th:readonly="${edicion}?'readonly'"><br><br>
-			<label for="provinvia">Provincia</label><br>
-			<select  id="provincia" name="sucursal_provincia" th:field="*{provincia}">
-				<option value="JUJUY">Jujuy</option>
-				<option value="SALTA">Salta</option>
-				<option value="TUCUMAN">Tucumán</option>
-			</select><br><br>
-			<label for="direccion">Dirección</label><br>
-			<input type="text" id="direccion" name="sucursal_direccion" th:field="*{direccion}"><br><br>
-			<label for="telefono">Teléfono</label><br>
-			<input type="text" id="telefono" name="sucursal_telefono" th:field="*{telefono}"><br><br>
-			<label for="horario de atencion">Horario de Atención</label><br>
-			<input type="text" id="horariodeatencion" name="sucursal_horario" th:field="*{horario}"><br><br>
-			<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
-			<!-- <p><input type="submit" class="button" value="Guardar"></p> -->
+	<div>
+			<div>
+					<div>
+						<h3 th:text="${edicion}?'Modificar Sucursal':'Nueva Sucursal'"></h3> <br>
+					</div>
+				<div>
 			
-		</form>
+						<!--  >p class="parraf">NOTA: Al modificar una Sucursal NO se debe cambiar ni Código Sucursal ni Nombre.</p--><br>
+					<form  th:action="${edicion}?@{/sucursales/modificar}:@{/sucursales/guardar}" th:object="${sucursal}" method="post">
+						
+						<div>
+							<label for="codigo sucursal">Código Sucursal</label>
+							<div>
+								<input type="text" id="codigosucursal" name="sucursal_codigo" th:field="*{codigo}"  th:readonly="${edicion}?'readonly'">
+								<div class="text-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></div>
+							</div>
+						</div>
+						
+						<div>
+							<label for="nombre">Nombre</label>
+							<div>
+								<input type="text" id="nombre" name="sucursal_nombre" th:field="*{nombre}" th:readonly="${edicion}?'readonly'">
+								<div class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+							</div>
+						</div>
+						
+						<div>
+							<label for="provincia">Provincia</label>
+							<div>
+								<select  id="provincia" name="sucursal_provincia" th:field="*{provincia}">
+								<option value="" selected>Seleccione una opción</option>
+								<option value="JUJUY">Jujuy</option>
+								<option value="SALTA">Salta</option>
+								<option value="TUCUMAN">Tucumán</option>
+							</select>
+							<div class="text-danger" th:if="${#fields.hasErrors('provincia')}" th:errors="*{provincia}"></div>
+							</div>
+						</div>
+						
+						<div>
+							<label for="direccion">Dirección</label>
+							<div>
+								<input type="text" id="direccion" name="sucursal_direccion" th:field="*{direccion}">
+								<div class="text-danger" th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}"></div>
+							</div>
+						</div>
+						
+						<div>
+							<label for="telefono">Teléfono</label>
+							<div>
+								<input type="text" id="telefono" name="sucursal_telefono" th:field="*{telefono}">
+								<div class="text-danger" th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></div>
+							</div>
+						</div>
+						
+						<div>
+							<label for="horario de atencion">Horario de Atención</label>
+							<div>
+								<!--input type="text" id="horariodeatencion" name="sucursal_horario" th:field="*{horario}"-->
+								<select  id="horario de atencion" name="sucursal_horario" th:field="*{horario}">
+								<option value="" selected>Seleccione una opción</option>
+								<option value="Lunes a Sábado 9 a 21 hs">Lunes a Sábado 9 a 21 hs</option>
+								<option value="Lunes a Sábado 9 a 13hs y 17 a 21 hs">Lunes a Sábado 9 a 13hs y 17 a 21 hs</option>
+								</select>
+								<div class="text-danger" th:if="${#fields.hasErrors('horario')}" th:errors="*{horario}"></div>
+							</div>
+						</div>
+							
+						
+							<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
+							<!-- <p><input type="submit" class="button" value="Guardar"></p> -->
+					
+							
+							
+					</form>
+				
+				</div>
+		</div>
+	</div>
 	
-	</section>
+	
 	
 	<footer th:replace = "~{layouts/footer :: footer}"id="footerInicio"></footer>
 	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>

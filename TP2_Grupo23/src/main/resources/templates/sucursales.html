@@ -15,18 +15,30 @@
 	<header th:replace="~{layouts/header :: header}"></header>
 	
 	<br>
-	<section>
-		<h2 id="subtsuc">Encontrá las Sucursales de Littlest Pet Shop
-			más cercanas!</h2>
-			<br>
-		<h4 id="infosuc">Actualmente Littlest Pet Shop cuenta con 10
-			locales en total ubicados en Jujuy, Salta y Tucumán y, seguiremos
-			creciendo con nuevas aperturas en el área y en el resto del país.</h4>
-			<br>
-	</section>
+	
+	<div class="conteiner">
+		<div class="row">
+			<div class="col-6">
+				<h2>Encontrá las Sucursales de Littlest Pet Shop más cercanas!</h2>
+			</div>
+		</div>
+	</div>
+	<br>
+	
+	<div>
+		<div>
+			<div>
+				<h4>Actualmente Littlest Pet Shop cuenta con 10 locales en total ubicados en Jujuy, Salta y Tucumán y, seguiremos creciendo con nuevas aperturas en el área y en el resto del país.</h4>
+			</div>
+		</div>
+		
+	</div>
+	<br>
+	
 	
 	<section class="paseo">
 		<p class = "centrado"><a class="link" th:href="@{/sucursales/nuevo}">Nueva Sucursal</a></p>
+		
 		<table border=1>
 			<tr>
 				<th>Código Sucursal</th>
@@ -53,6 +65,7 @@
 				
 			</tr>
 		</table>
+		
 	</section>
 	
 	

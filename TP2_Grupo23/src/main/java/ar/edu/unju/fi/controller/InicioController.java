@@ -3,6 +3,7 @@ package ar.edu.unju.fi.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,17 +11,28 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ar.edu.unju.fi.listas.ListaIndex;
 import ar.edu.unju.fi.model.IndexModel;
+import jakarta.validation.Valid;
+
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/inicio")
 public class InicioController {
 	
+	/**
+	 * Declaro mis atributos inyectados
+	 */
+	
 	@Autowired
 	 private ListaIndex listaIndex;
 	@Autowired
 	private IndexModel objetivo;
 	
+	/**
+	 * Controlador GetMapping que me permite devolver la vista '/lisInicio' con el HTML 'index'
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/lisInicio")
 	public String getIndex(Model model) {
 		model.addAttribute("index", listaIndex.getIndex());
@@ -28,6 +40,10 @@ public class InicioController {
 	}
 	
 	
+	/**
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/nuevoobj")
 	public String getNuevoObjetivo(Model model) {
 		boolean edicion = false;
@@ -37,8 +53,13 @@ public class InicioController {
 	}
 	
 	@PostMapping("/guardar")
-	public ModelAndView getGuardarObjetivo(@ModelAttribute("objetivo") IndexModel indexModel) {
+	public ModelAndView getGuardarObjetivo( @Valid @ModelAttribute("objetivo") IndexModel indexModel, BindingResult  result) {
 		ModelAndView modelView = new ModelAndView("index");
+		if(result.hasErrors()) {
+			modelView.setViewName("nuevoo_objetivo");
+			modelView.addObject("objetivo", objetivo);
+			return modelView;
+		}
 		listaIndex.getIndex().add(indexModel);
 		modelView.addObject("index", listaIndex.getIndex());
 		return modelView;
