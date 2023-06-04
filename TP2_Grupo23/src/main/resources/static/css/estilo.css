@@ -772,3 +772,41 @@ p.imgForm2{
 	color:#734d26;
 	font-size: 18px;
 }
+/*Estillo css para productos*/
+.titulo{
+	display:flex;
+	box-sizing: border-box;
+    border-radius: 20px;
+    background-color: #64483c;
+    border: 2px solid ;
+	font-family:'Gorditas', sans-serif;
+	font-size:30px;
+	align-items:center;
+	justify-content:center;
+	text-align:	center;
+	margin-top:10px;
+	height:50px;
+	color:#f0e7db;
+	line-height: 20px;
+}
+.box{
+	background-color: #EDE2DB;
+}
+.box h5{
+	font-family:'Gorditas', sans-serif;
+	text-align: center;
+	font-size: 25px;
+	color:#BF6C71;
+}
+
+.box p{
+	font-family: 'Urbanist', sans-serif;
+	color:#734d26;
+	font-size: 12px;
+}
+
+.card-img-top {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
