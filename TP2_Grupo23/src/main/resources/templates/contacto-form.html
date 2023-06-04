@@ -44,8 +44,9 @@
 			<div class="col-12 col-lg-4">
 				<div class="container-fluid parte2 mt-4 mb-3 text-center ">
 						<form th:action="@{/contacto}"  th:object="${contacto}" method="post">
-							<label class="label">Nombre</label> <br>
-							<input class="inputForm" type="text" name="Ingrese su nombre" placeholder="Ingrese su nombre" th:field="*{usuario}" required> <br>
+							<label for="usuario" class="label">Nombre</label> <br>
+							<input class="inputForm" type="text" name="Ingrese su nombre" placeholder="Ingrese su nombre" th:field="*{usuario}" > <br>
+							<div class="text-danger" th:if="${#fields.hasErrors('usuario')}" th:errors="*{usuario}"></div>
 							<label class="label">Email</label> <br>
 							<input class="inputForm" type="email" name="Ingrese su Email" placeholder="Ingrese un email válido" th:field="*{emailUsuario}" required> <br>
 							<label class="label">Ciudad</label><br>

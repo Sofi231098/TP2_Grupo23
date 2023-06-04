@@ -11,7 +11,7 @@
 		<link th:rel= "stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 	
 	</head>
-	<body style="background-color: #EDE2DB;">
+	<body>
 		<div class="custom-container container text-center p-3">
 			<h3>Iniciar Sesión</h3>
 			<form class="" th:action="@{/login}" th:object="${formLogin}" method="post">
@@ -21,6 +21,7 @@
 					</div>
 					<div class="col-12">
 						<input class="inputLogin" type="text" th:field="*{usuario}"><br>
+						<div class="text-danger" th:if="${#fields.hasErrors('usuario')}" th:errors="*{usuario}"></div>
 					</div>
 				</div>
 				<div class="row mb-1">	
@@ -29,6 +30,7 @@
 					</div>
 					<div class="col-12">
 						<input class="inputLogin" type="password" th:field="*{password}"><br>
+						<div class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
 					</div>
 				</div>
 				<input class="inputLogin" type="submit" value="Ingresar">
