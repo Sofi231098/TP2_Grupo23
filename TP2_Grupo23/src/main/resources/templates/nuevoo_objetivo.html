@@ -17,13 +17,13 @@
 		<form th:action="${edicion}?@{/inicio/modificar}:@{/inicio/guardar}" th:object="${objetivo}" method="post">
 			<div class=row>
 				<div class="col-12">
-					<input class="inputObj" type="text" name="objetivo..."  th:field="*{objetivos}" required> <br>
+					<input class="inputObj" type="text" name="objetivo..."  th:field="*{objetivos}" th:readonly="${edicion}?'readonly'"> <br>
+					<div class="text-danger" th:if="${#fields.hasErrors('objetivos')}" th:errors="*{objetivos}"></div>
 				</div>
 				<div class="col-12">
 			    	<p><input  type="submit" class="button" th:value="${edicion}?'Modificar' : 'Guardar'"></p>
 				</div>
 			</div>
-			
 				<input type="hidden" th:field="*{id}">
 		</form>
 	</div>

@@ -2,9 +2,14 @@ package ar.edu.unju.fi.model;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 @Component
 public class IndexModel {
 	private static Integer nextId = 0;
+	@NotEmpty(message="El campo no puede estar vacio")
+	@Size(min=20, max=150, message="el objetivo debe contener entre 20 y 150 caracteres")
 	private String objetivos;
 	private int id;
 	

@@ -2,9 +2,13 @@ package ar.edu.unju.fi.controller.form;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.validation.constraints.NotEmpty;
+
 @Component
 public class FormLogin {
+	@NotEmpty(message="El campo no puede estar vacio")
 	private String usuario;
+	@NotEmpty(message="El campo no puede estar vacio")
 	private String password;
 	
 	public FormLogin() {
