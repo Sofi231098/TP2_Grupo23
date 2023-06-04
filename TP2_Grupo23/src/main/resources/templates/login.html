@@ -20,7 +20,9 @@
 						<label class="labelLogin">Usuario​‎</label>
 					</div>
 					<div class="col-12">
+						<!-- Entrada de datos -->
 						<input class="inputLogin" type="text" th:field="*{usuario}"><br>
+						<!-- Validacion del usuario -->
 						<div class="text-danger" th:if="${#fields.hasErrors('usuario')}" th:errors="*{usuario}"></div>
 					</div>
 				</div>
@@ -29,7 +31,9 @@
 						<label class="labelLogin">Password</label>
 					</div>
 					<div class="col-12">
+					<!-- Entrada de datos -->
 						<input class="inputLogin" type="password" th:field="*{password}"><br>
+						<!-- Validacion de la contraseña -->
 						<div class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
 					</div>
 				</div>
