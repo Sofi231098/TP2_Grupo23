@@ -428,6 +428,23 @@ hr{
    Trabajo: desde linea 306 hasta linea 335 */
 
   /*servicio de paseo*/
+.col-md-4 img{
+	overflow:auto;
+	width: 200px;
+	border-radius: 50%;
+}  
+.card-title{
+	font-family: 'Gorditas', sans-serif;
+	color:#734d26;
+	font-size: 20px;
+}
+.text-center {
+	font-family: 'Gorditas', sans-serif;
+	color:#734d26;
+	font-size: 20px;
+	text-align: center;	
+}
+
 .paseo h2{
 	font-family: 'Gorditas', sans-serif;
 	color:#734d26;
@@ -694,6 +711,7 @@ p.imgForm{
     color:#734d26 ;
     background:#EDE2DB;
     cursor: pointer;
+    width:265px;
 }
 
 .parte2 .boton:hover{

@@ -8,10 +8,19 @@ import org.springframework.stereotype.Component;
 
 import ar.edu.unju.fi.model.Servicios;
 
+/**
+ * Clase que representa una lista de servicios.
+ */
+
 @Component
 public class ListaServicios {
 
 	private List<Servicios> servicios;
+	
+	 /**
+     * Constructor de la clase ListaServicios.
+     * Inicializa la lista de servicios y agrega algunos servicios de ejemplo.
+     */
 	
 	public ListaServicios() {
 		servicios = new ArrayList<Servicios>();
@@ -24,9 +33,21 @@ public class ListaServicios {
 		servicios.add(new Servicios ("Angel E. Gallardo","3884-569820","Domingo","9 a 12 - 14 a 20"));
 	}
 	
+	/**
+     * Obtiene la lista de servicios.
+     *
+     * @return la lista de servicios
+     */
+	
 	public List<Servicios> getServicios(){
 		return servicios;
 	}
+	
+	 /**
+     * Establece la lista de servicios.
+     *
+     * @param servicios la lista de servicios a establecer
+     */
 	
 	public void setServicios(List<Servicios> servicios) {
 		this.servicios = servicios;
