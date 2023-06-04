@@ -10,92 +10,119 @@
 		<link th:rel= "stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 
 	</head>
- <body>
-
-	<header th:replace="~{layouts/header :: header}"></header>
 	
-	<div>
-			<div>
-					<div>
-						<h3 th:text="${edicion}?'Modificar Sucursal':'Nueva Sucursal'"></h3> <br>
-					</div>
-				<div>
-			
-						<!--  >p class="parraf">NOTA: Al modificar una Sucursal NO se debe cambiar ni Código Sucursal ni Nombre.</p--><br>
-					<form  th:action="${edicion}?@{/sucursales/modificar}:@{/sucursales/guardar}" th:object="${sucursal}" method="post">
-						
-						<div>
-							<label for="codigo sucursal">Código Sucursal</label>
-							<div>
-								<input type="text" id="codigosucursal" name="sucursal_codigo" th:field="*{codigo}"  th:readonly="${edicion}?'readonly'">
-								<div class="text-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></div>
+	
+ <body>
+	
+	<!-- Sección de encabezado -->
+	<header th:replace="~{layouts/header :: header}"></header>
+	 <br>
+	
+	
+	<div class="tabyform labelsuc">
+		<div class="card col-xs-10 col-sm-11 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+			<!-- Título de la tarjeta -->
+			<h3 class="card-header" id="subtsuc" th:text="${edicion}?'Modificar Sucursal':'Nueva Sucursal'"></h3>
+			<div class="card-body">
+					<p class="parraf">NOTA: Al modificar una Sucursal NO se debe cambiar ni Código Sucursal ni Nombre.</p>
+						<!-- Formulario con acción y método -->
+						<form  th:action="${edicion}?@{/sucursales/modificar}:@{/sucursales/guardar}" th:object="${sucursal}" method="post">
+							
+							<!-- Campo Código Sucursal -->
+							<div class="row mb-3">
+								<label for="codigo sucursal" class="col-sm-2 col-form-label ">Código Sucursal</label>
+								<div class="col-sm-10">
+									<!-- Entrada de texto para el código de sucursal -->
+									<input type="text" id="codigosucursal" name="sucursal_codigo" class="form-control"  th:field="*{codigo}"  th:readonly="${edicion}?'readonly'">
+									<!-- Mostrar errores de validación si existen -->
+									<div class="text-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></div>
+								</div>
+								
 							</div>
-						</div>
-						
-						<div>
-							<label for="nombre">Nombre</label>
-							<div>
-								<input type="text" id="nombre" name="sucursal_nombre" th:field="*{nombre}" th:readonly="${edicion}?'readonly'">
-								<div class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+							
+							<!-- Campo Nombre -->
+							<div class="row mb-3">
+								<label for="nombre" class="col-sm-2 col-form-label ">Nombre</label>
+								<div class="col-sm-10">
+									<!-- Entrada de texto para el nombre de sucursal -->
+									<input type="text" id="nombre" name="sucursal_nombre" class="form-control" th:field="*{nombre}" th:readonly="${edicion}?'readonly'">
+									<!-- Mostrar errores de validación si existen -->
+									<div class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+								</div>
+								
 							</div>
-						</div>
-						
-						<div>
-							<label for="provincia">Provincia</label>
-							<div>
-								<select  id="provincia" name="sucursal_provincia" th:field="*{provincia}">
-								<option value="" selected>Seleccione una opción</option>
-								<option value="JUJUY">Jujuy</option>
-								<option value="SALTA">Salta</option>
-								<option value="TUCUMAN">Tucumán</option>
-							</select>
-							<div class="text-danger" th:if="${#fields.hasErrors('provincia')}" th:errors="*{provincia}"></div>
-							</div>
-						</div>
-						
-						<div>
-							<label for="direccion">Dirección</label>
-							<div>
-								<input type="text" id="direccion" name="sucursal_direccion" th:field="*{direccion}">
-								<div class="text-danger" th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}"></div>
-							</div>
-						</div>
-						
-						<div>
-							<label for="telefono">Teléfono</label>
-							<div>
-								<input type="text" id="telefono" name="sucursal_telefono" th:field="*{telefono}">
-								<div class="text-danger" th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></div>
-							</div>
-						</div>
-						
-						<div>
-							<label for="horario de atencion">Horario de Atención</label>
-							<div>
-								<!--input type="text" id="horariodeatencion" name="sucursal_horario" th:field="*{horario}"-->
-								<select  id="horario de atencion" name="sucursal_horario" th:field="*{horario}">
-								<option value="" selected>Seleccione una opción</option>
-								<option value="Lunes a Sábado 9 a 21 hs">Lunes a Sábado 9 a 21 hs</option>
-								<option value="Lunes a Sábado 9 a 13hs y 17 a 21 hs">Lunes a Sábado 9 a 13hs y 17 a 21 hs</option>
+							
+							<!-- Campo Provincia -->
+							<div class="row mb-3">
+								<label for="provincia" class="col-sm-2 col-form-label ">Provincia</label>
+								<div class="col-sm-10">
+									<!-- Menú desplegable para seleccionar la provincia -->
+									<select  id="provincia" name="sucursal_provincia" class="form-control" th:field="*{provincia}">
+									<option value="" selected>Seleccione una opción</option>
+									<option value="JUJUY">Jujuy</option>
+									<option value="SALTA">Salta</option>
+									<option value="TUCUMAN">Tucumán</option>
 								</select>
-								<div class="text-danger" th:if="${#fields.hasErrors('horario')}" th:errors="*{horario}"></div>
+								<!-- Mostrar errores de validación si existen -->
+								<div class="text-danger" th:if="${#fields.hasErrors('provincia')}" th:errors="*{provincia}"></div>
+								</div>
 							</div>
-						</div>
 							
+							<!-- Campo Dirección -->
+							<div class="row mb-3">
+								<label for="direccion" class="col-sm-2 col-form-label ">Dirección</label>
+								<div class="col-sm-10">
+									<!-- Entrada de texto para la dirección de la sucursal -->
+									<input type="text" id="direccion" name="sucursal_direccion" class="form-control" th:field="*{direccion}">
+									<!-- Mostrar errores de validación si existen -->
+									<div class="text-danger" th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}"></div>
+								</div>
+							</div>
+							
+							<!-- Campo Teléfono -->
+							<div class="row mb-3">
+								<label for="telefono" class="col-sm-2 col-form-label ">Teléfono</label>
+								<div class="col-sm-10">
+									<!-- Entrada de texto para el teléfono de la sucursal -->
+									<input type="text" id="telefono" name="sucursal_telefono" class="form-control" th:field="*{telefono}">
+									<!-- Mostrar errores de validación si existen -->
+									<div class="text-danger" th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></div>
+								</div>
+							</div>
+							
+							<!-- Campo Horario de Atención -->
+							<div class="row mb-3">
+								<label for="horario de atencion" class="col-sm-2 col-form-label ">Horario de Atención</label>
+								<div class="col-sm-10">
+									<!-- Menú desplegable para seleccionar el horario de atención -->
+									<select  id="horario de atencion" name="sucursal_horario" class="form-control" th:field="*{horario}">
+									<option value="" selected>Seleccione una opción</option>
+									<option value="Lunes a Sábado 9 a 21 hs">Lunes a Sábado 9 a 21 hs</option>
+									<option value="Lunes a Sábado 9 a 13hs y 17 a 21 hs">Lunes a Sábado 9 a 13hs y 17 a 21 hs</option>
+									</select>
+									<!-- Mostrar errores de validación si existen -->
+									<div class="text-danger" th:if="${#fields.hasErrors('horario')}" th:errors="*{horario}"></div>
+								</div>
+							</div>
+								
+								<!-- Botón para enviar el formulario -->
+								<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
+								<!-- <p><input type="submit" class="button" value="Guardar"></p> -->
 						
-							<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
-							<!-- <p><input type="submit" class="button" value="Guardar"></p> -->
-					
+								
+								
+						</form>	
 							
-							
-					</form>
-				
 				</div>
+		
 		</div>
 	</div>
 	
 	
+			
 	
+	
+	<!-- Sección de pie de página -->
 	<footer th:replace = "~{layouts/footer :: footer}"id="footerInicio"></footer>
 	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 	
