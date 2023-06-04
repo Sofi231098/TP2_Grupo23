@@ -12,22 +12,22 @@
 	</head>
 <body>
 	<header th:replace = "~{layouts/header :: header}"> </header>
-	<div class="objForm container">
-		<h3 th:text="${edicion}? 'Modificar Objetivos' : 'Nuevo Objetivo'"></h3>
-		<form th:action="${edicion}?@{/inicio/modificar}:@{/inicio/guardar}" th:object="${objetivo}" method="post">
-			<div class=row>
-				<div class="col-12">
-					<input class="inputObj" type="text" name="objetivo..."  th:field="*{objetivos}" th:readonly="${edicion}?'readonly'"> <br>
-					<div class="text-danger" th:if="${#fields.hasErrors('objetivos')}" th:errors="*{objetivos}"></div>
+		<div class="objForm container">
+			<h3 th:text="${edicion}? 'Modificar Objetivos' : 'Nuevo Objetivo'"></h3>
+			<form th:action="${edicion}?@{/inicio/modificar}:@{/inicio/guardar}" th:object="${objetivo}" method="post">
+				<div class=row>
+					<div class="col-12">
+						<input class="inputObj" type="text" name="objetivo..."  th:field="*{objetivos}"> <br>
+						<div class="text-danger" th:if="${#fields.hasErrors('objetivos')}" th:errors="*{objetivos}"></div>
+					</div>
+					<div class="col-12">
+			    		<p><input  type="submit" class="button" th:value="${edicion}?'Modificar' : 'Guardar'"></p>
+					</div>
 				</div>
-				<div class="col-12">
-			    	<p><input  type="submit" class="button" th:value="${edicion}?'Modificar' : 'Guardar'"></p>
-				</div>
-			</div>
-				<input type="hidden" th:field="*{id}">
-		</form>
-	</div>
-	<footer th:replace="~{layouts/footer :: footer}" id="footerInicio"></footer>
-	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-	
-</body>
+					<input type="hidden" th:field="*{id}">
+			</form>
+		</div>
+		<footer th:replace="~{layouts/footer :: footer}" id="footerInicio"></footer>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	</body>
+</html>
