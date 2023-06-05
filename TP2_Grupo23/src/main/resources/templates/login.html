@@ -1,22 +1,46 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>Login</title>
-	<link rel="stylesheet" th:href="@{/css/estilo.css}" > 
-	<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximun-scale=1, user-scalable=no">
+		<title>Login</title>
+		<link rel="stylesheet" th:href="@{/css/estilo.css}" > 
+		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
 		<link rel="styLesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
+		<link th:rel= "stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	
+	</head>
 	<body>
-		<form class="formLogin" th:action="@{/login}" th:object="${formLogin}" method="post">
-			<label class="labelLogin">Usuario</label>
-			<input class="inputLogin" type="text" th:field="*{usuario}"><br>
-			<label class="labelLogin">Password</label>
-			<input class="inputLogin" type="password" th:field="*{password}"><br>
-			<input class="inputLogin" type="submit" value="Ingresar">
-			<p class="parrafoLogin" th:if="${error}" th:text="${error}"></p>
-		</form>
-		
+		<div class="custom-container container text-center p-3">
+			<h3>Iniciar Sesión</h3>
+			<form class="" th:action="@{/login}" th:object="${formLogin}" method="post">
+				<div class="row mb-1">	
+					<div class="col-12">
+						<label class="labelLogin">Usuario​‎</label>
+					</div>
+					<div class="col-12">
+						<!-- Entrada de datos -->
+						<input class="inputLogin" type="text" th:field="*{usuario}"><br>
+						<!-- Validacion del usuario -->
+						<div class="text-danger" th:if="${#fields.hasErrors('usuario')}" th:errors="*{usuario}"></div>
+					</div>
+				</div>
+				<div class="row mb-1">	
+					<div class="col-12">
+						<label class="labelLogin">Password</label>
+					</div>
+					<div class="col-12">
+					<!-- Entrada de datos -->
+						<input class="inputLogin" type="password" th:field="*{password}"><br>
+						<!-- Validacion de la contraseña -->
+						<div class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+					</div>
+				</div>
+				<input class="inputLogin" type="submit" value="Ingresar">
+				<p class="labelLogin" th:if="${error}" th:text="${error}"></p>
+			</form>		
+		</div>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 	</body>
 </html>

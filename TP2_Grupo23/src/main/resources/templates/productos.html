@@ -2,172 +2,52 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximun-scale=1, user-scalable=no">
 		<title>Productos</title>
 		<link rel="styLesheet" th:href="@{/css/estilo.css}">
 		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
+		<link th:rel= "stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+
 	</head>
 <body>
-	<header th:replace ="~{layouts/header :: header}">
-		 <!-- <div class='menu'>
-			<h1>Littlest Pets Shop</h1> 
-			<img src="../static/images/logor.png" width="150" title="LogoLittlest" alt="perrito kawaii">
-				<nav >
-					<ul>
-						<li><a href="index.html">Inicio</a></li>
-						<li><a href="productos.html">Productos</a></li>
-						<li><a href="consejos.html">Consejos de salud</a></li>
-						<li><a href="serviciosDePaseo.html">Servicios de paseos</a></li>
-						<li><a href="sucursales.html">Sucursales</a></li>
-						<li><a href="contacto-form.html">Contactanos</a></li>
-					</ul>
-				</nav>
-		</div> -->
-	</header>
-	<section  class='articulos'>
-	<h2> ALIMENTO PARA PERRO ADULTO</h2>
-		<ul >
-			<li><h3>Pedigree Adulto</h3>
-	 		<img th:src="@{/images/pedi1.png}" width="150" title="perroadulto" alt="perro">
-	 		<p>Ayuda su sistema inmunológico gracias a su contenido de antioxidantes, vitamina E y Selenio</p>
-	 		<strong>$12.600</strong></li>
-	 		<li><h3>Raza Adulto</h3>
-	 		<img th:src="@{/images/raza1.png}" width="150" title="perroadulto" alt="perro">
-	 		<p>Un alimento ideal para perros adultos que llevan una vida sedentaria y conviven con su familia en espacios reducidos.</p>
-	 		<strong>$8.000</strong></li>
-			<li><h3>Sabrocitos Adulto</h3>
-		 	<img th:src="@{/images/sabroA.png}" width="150" title="sabrocitos" alt="Adulto">
-			<p>es un alimento que brinda justo lo que tu perro necesita, acompañado de los mejores y más variados sabores de este mix de carne, cereales y vegetales.</p>
-			<strong>$9.500</strong></li>
-		</ul>
-		<h2>ALIMENTO PARA CACHORRO</h2>
-		<ul>
-			<li><h3>Pedigree Cachorro</h3>
-			<img th:src="@{/images/Pedi2.png}" width="150" title="perroadulto" alt="perro">
-			<P>Con Nutri Defense™ para un óptimo crecimiento, fibras naturales para una óptima digestión y con calcio para huesos fuertes</P>
-			<strong>$9.600</strong></li>
-			<li> <h3>Raza Cachorro</h3>
-	 		<img th:src="@{/images/raza2.png}" width="150" title="perroadulto" alt="perro">
-			<p>Menos sarro dental. Con Hexametafosfato de sodio, que son partículas de sal que se activan con la mordida del perro y separan el sarro de los dientes.</p>
-			<strong>$6.000</strong></li>
-			<li><h3>Sabrocitos Cachorro</h3>
-		 	<img th:src="@{/images/sabroC.png}" width="150" title="sabrocitos" alt="Adulto">
-			<p>Que tengan una vida plena y sana depende de los cuidados que le demos de cachorros, La línea Cachorros está formulada con la más alta composición nutricional y los ingredientes que más necesita en esta etapa.</p>
-			<strong>$7.600</strong></li>
-		</ul>
-
-	<h2>ALIMENTO PARA GATO ADULTO</h2>
-		<ul >
-			<li><h3>Whiskas Adulto</h3>
-			<img th:src="@{/images/wiskasA.png}" width="150" title="Gato adulto" alt="gato">
-		 	<p>Nueva receta, cuidadosamente preparada para satisfacer las necesidades nutricionales de su gato, apoya el funcionamiento gastrointestinal, contribuyendo a la formación de heces firmes y fáciles de limpiar.</p>
-		 	<strong>$8.000</strong></li>
-		 	<li><h3>Purina Cat Chow (gato adulto)</h3>
-		 	<img th:src="@{/images/cat1.png}" width="150" title="Gato Adulto" alt="gato">
-		 	<p>Una buena nutrición es fundamental para proteger la salud de los gatos, elaborado con una selección de ingredientes naturales y mejorado, con la inclusión de un prebiótico natural.</p>
-		 	<strong>$10.000</strong></li>
-		 	<li><h3>Raza Gato Adulto</h3>
-		 	<img th:src="@{/images/razag1.png}" width="150" title="Gato adulto" alt="gato">
-		 	<p>El alimento Raza Adulto logra promover la flora bacteriana benéfica, contiene nucleótidos que son necesarios para la multiplicación y función normal de las células epiteliales de la mucosa intestinal.</p>
-		 	<strong>$9.500</strong></li>
-
-		 </ul>
-		 <h2>ALIMENTO PARA GATITO</h2>
-		<ul>
-			<li><h3>Whiskas gatito</h3>
-		 	<img th:src="@{/images/wiskasC.png}" width="150" title="Gatito" alt="gatito">
-		 	<p>La nueva receta de Whiskas Gatitos brinda a tu gatito una alimentación 100% completa y balanceada para que crezca sano y fuerte, contiene calcio que ayuda al desarrollo de dientes y huesos sanos, DHA para el desarrollo del cerebro y minerales controlados que ayudan a mantener la salud de su tracto urinario.</p>
-		 	<strong>$6.500</strong></li>
-		 	<li><h3>Purina Cat Chow (gatito)</h3>
-		 	<img th:src="@{/images/cat2.png}" width="150" title="Gatito" alt="gatito">
-		 	<p>Alimento completo y balanceado para gatitos desde el destete hasta 12 meses de edad, hecho con todos los nutrientes que tu gatito necesita para favorecer un crecimiento sano, y mejorado con la inclusión de un prebiótico natural.</p>
-		 	<strong>$8.200</strong></li>
-		 	<li><h3>Raza Gatito</h3>
-		 	<img th:src="@{/images/razag2.png}" width="150" title="Gatito" alt="gatito">
-			<p>Luego de las primeras siete semanas de vida, la mayoría de los gatitos ya están destetados y preparados para incorporar una dieta sólida, el alimento Raza es ideal porque tiene prebióticos que refuerzan el sistema inmunológico.</p>
-		 	<strong>$6.000</strong></li>
-		</uL>
-	<h2>ARTICULOS PARA TU MASCOTA</h2>
-		<ul >
-			<li><h3>Hueso</h3>
-		 	<img th:src="@{/images/hueso.png}" width="150" title="juguete" alt="hueso">
-		 	<p>Juguete que posee textura para masajear las encías y ayuda a promover la buena salud dental</p>
-			<strong>$900</strong></li>
-			<li><h3>Soga</h3>
-		 	<img th:src="@{/images/soga.png}" width="150" title="juguete" alt="soga">
-		 	<p>Juguete de hilo para perro, fabricado en algodón, ejercita la mandíbula y limpia los dientes de tu mascota</p>
-		 	<strong>$1.200</strong>
-		 	<li><h3>Sapito</h3>
-		 	<img th:src="@{/images/sapo.png}" width="150" title="juguete" alt="sapo">
-		 	<p>Ayuda a eliminar estrés y ansiedad, sobre todo en cachorros cuyos dientes están creciendo.</p>
-		 	<strong>$1.200</strong></li>
-		 	<li><h3>Collar para Perro</h3>
-		 	<img th:src="@{/images/collar1.png}" width="150" title="perro" alt="collar">
-		 	<p>Collar para perro con diseño de "Star Wars", hecho con material reforzado, ajustable y ademas cumple la funcion de collas anti-pulgas.</p>
-		 	<strong>$1.800</strong></li>
-	
-			<li><h3>Laser</h3>
-			<img th:src="@{/images/laser.png}" width="150" title="juguete" alt="laser">
-		 	<p>Juguete especial para mantener a tu gatito activo.</p>
-		 	<strong>$600</strong></li>
-		 	<li><h3>Varilla para gato</h3>
-		 	<img th:src="@{/images/varilla.png}" width="150" title="juguete" alt="varilla">
-		 	<p>Es un juguete diseñado para despertar el instinto cazador de tu gato y son ideales para el vínculo entre el ser humano y su mascota.</p>
-		  	<strong>$800</strong></li>
-		  	<li><h3>Ratoncito</h3>
-		 	<img th:src="@{/images/rati.png}" width="150" title="juguete" alt="rata">
-		 	<p>Excelente para jugar con su mascota o para sorprender a algún asustadizo!.</p>
-		 	<strong>$1.200</strong></li>
-		 	<li><h3>Collar para gatos</h3>
-		 	<img th:src="@{/images/callarg1.png}" width="150" title="collar" alt="gato">
-		 	<p>Collar para gato con un hermoso diseño de "Batman", con costuras reforzadas, ajustable y cuenta con un cascabel para que tu catito juegue.</p>
-		 	<strong>$1.800</strong></li>
-	</ul>
-	</section>
-	
-	 	<section class="paseo">
-	  		<p class="centrado"><a th:href="@{/nuevo}">Productos Nuevos</a></p>		  		
-	  		<table style="width: 80%" border=1>
-		  			<tr>
-		  				<th>Codigo</th>
-		  				<th>Nombre articulo</th>
-		  				<th>Precio</th>
-		  				<th>Descuento</th>
-						<th>Precio con descuento</th>
-		  				<th>Categoria</th>
-		  				<th>Acciones</th>
-		  			</tr>
-		  			<tr th:each = "prod: ${productos}">
-		  				<td th:text="${prod.codigo}"></td>
-		  				<td th:text="${prod.nombre}"></td>
-		  				<td th:text="${prod.precio}"></td>
-		  				<td th:text="${prod.descuento}"></td>
-		  				<td th:text="${prod.preciodescuento}"></td>
-		  				<td th:text="${prod.categoria}"></td>
-		  				<td>
-		  					<a class= "EditElim" th:href="@{/productos/modificar/}+${prod.nombre}">Editar</a>
-		  					<a class= "EditElim" th:href="@{/productos/eliminar/}+${prod.nombre}">Eliminar</a>
-		  				</td>
-		
-		  			</tr>
-		  			
-		  		</table>
-  		  		
-  	</section>
+	<header th:replace ="~{layouts/header :: header}"></header>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-4 col-sm-4 col-md-8 col-lg-8 col-xl-12 col-xxl-12">
+					<h2 class="titulo">PRODUCTOS PARA TU MASCOTA</h2>
+				</div>
+			</div>
+			<a th:href="@{/nuevo}">Productos Nuevos</a>
+			<div class="row" >
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4" th:each = "prod: ${productos}">
+                    <div class="card mx-6 mt-3" style="width: 18rem;">
+                          <img th:src="@{/images/logor.png}" style="width: 150px;" class="card-img-top" alt="perro">
+                          <div class="card-body box">
+                            <h5 class="card-title" th:text="${prod.nombre}"></h5>
+                            <p class="card-text" th:text="${prod.categoria}"></p>
+                            <a href="https://www.mercadopago.com.ar/" class="btn btn-primary" th:text="${prod.preciodescuento}"></a>
+                        </div>
+                        <a class= "EditElim" th:href="@{/productos/modificar/}+${prod.nombre}">Editar</a>
+		  				<a class= "EditElim" th:href="@{/productos/eliminar/}+${prod.nombre}">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 	 <br> 
 	 <br>
-	 
-	 <aside id="asidep">
+	 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-10  col-xxl-10 container-fluid mt-3 border  border-solid text-center asidep">
+	 <aside>
 	 	<h4>¿SABIAS QUE los perros y gatos son capaces de detectar tus sentimientos?.</h4>
 		<p>Según diversos estudios, los perros pueden detectar cambios sutiles en nuestro olor, lo que les ayuda a comprender cómo nos sentimos (por ejemplo, si sudas, puede interpretar que estás nervioso o inquieto). También aseguran que las perras son capaces de detectar si un miembro de la familia está embarazada.</p>
 	</aside>
-	 
+	</div>
 	 <br>
 	 <br>
 	 
-	<footer th:replace="~{layouts/footer :: footer}" id="footerInicio">
-		<!-- <p> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>  -->
-   </footer>
+	<footer th:replace="~{layouts/footer :: footer}" id="footerInicio"></footer>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	
 </body>
 </html>

@@ -2,53 +2,84 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximun-scale=1, user-scalable=no">
 		<title>Nuevo Paseador</title>
 		<link rel="styLesheet" th:href="@{/css/estilo.css}">
 		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
+		<link th:rel= "stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+
 	</head>
 	<body>
 		<header th:replace="~{layouts/header :: header}"> </header>
-			
-			<section>
-					<form class="formprod" th:action= "${edicion}?@{/servicios/modificar}:@{/servicios/guardar}" th:object="${servicio}" method="post">
-						<h3 th:text="${edicion}?'Modificar Paseador' : 'Nuevo Paseador'"></h3> <br><br>
-						<label for= "paseador"> Nombre Del Paseador</label>
-						<input type="text" id="paseador" name="servicio_paseador" th:field="*{paseador}"><br><br>
-						
-						<label for= "telefono"> Telefono</label>
-						<input type="text" id="telefono" name="servicio_telefono" th:field="*{telefono}"><br><br>
-						
-						<label for= "dias"> Dias</label>
-						<select id="dias" name="servicio_dias" th:field="*{dias}">
-								<option value="Lunes">Lunes</option>
-								<option value="Martes">Martes</option>
-								<option value="Miercoles">Miercoles</option>
-								<option value="Jueves">Jueves</option>
-								<option value="Viernes">Viernes</option>
-								<option value="Sabado">Sabado</option>
-								<option value="Domingo">Domingo</option>
-						</select><br><br>
-						
-						<label for= "horarios"> Horarios</label>
-						<select id="horarios" name="servicio_dias" th:field="*{horarios}">
-								<option value="08:00 a 09:00">08:00 a 09:00</option>
-								<option value="09:00 a 10:00">09:00 a 10:00</option>
-								<option value="10:00 a 11:00">10:00 a 11:00</option>
-								<option value="11:00 a 12:00">11:00 a 12:00</option>
-								<option value="13:00 a 14:00">13:00 a 14:00</option>
-								<option value="15:00 a 16:00">15:00 a 16:00</option>
-								<option value="17:00 a 18:00">17:00 a 18:00</option>
-								<option value="18:00 a 19:00">18:00 a 19:00</option>
-								<option value="20:00 a 21:00">20:00 a 21:00</option>
-								<option value="22:00 a 23:00">22:00 a 23:00</option>
-						</select><br><br>
-						<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
-					</form>
-			</section>
-			<br><br><br><br><br>
-		
-			
+		<!-- Contenido principal -->
+		<div class="tabyforn labelsuc">
+			<!-- Tarjeta de formulario -->
+			<div class="card col-xs-10 col-sm-11 col-md-12 col-lg-12 col-xl-12 col-xxl12">
+				<!-- Encabezado de la tarjeta -->
+			   <h3 class="casr_header" id="subtsuc" th:text="${edicion}?'Modificar Paseador' : 'Nuevo Paseador'"></h3><br>
+					<div class="card-body">
+						<!-- Formulario -->
+						<form th:action= "${edicion}?@{/servicios/modificar}:@{/servicios/guardar}" th:object="${servicio}" method="post">
+							<!-- Campos del formulario -->
+							<div class="row mb-3">
+								<label for= "paseador" class="col-sm-2 col-form-label "> Nombre Del Paseador</label>
+									<div class="col-sm-10">
+										<input placeholder="Ingrese Nombre del Paseador" class="form-control" type="text" id="paseador" name="servicio_paseador" th:field="*{paseador}"><br>
+										<div class="text-danger" th:if="${#fields.hasErrors('paseador')}" th:errors="*{paseador}"></div>
+										
+									</div>
+							</div>
+							<div class="row mb-3">
+								<label for="telefono" class="col-sm-2 col-form-label ">Teléfono</label>
+									<div class="col-sm-10">
+										<input  placeholder="Ingrese un Telefono" class="form-control" type="text" id="telefono" name="servicio_telefono" th:field="*{telefono}">
+										<div class="text-danger" th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></div>
+									</div>
+							</div>
+							<div class="row mb-3">
+								<label  for= "dias" class="col-sm-2 col-form-label"> Dias</label>
+								<div class="col-sm-10">
+										<select class="form-control" id="dias" name="servicio_dias" th:field="*{dias}">
+											<option value="" selected>Seleccione un Dia..</option>
+											<option value="Lunes">Lunes</option>
+											<option value="Martes">Martes</option>
+											<option value="Miercoles">Miercoles</option>
+											<option value="Jueves">Jueves</option>
+											<option value="Viernes">Viernes</option>
+											<option value="Sabado">Sabado</option>
+											<option value="Domingo">Domingo</option>
+									   	</select><br>
+										<div class="text-danger" th:if="${#fields.hasErrors('dias')}" th:errors="*{dias}"></div>
+								</div>
+							</div>
+							<div class="row mb-3">
+								<label for= "horarios" class="col-sm-2 col-form-label"> Horarios</label>
+								<div class="col-sm-10">
+									<select  class="form-control" id="horarios" name="servicio_dias" th:field="*{horarios}">
+											<option value="" selected>Seleccione un Horario..</option>
+											<option value="08:00 a 09:00">08:00 a 09:00</option>
+											<option value="09:00 a 10:00">09:00 a 10:00</option>
+											<option value="10:00 a 11:00">10:00 a 11:00</option>
+											<option value="11:00 a 12:00">11:00 a 12:00</option>
+											<option value="13:00 a 14:00">13:00 a 14:00</option>
+											<option value="15:00 a 16:00">15:00 a 16:00</option>
+											<option value="17:00 a 18:00">17:00 a 18:00</option>
+											<option value="18:00 a 19:00">18:00 a 19:00</option>
+											<option value="20:00 a 21:00">20:00 a 21:00</option>
+											<option value="22:00 a 23:00">22:00 a 23:00</option>
+									</select><br>
+									<div class="text-danger" th:if="${#fields.hasErrors('horarios')}" th:errors="*{horarios}"></div>
+								</div>
+							</div>
+							<!-- Botón de enviar formulario -->
+						    <button class="form-element" type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
+						</form>
+					</div>
+				</div>
+			</div>
 		<footer th:replace="~{layouts/footer :: footer}" id="footerInicio"></footer>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
 	</body>
 </html>

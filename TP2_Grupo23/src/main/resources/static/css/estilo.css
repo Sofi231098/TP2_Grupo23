@@ -10,7 +10,16 @@ body{
 }
 /* Encabezado y menu principal 
 	Trabajo en equipo desde linea 13 hasta 68 */
-.menu{
+.navbar-brand h1{
+	font-family:'Gorditas', sans-serif;
+	font-size: 30px;
+}	
+
+.nav-item{
+	font-family:'Gorditas', sans-serif;
+}
+
+/*.menu{
 	font-family:'Gorditas', sans-serif;
 	color:#734d26;
 	background:#ccad99;
@@ -66,52 +75,52 @@ body{
 .menu a:hover{
 	color:#f0e7db;
 	text-decoration: underline;
-}
+}*/
 
 /* Realizado por: Sofia Trinida Yañez
    Usuario git: Sofi231098
    Trabajo: desde linea 75 hasta linea 148 */
 
 /* ASIDE,SECTION Y FOOTER DE INICIO */
-.content{
-	width:calc(80% - 40px);
-	float:left;
-	min-height:400px;
-	padding:20px;
-	border-radius: 35px;
-    background:#E9D5A2;
-}
+
 
 .content h2,h3{
 	font-family:'Gorditas', sans-serif;
 	font-size: 35px;
 	color:#734d26;
-	margin-bottom: 20px;
-	margin-top: 20px;
+	padding:10px;
+	margin-left: 40px;
 }
-
+.nuevoobj{
+	font-family:'Gorditas', sans-serif;
+	font-size: 15px;
+	margin-left: 50px;
+	
+}
 .content p{
 	text-align:justify;
 	font-size: 20px;
 	font-family: 'Urbanist', sans-serif;
 	color:#734d26;
+	margin-left: 50px;
+	margin-right: 70px;
 }
 .objetivos{
 	font-family: 'Urbanist', sans-serif;
 	font-size: 20px;
 	color:#734d26;
-	margin-left: 20px;
-	
+	margin-left: 50px;	
+	margin-right: 70px;
 }
 
+
 .content2{
-	width:calc(20% - 30px);
-	float:left;
-	background:#975942;
-	min-height:400px;
+	 /*background:#E9D5A2;*/
+    border: 2px solid black;
+    border-radius: 15px;
+	/*min-height:100%;*/
 	padding: 15px;
 	padding-bottom: 25px;
-	border-radius: 35px;
 	
 }
 
@@ -119,20 +128,45 @@ body{
 	text-align: center;
 	font-size: 18px;
 	font-family:'Gorditas', sans-serif;
-	color:#f0e7db;
-	margin-top:15px;
+	color:#975942;
+	margin-top:20px;
+	margin-left: 50px;
+	margin-right: 70px;
 }
 
 .content2 p{
 	font-family: 'Urbanist', sans-serif;
 	font-size:18px;
-	color: #f0e7db;
+	color: #975942;
 	margin-bottom:20px;
+	margin-left: 30px;
+	margin-right: 40px;
 }
 
 p.imgcentrado{
 	text-align: center;
 	
+}
+@media (min-width: 540px) {
+  .content {
+    width: 850px !important;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding-bottom: 15px;
+    border-radius: 15px;
+    border: 2px solid #ccad99;
+   
+  }
+}
+@media (min-width: 540px) {
+  .content2 {
+    width: 400px !important;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border: 2px solid #ccad99;
+    border-radius: 15px;
+  }
 }
 
 #footerInicio{
@@ -140,7 +174,7 @@ p.imgcentrado{
 	font-size: 20px;
 	text-align: center;
 	clear:both;
-	background: #EDE2DB;
+	/*background: #EDE2DB;*/
 	padding: 30px;
 	height: 50px;
 	line-height: 50px;
@@ -195,6 +229,44 @@ p.imgcentrado{
     color:#64483c
 }*/
 /* lista de articulos */
+/*Estillo css para productos*/
+.titulo{
+    display:flex;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: #64483c;
+    border: 2px solid ;
+    font-family:'Gorditas', sans-serif;
+    font-size:30px;
+    align-items:center;
+    justify-content:center;
+    text-align:    center;
+    margin-top:10px;
+    height:50px;
+    color:#f0e7db;
+    line-height: 20px;
+}
+.box{
+    background-color: #EDE2DB;
+}
+.box h5{
+    font-family:'Gorditas', sans-serif;
+    text-align: center;
+    font-size: 25px;
+    color:#BF6C71;
+}
+
+.box p{
+    font-family: 'Urbanist', sans-serif;
+    color:#734d26;
+    font-size: 12px;
+}
+
+.card-img-top {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .articulos li{
  	display: inline-table;
  	width:20%;
@@ -356,6 +428,23 @@ hr{
    Trabajo: desde linea 306 hasta linea 335 */
 
   /*servicio de paseo*/
+.col-md-4 img{
+	overflow:auto;
+	width: 200px;
+	border-radius: 50%;
+}  
+.card-title{
+	font-family: 'Gorditas', sans-serif;
+	color:#734d26;
+	font-size: 20px;
+}
+.text-center {
+	font-family: 'Gorditas', sans-serif;
+	color:#734d26;
+	font-size: 20px;
+	text-align: center;	
+}
+
 .paseo h2{
 	font-family: 'Gorditas', sans-serif;
 	color:#734d26;
@@ -454,7 +543,7 @@ b{
 
 .form{
   width: 100%;
-  max-width: 600px;
+  max-width: 1500px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -484,22 +573,48 @@ b{
   font-size: 15px;
 }
 
-.form label {
+.labelsuc {
 	font-family: 'Urbanist', sans-serif;
 	color:#734d26;
-	font-size: 18px;
+	font-size: 19px;
 }
 
 
 .link {
 	margin-left: 65px;
-	font-family:'Gorditas', sans-serif;
-	font-size: 20px;
+	font-family: 'Urbanist', sans-serif;
+	font-size: 15px;
 	font-style:inherit;
-	color:#64483c;
+	color: #800080;
+}
 
+.tabyform {
+	width: 100%;
+  	max-width: 1300px;
+  	justify-content: center;
+  	align-items: center;
+  	 margin: 0 auto;
+  	display: flex;
+  	font-family: 'Urbanist', sans-serif;
 	
 }
+
+.carrusel {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parraf {
+	text-align: center;
+	font-family: 'Urbanist', sans-serif;
+	background: #ff6666;
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;
+	color: white;
+}
+
 
 /* ---------------- */
 
@@ -521,7 +636,30 @@ b{
 	margin:25px;
 	border-radius: 20px;
 	margin-left: 120px;
+	
 
+}
+
+
+@media (min-width: 540px) {
+  .parte1 {
+    /*width: 530px !important;*/
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding-bottom: 15px;
+    border-radius: 15px;
+    border: 2px solid #ccad99;
+  }
+}
+@media (min-width: 540px) {
+  .parte2 {
+    /*width: 530px !important;*/
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border: 2px solid #ccad99;
+    border-radius: 15px;
+  }
 }
 
 .parte1 h2{
@@ -547,6 +685,7 @@ p.imgForm{
 	font-family: 'Urbanist', sans-serif;
 	font-size:20px;
 	color:#734d26 ;
+	padding-top: 5px;
 }
 
 .parte2 .inputForm{
@@ -572,6 +711,7 @@ p.imgForm{
     color:#734d26 ;
     background:#EDE2DB;
     cursor: pointer;
+    width:265px;
 }
 
 .parte2 .boton:hover{
@@ -711,7 +851,39 @@ p.imgForm2{
     outline: none;
     color:#734d26 ;
 }
+@media (min-width: 540px) {
+  .custom-container {
+    width: 530px !important;
+    margin-top: 150px;
+    background:#ccad99;
+    border-radius: 20px; 
+  }
+}
 
+@media (max-width: 540px) {
+  .objForm {
+    width: 100% !important;
+    margin-top: 150px;
+    
+    background:#ccad99;
+  }
+}
+@media (min-width: 540px) {
+  .objForm {
+    width: 530px !important;
+    margin-top: 90px;
+    background:#ccad99;
+    border-radius: 20px; 
+    margin-bottom: 90px;;
+  }
+}
+
+@media (max-width: 540px) {
+  .custom-container {
+    width: 100% !important;
+    margin-top: 150px;background:#ccad99;
+  }
+}
 /*Estilo de tablas*/
 .EditElim{
 	font-family: 'Urbanist', sans-serif;
@@ -772,3 +944,4 @@ p.imgForm2{
 	color:#734d26;
 	font-size: 18px;
 }
+

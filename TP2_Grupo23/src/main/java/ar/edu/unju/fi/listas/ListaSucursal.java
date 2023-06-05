@@ -1,12 +1,26 @@
+/**
+ * Clase que representa una lista de sucursales.
+ */
+
 package ar.edu.unju.fi.listas;
 
 import java.util.List;
+
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import ar.edu.unju.fi.model.Sucursal;
 
+
+@Component
 public class ListaSucursal {
 	private List<Sucursal> sucursales;
 	
+	
+	/**
+     * Constructor de la clase ListaSucursal.
+     * Inicializa la lista de sucursales y sev agrega algunas sucursales de ejemplo.
+     */
 	public ListaSucursal() {
 		sucursales = new ArrayList<Sucursal>();
 		sucursales.add(new Sucursal("0001","Centro","JUJUY", "Independencia esq Alberdi", "3886439281", "Lunes a Sábado 9 a 21 hs"));
@@ -21,10 +35,19 @@ public class ListaSucursal {
 		sucursales.add(new Sucursal("0010","Tafi Viejo","TUCUMAN","Gral. Jose de San Martin 271","3817629012","Lunes a Sábado 9 a 21 hs"));	
 	}
 	
+	
+	/**
+     * Obtiene la lista de sucursales.
+     * @return Lista de sucursales.
+     */
 	public List<Sucursal> getSucursales() {
 		return sucursales;
 	}
 	
+	/**
+     * Establece la lista de sucursales.
+     * @param sucursales Lista de sucursales.
+     */
 	public void setSucursales(List<Sucursal> sucursales) {
 		this.sucursales = sucursales;
 	}

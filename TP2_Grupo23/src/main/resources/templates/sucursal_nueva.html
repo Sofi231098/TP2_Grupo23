@@ -2,64 +2,129 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es" >
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximun-scale=1, user-scalable=no">
 		<title>Nueva Sucursal</title>
 		<link rel="styLesheet" th:href="@{/css/estilo.css}">
 		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
-	</head>
- <body>
+		<link th:rel= "stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 
-	<header th:replace="~{layouts/header :: header}">
-	 	<!-- <div class='menu'>
-			<h1>Littlest Pets Shop</h1> 
-			<img src="../static/images/logor.png" width="150" title="LogoLittlest" alt="perrito kawaii">
-				<nav >
-					<ul>
-						<li><a href="index.html">Inicio</a></li>
-						<li><a href="productos.html">Productos</a></li>
-						<li><a href="consejos.html">Consejos de salud</a></li>
-						<li><a href="serviciosDePaseo.html">Servicios de paseos</a></li>
-						<li><a th:href="@{/sucursales/listado}" >Sucursales</a></li>
-						<li><a href="contacto-form.html">Contactanos</a></li>
-					</ul>
-				</nav>
-		</div> -->
-		
-	</header>
+	</head>
 	
-	<section>
 	
+ <body>
+	
+	<!-- Sección de encabezado -->
+	<header th:replace="~{layouts/header :: header}"></header>
+	 <br>
+	
+	
+	<div class="tabyform labelsuc">
+		<div class="card col-xs-10 col-sm-11 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+			<!-- Título de la tarjeta -->
+			<h3 class="card-header" id="subtsuc" th:text="${edicion}?'Modificar Sucursal':'Nueva Sucursal'"></h3>
+			<div class="card-body">
+					<p class="parraf">NOTA: Al modificar una Sucursal NO se debe cambiar ni Código Sucursal ni Nombre.</p>
+						<!-- Formulario con acción y método -->
+						<form  th:action="${edicion}?@{/sucursales/modificar}:@{/sucursales/guardar}" th:object="${sucursal}" method="post">
+							
+							<!-- Campo Código Sucursal -->
+							<div class="row mb-3">
+								<label for="codigo sucursal" class="col-sm-2 col-form-label ">Código Sucursal</label>
+								<div class="col-sm-10">
+									<!-- Entrada de texto para el código de sucursal -->
+									<input type="text" id="codigosucursal" name="sucursal_codigo" class="form-control"  th:field="*{codigo}"  th:readonly="${edicion}?'readonly'">
+									<!-- Mostrar errores de validación si existen -->
+									<div class="text-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></div>
+								</div>
+								
+							</div>
+							
+							<!-- Campo Nombre -->
+							<div class="row mb-3">
+								<label for="nombre" class="col-sm-2 col-form-label ">Nombre</label>
+								<div class="col-sm-10">
+									<!-- Entrada de texto para el nombre de sucursal -->
+									<input type="text" id="nombre" name="sucursal_nombre" class="form-control" th:field="*{nombre}" th:readonly="${edicion}?'readonly'">
+									<!-- Mostrar errores de validación si existen -->
+									<div class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+								</div>
+								
+							</div>
+							
+							<!-- Campo Provincia -->
+							<div class="row mb-3">
+								<label for="provincia" class="col-sm-2 col-form-label ">Provincia</label>
+								<div class="col-sm-10">
+									<!-- Menú desplegable para seleccionar la provincia -->
+									<select  id="provincia" name="sucursal_provincia" class="form-control" th:field="*{provincia}">
+									<option value="" selected>Seleccione una opción</option>
+									<option value="JUJUY">Jujuy</option>
+									<option value="SALTA">Salta</option>
+									<option value="TUCUMAN">Tucumán</option>
+								</select>
+								<!-- Mostrar errores de validación si existen -->
+								<div class="text-danger" th:if="${#fields.hasErrors('provincia')}" th:errors="*{provincia}"></div>
+								</div>
+							</div>
+							
+							<!-- Campo Dirección -->
+							<div class="row mb-3">
+								<label for="direccion" class="col-sm-2 col-form-label ">Dirección</label>
+								<div class="col-sm-10">
+									<!-- Entrada de texto para la dirección de la sucursal -->
+									<input type="text" id="direccion" name="sucursal_direccion" class="form-control" th:field="*{direccion}">
+									<!-- Mostrar errores de validación si existen -->
+									<div class="text-danger" th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}"></div>
+								</div>
+							</div>
+							
+							<!-- Campo Teléfono -->
+							<div class="row mb-3">
+								<label for="telefono" class="col-sm-2 col-form-label ">Teléfono</label>
+								<div class="col-sm-10">
+									<!-- Entrada de texto para el teléfono de la sucursal -->
+									<input type="text" id="telefono" name="sucursal_telefono" class="form-control" th:field="*{telefono}">
+									<!-- Mostrar errores de validación si existen -->
+									<div class="text-danger" th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></div>
+								</div>
+							</div>
+							
+							<!-- Campo Horario de Atención -->
+							<div class="row mb-3">
+								<label for="horario de atencion" class="col-sm-2 col-form-label ">Horario de Atención</label>
+								<div class="col-sm-10">
+									<!-- Menú desplegable para seleccionar el horario de atención -->
+									<select  id="horario de atencion" name="sucursal_horario" class="form-control" th:field="*{horario}">
+									<option value="" selected>Seleccione una opción</option>
+									<option value="Lunes a Sábado 9 a 21 hs">Lunes a Sábado 9 a 21 hs</option>
+									<option value="Lunes a Sábado 9 a 13hs y 17 a 21 hs">Lunes a Sábado 9 a 13hs y 17 a 21 hs</option>
+									</select>
+									<!-- Mostrar errores de validación si existen -->
+									<div class="text-danger" th:if="${#fields.hasErrors('horario')}" th:errors="*{horario}"></div>
+								</div>
+							</div>
+								
+								<!-- Botón para enviar el formulario -->
+								<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
+								<!-- <p><input type="submit" class="button" value="Guardar"></p> -->
+						
+								
+								
+						</form>	
+							
+				</div>
 		
-		<!--  >p class="parraf">NOTA: Al modificar una Sucursal NO se debe cambiar ni Código Sucursal ni Nombre.</p--><br>
-		<form class="formprod" th:action="${edicion}?@{/sucursales/modificar}:@{/sucursales/guardar}" th:object="${sucursal}" method="post">
-			<h3 th:text="${edicion}?'Modificar Sucursal':'Nueva Sucursal'"></h3> <br>
-			<label for="codigo sucursal">Código Sucursal</label><br>
-			<input type="text" id="codigosucursal" name="sucursal_codigo" th:field="*{codigo}"  th:readonly="${edicion}?'readonly'"><br><br>
-			<label for="nombre">Nombre</label><br>
-			<input type="text" id="nombre" name="sucursal_nombre" th:field="*{nombre}" th:readonly="${edicion}?'readonly'"><br><br>
-			<label for="provinvia">Provincia</label><br>
-			<select  id="provincia" name="sucursal_provincia" th:field="*{provincia}">
-				<option value="JUJUY">Jujuy</option>
-				<option value="SALTA">Salta</option>
-				<option value="TUCUMAN">Tucumán</option>
-			</select><br><br>
-			<label for="direccion">Dirección</label><br>
-			<input type="text" id="direccion" name="sucursal_direccion" th:field="*{direccion}"><br><br>
-			<label for="telefono">Teléfono</label><br>
-			<input type="text" id="telefono" name="sucursal_telefono" th:field="*{telefono}"><br><br>
-			<label for="horario de atencion">Horario de Atención</label><br>
-			<input type="text" id="horariodeatencion" name="sucursal_horario" th:field="*{horario}"><br><br>
-			<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
-			<!-- <p><input type="submit" class="button" value="Guardar"></p> -->
+		</div>
+	</div>
+	
+	
 			
-		</form>
 	
-	</section>
 	
-	<footer th:replace = "~{layouts/footer :: footer}"id="footerInicio">
-		<!-- <p> &copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p>-->
-   </footer>
-	
+	<!-- Sección de pie de página -->
+	<footer th:replace = "~{layouts/footer :: footer}"id="footerInicio"></footer>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 	
  </body>
 </html>

@@ -1,35 +1,54 @@
 package ar.edu.unju.fi.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import ar.edu.unju.fi.model.Contactos;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-
 
 
 @Controller
 @RequestMapping("/")
 	public class ContactoController {
 	
+	/**
+	 * Declaro mis objetos inyectados
+	 */
+	@Autowired
+	private Contactos contacto;
 	
+	/**
+	 * @param model  se hace peticion de la pagina
+	 * @return  retorno la pagina contacto-form.html
+	 */
 	@GetMapping("/contacto") 
 		public String getContacto(Model model){
-	//	Contacto contacto = new Contacto();
-		model.addAttribute( "contacto", new Contactos()); //enviar un pbjeto a la pagina, agrega un atributo a la pagina llamada contacto
+		model.addAttribute( "contacto", contacto); //enviar un pbjeto a la pagina, agrega un atributo a la pagina llamada contacto
 		return "contacto-form";
 	}
 	
+	/**
+	 * @param model  modelo que se utiliza para la vista
+	 * @param contacto objeto que representa los datos para rellenar el formulario
+	 * @param result objeto que  controla las validaciones de los datos introducidos
+	 * @return  el retorno es la pagina contacto-form.html, vista
+	 */
 	@PostMapping("/contacto")
-	public String postContacto(Model model, Contactos contacto ) {
-		System.out.println(contacto.toString()); //Muestro por consola los atributos de contacto.
-		model.addAttribute( "contacto", new Contactos()); //Se envia un nuevo objeto para que se reinicie el formulario. 
-		model.addAttribute("datos", "Datos enviados Correctamente");
-		return "contacto-form";
-		
+	public String postContacto(Model model ,@Valid Contactos contacto, BindingResult  result ) {
+		if(result.hasErrors()) {
+			model.addAttribute("contacto-form");
+			model.addAttribute( "contacto", contacto);
+			return "contacto-form";
+		}
+			model.addAttribute( "contacto", contacto); //Se envia un nuevo objeto para que se reinicie el formulario. 
+			model.addAttribute("datos", "Datos enviados Correctamente");
+			System.out.println(contacto.toString()); //Muestro por consola los atributos de contacto.
+			return "contacto-form";
+			
 	}
 	
 	

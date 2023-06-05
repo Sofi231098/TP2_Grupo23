@@ -1,12 +1,27 @@
 package ar.edu.unju.fi.listas;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.stereotype.Component;
+
 import ar.edu.unju.fi.model.IndexModel;
 
+/**
+ * @author Sofia Trinidad Yañez
+ * 
+ */
+@Component
 public class ListaIndex {
+	/**
+	 * declaracion de los objetos inyectados, lista de objetos
+	 */
 	private List<IndexModel> index;
 	
 	
+	/**
+	 * constructor de la clase ListaIndex
+	 * Array donde se encuentran los objetivos 
+	 */
 	public ListaIndex() { 
 		index = new ArrayList<IndexModel>();
 		index.add(new IndexModel("Ayudarte con el cuidado de tus mascotas con nuestros consejos de salud."));
@@ -15,11 +30,18 @@ public class ListaIndex {
 	}
 
 
+	/**
+	 * Aquí se obtiene la lista de objetos IndexModel
+	 */
 	public List<IndexModel> getIndex() {
 		return index;
 	}
 
 
+	/**
+	 * Aquí se establece la lista de objetos IndexModel
+	 * @param index
+	 */
 	public void setIndex(List<IndexModel> index) {
 		this.index = index;
 	}

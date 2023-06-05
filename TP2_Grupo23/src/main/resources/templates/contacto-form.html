@@ -1,76 +1,67 @@
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximun-scale=1, user-scalable=no">
 		<title>Contáctanos</title>
 		<link rel="styLesheet" th:href="@{/css/estilo.css}">
 		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
 		<link rel="styLesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<link th:rel= "stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	
 	</head>
-<body>
-	<header th:replace="~{layouts/header :: header}"></header>
-	
-<section class="sectionForm">
-		<div class="contactenos">
-			<div class="parte1">
-				<h2>Contáctenos</h2>
-				<p class="imgForm"><img th:src="@{/images/contacto.png}" width="150"
-					title="Perrito contacto" alt="perrito"></p>
-				<article>
-					<p>
-						Independencia esq- Alberdi-Barrio centro 388-6439281 <br>
-						Lunes a viernes: 9:00 a.m. a 8:00 p.m. <br> Sábados a
-						domingos: 9:00 a.m. a 13:00 p.m <br>
-					</p>
-	
-				</article>
-				<article class="paginas">
-					
-						<a class="logos" href="https://www.gmail.com/"><i class="fa-solid fa-envelope"></i></a>
-						<a class="logos" href="https://es-la.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
-						<a  class="logos" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-						<a class="logos" href="https://www.twitter.com/"><i class="fa-brands fa-twitter"></i></a>
-					
-				</article>
-			</div>
-				
-
-		</div>	
-			
-		
-		<div  class="contactenos">
-			<div class="parte2">
-			
-				<form th:action="@{/contacto}"  th:object="${contacto}" method="post">
-					<label class="label">Nombre</label> <br>
-					<input class="inputForm" type="text" name="Ingrese su nombre" placeholder="Ingrese su nombre" th:field="*{usuario}" required> <br>
-					<label class="label">Email</label> <br>
-					<input class="inputForm" type="email" name="Ingrese su Email" placeholder="Ingrese un email válido" th:field="*{emailUsuario}" required> <br>
-					<label class="label">Ciudad</label><br>
-					<input class="inputForm" type="text" name="Ingrese su ciudad" placeholder=" Ingrese su ciudad" th:field="*{ciudadUsuario}" required><br>
-					<label class="label">Mensaje</label> <br>
-					<textarea class="inputForm" rows="2" cols="20" placeholder="Tu mensaje... " th:field="*{mensajeUsuario}"></textarea><br>
-				    <button class="boton" type="submit">Enviar</button>
-				</form>
-				<p class="errorLogin" th:if="${datos}" th:text="${datos}"></p>
+	<body>
+		<header th:replace="~{layouts/header :: header}"></header>
+		<div class="container">
+			<div class="row " >
+				<div class="col-12 col-lg-8">
+					<section class="container-fluid mt-4 text-center ms-1" >
+						<div class="parte1">
+							<h2>Contáctenos</h2>
+							<p class="imgForm"><img th:src="@{/images/contacto.png}" width="150"
+								title="Perrito contacto" alt="perrito"></p>
+							<article>
+								<p>
+									Independencia esq- Alberdi-Barrio centro 388-6439281 <br>
+									Lunes a viernes: 9:00 a.m. a 8:00 p.m. <br> Sábados a
+									domingos: 9:00 a.m. a 13:00 p.m <br>
+									Tambien podes llenar nuestro FORMUARIO para contactarnos.!
+								</p>
+							</article>
+							<article class="paginas">
+								<a class="logos" href="https://www.gmail.com/"><i class="fa-solid fa-envelope"></i></a>
+								<a class="logos" href="https://es-la.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+								<a  class="logos" href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+								<a class="logos" href="https://www.twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+							</article>
+						</div>
+					</section>
+				</div>
+				<div class="col-12 col-lg-4">
+					<div class="container-fluid parte2 mt-4 mb-3 text-center ">
+						<form th:action="@{/contacto}"  th:object="${contacto}" method="post">
+							<label for="usuario" class="label">Nombre</label> <br>
+							<input class="inputForm" type="text" name="Ingrese su nombre" placeholder="Ingrese su nombre" th:field="*{usuario}"> <br>
+							<div class="text-danger" th:if="${#fields.hasErrors('usuario')}" th:errors="*{usuario}"></div> 
+							<label for="emailUsuario"  class="label">Email</label> <br>
+							<input class="inputForm" type="email" name="Ingrese su Email" placeholder="Ingrese un email válido" th:field="*{emailUsuario}"> <br>
+							<div class="text-danger" th:if="${#fields.hasErrors('emailUsuario')}" th:errors="*{emailUsuario}"></div>
+							<label for="ciudadUsuario" class="label">Ciudad</label><br>
+							<input class="inputForm" type="text" name="Ingrese su ciudad" placeholder=" Ingrese su ciudad" th:field="*{ciudadUsuario}" ><br>
+							<div class="text-danger" th:if="${#fields.hasErrors('ciudadUsuario')}" th:errors="*{ciudadUsuario}"></div>
+							<label for="mensajeUsuario" class="label">Mensaje</label> <br>
+							<textarea class="inputForm" rows="2" cols="20" placeholder="Tu mensaje... " th:field="*{mensajeUsuario}"></textarea><br>
+							<div class="text-danger" th:if="${#fields.hasErrors('mensajeUsuario')}" th:errors="*{mensajeUsuario}"></div>
+							<button class="boton" type="submit" >Enviar</button>
+							<p class="errorLogin" th:if="${datos}" th:text="${datos}"></p>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
-			
-	       </section>
-
-	<aside class="asideForm">
-		<h4>¿SABÍAS QUÉ los gatos pueden pasar hasta 14 horas dormidos?</h4>
-		<p>Los gatos domésticos pasan cerca del 70 por ciento del día
-			durmiendo,<br> y 15 por ciento del día acicalándose.</p>
-		<p class="imgForm2"><img th:src="@{/images/gatito.png}" width="150" title="Gatito durmiendo" alt="durmiendo"></p>
-		
-	</aside>
-	<br>
-	<footer th:replace="~{layouts/footer :: footer}" id="footerInicio">
-	 	<!-- <p>&copy; Copyright 2023 - Little Pet Shop - Diseñado por grupo 23 - Jujuy - Republica Argentina</p> -->	
-	</footer>
-
-</body>
+		<br>
+		<footer th:replace="~{layouts/footer :: footer}" id="footerInicio"></footer>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	</body>
 </html>
