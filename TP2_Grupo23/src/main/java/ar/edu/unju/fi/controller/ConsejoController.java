@@ -1,7 +1,9 @@
 package ar.edu.unju.fi.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,13 +12,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import ar.edu.unju.fi.listas.ListaConsejo;
 import ar.edu.unju.fi.model.Consejo;
+import jakarta.validation.Valid;
 
 
 @Controller
 @RequestMapping("/")
 public class ConsejoController {
 	
-	ListaConsejo listaConsejo = new ListaConsejo();
+	@Autowired
+	private ListaConsejo listaConsejo ;
+	
+	@Autowired
+	private Consejo consejo;
 	
 	@GetMapping("/consejos")
 	public String getConsejosPageString(){
@@ -33,7 +40,7 @@ public class ConsejoController {
 	@GetMapping("/nuevoConsejo")
 	public String getNuevoConsejos(Model model) {
 		boolean edicion = false;
-    	model.addAttribute("consejos", new Consejo());
+    	model.addAttribute("consejo",consejo);
     	model.addAttribute("edicion" , edicion);
 		return "consejo_nuevo";
 		
@@ -41,8 +48,13 @@ public class ConsejoController {
 	}
 	
 	@PostMapping("/consejos/guardar")
-	public ModelAndView getGuardarConsejosPage(@ModelAttribute("consejo") Consejo consejo) {
+	public ModelAndView getGuardarConsejosPage(@Valid  @ModelAttribute("consejo") Consejo consejo, BindingResult result) {
 		ModelAndView modelView =new ModelAndView("consejos");
+		if(result.hasErrors()) {
+			 modelView.setViewName("consejo_nuevo");
+			 modelView.addObject("consejo", consejo);
+			 return modelView;
+		}
 		listaConsejo.getConsejos().add(consejo);
 		modelView.addObject("consejos", listaConsejo.getConsejos());
 		return modelView;
@@ -58,7 +70,7 @@ public class ConsejoController {
 				break;
 			}
 		}
-		model.addAttribute("consejos", ConsejoEncontrado);
+		model.addAttribute("consejo", ConsejoEncontrado);
 		model.addAttribute("edicion", edicion);
 		return "consejo_nuevo";
 	}
@@ -71,7 +83,7 @@ public class ConsejoController {
 			cons.setConsejo(consejo.getConsejo());	
 		
 		}
-		}
+	  }
 		return "redirect:/consejos/listaConsejo";
 	}
 
