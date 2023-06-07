@@ -1,8 +1,14 @@
 package ar.edu.unju.fi.model;
 
+import org.springframework.stereotype.Component;
 
+import jakarta.validation.constraints.NotEmpty;
+
+@Component 
 public class Consejo {
+	@NotEmpty(message="debe poner un titulo")
 	private String titulo;
+	@NotEmpty(message="debe poner un consejo")
 	private String Consejo;
 
 	public Consejo() {
