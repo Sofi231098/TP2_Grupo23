@@ -5,60 +5,52 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximun-scale=1, user-scalable=no">
 		<link th:rel= "stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
 	</head>
-<body>
-	<header	th:fragment="header">
-	
-		<nav class="navbar navbar-expand-lg bg-light">
-		  <div class="container-fluid">
-		    <div class="navbar-brand">
-		    	<h1>Littlest Pets Shop</h1>
-		    </div>
-		    <img th:src="@{/images/logor.png}" width="250px" title="LogoLittlest" alt="perrito kawaii">
-		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      			<span class="navbar-toggler-icon"></span>
-   			</button>
-		   
-		    <div class="collapse navbar-collapse " id="navbarNav">
-		      <ul class="navbar-nav">
-		        <li class="nav-item">
-		         <a class="nav-link active" aria-current="page" th:href="@{/inicio/lisInicio}">Inicio</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link active" aria-current="page" th:href="@{/productos/lista}">Productos</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link active" aria-current="page" th:href="@{/consejos/listaConsejo}">Consejos de salud</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link active" aria-current="page" th:href="@{/servicios/lista}">Servicios de paseos</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link active" aria-current="page" th:href="@{/sucursales/listado}">Sucursales</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link active" aria-current="page" th:href="@{/contacto}">Contactanos</a>
-		        </li>
-		      </ul>
-		    </div>
+  <body>
+	  <header th:fragment="header">
+		  <nav class="navbar bg-light">
+		  	  <div class="container-fluid">
+		  		    <img class="navbar-brand" th:src="@{/images/logor.png}" width="250px" title="LogoLittlest" alt="perrito kawaii" style= margin-left:45%>
+		    		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+		      			<span class="navbar-toggler-icon"></span>
+		    		</button>
+		    	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+		      			<div class="offcanvas-header">
+		       			 	<h3 class="offcanvas-title" id="offcanvasNavbarLabel">Littlest Pets Shop</h3>
+		        		 	<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		     		   </div>
+		      		<div class="offcanvas-body">
+		       			 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+		          			 <li class="nav-item">
+		            			<a class="nav-link active" aria-current="page" th:href="@{/inicio/lisInicio}">Inicio</a>
+		          			 </li>
+					         <li class="nav-item">
+					            <a class="nav-link active" aria-current="page" th:href="@{/productos/lista}">Productos</a>
+					         </li>
+					         <li class="nav-item">
+					            <a class="nav-link active" aria-current="page" th:href="@{/consejos/listaConsejo}">Consejos de salud</a>
+					         </li>
+					         <li class="nav-item">
+					            <a class="nav-link active" aria-current="page" th:href="@{/servicios/lista}">Servicios de Paseo</a>
+					         </li>
+					         <li class="nav-item">
+					            <a class="nav-link active" aria-current="page" th:href="@{/sucursales/listado}">Sucursales</a>
+					         </li>
+					         <li class="nav-item">
+					            <a class="nav-link active" aria-current="page" th:href="@{/contacto}">Contacto</a>
+					         </li>
+		        		</ul>
+		        		<form class="d-flex mt-3" role="search">
+		          			<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+		          			<button class="btn btn-outline-success" type="submit">Search</button>
+		        		</form>
+		     	  </div>
+		     </div>
 		  </div>
 		</nav>
-
-	 <!--<div class='menu'>
-		<h1>Littlest Pets Shop</h1> 
-		<img th:src="@{/images/logor.png}" width="150" title="LogoLittlest" alt="perrito kawaii">		
-			<nav >
-				<ul>
-					<li><a th:href="@{/inicio/lisInicio}">Inicio</a></li>
-					<li><a th:href="@{/productos/lista}">Productos</a></li>
-					<li><a th:href="@{/consejos/listaConsejo}">Consejos de salud</a></li>
-					<li><a th:href="@{/servicios/lista}">Servicios de paseos</a></li>
-					<li><a th:href="@{/sucursales/listado}">Sucursales</a></li>
-					<li><a th:href="@{/contacto}">Contactanos</a></li>
-				</ul>
-			</nav>
-		</div> -->
-	</header>
-	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+				
+		
+	  </header>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 	
-</body>
+  </body>
 </html>
