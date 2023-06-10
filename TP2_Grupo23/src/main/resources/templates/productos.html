@@ -18,15 +18,15 @@
 					<h2 class="titulo">PRODUCTOS PARA TU MASCOTA</h2>
 				</div>
 			</div>
-			<a th:href="@{/nuevo}">Productos Nuevos</a>
+			<a class="nuevoobj"th:href="@{/nuevo}">Productos Nuevos</a>
 			<div class="row" >
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4" th:each = "prod: ${productos}">
-                    <div class="card mx-6 mt-3" style="width: 18rem;">
+                    <div class="card mx-6 mt-3" style="width: 20rem;">
                           <img th:src="@{/images/logor.png}" style="width: 150px;" class="card-img-top" alt="perro">
                           <div class="card-body box">
                             <h5 class="card-title" th:text="${prod.nombre}"></h5>
-                            <p class="card-text" th:text="${prod.categoria}"></p>
-                            <a href="https://www.mercadopago.com.ar/" class="btn btn-primary" th:text="${prod.preciodescuento}"></a>
+                            <p class="card-text" th:text="${prod.descripcion}"></p>
+                            <strong> Comprar <a href="https://www.mercadopago.com.ar/" class="btn btn-primary" th:text="${prod.preciodescuento}"></a></strong>
                         </div>
                         <a class= "EditElim" th:href="@{/productos/modificar/}+${prod.nombre}">Editar</a>
 		  				<a class= "EditElim" th:href="@{/productos/eliminar/}+${prod.nombre}">Eliminar</a>
