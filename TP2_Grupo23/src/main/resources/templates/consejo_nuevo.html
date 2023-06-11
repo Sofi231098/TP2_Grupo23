@@ -13,10 +13,12 @@
 	<header th:replace ="~{layouts/header :: header}"></header>
 		<section class="formprod">
 			<h3 th:text="${edicion}?'Modificar Consejo' : 'Nuevos Consejos'">CONSEJOS NUEVOS</h3>	
-			<form  th:action="${edicion}?@{/consejos/modificar}:@{/consejos/guardar}" th:object="${consejos}" method="post">
+			<form  th:action="${edicion}?@{/consejos/modificar}:@{/consejos/guardar}" th:object="${consejo}" method="post">
 					<label>Titulo: </label>
-					<input type="text" th:field="*{titulo}">
-					<label>Consejo:</label>
+					<div class="text-danger" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}" > </div>
+					<input type="text" class="form-control" id="titulo" th:field="*{titulo}" th:readonly="${edicion}?'readonly'">
+					<label>Consejo:</label>		
+					<div class="text-danger" th:if="${#fields.hasErrors('Consejo')}" th:errors="*{Consejo}" > </div>
 					<textarea class="inputForm" rows="5" cols="37" th:field="*{consejo}"></textarea> 
 					
 					<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>

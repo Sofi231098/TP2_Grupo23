@@ -13,145 +13,39 @@
 <body>
 	<header th:replace="~{layouts/header :: header}"></header>	
 	
-			<h2 class="tituloconsejo" >Consejos de salud para tu mascota</h2> 
-	  		<p id= "parrafo">Aquí encontraras algunos consejos utiles para el cuidado de tu mascota. </p>  
-	<section  id ="consejos">
-		<article >
-		
-			<h2> 1.- Bañar a tu perro. </h2>
-			<img th:src="@{/images/baño.png}"  width="150px" title="baño" alt="consejos salud">
-			<p>
-			 	<br>
-				Que tu peludo goce de una buena salud también dependerá de que lo mantengas limpio, libre de pulgas y garrapatas
-				<br/>
-	 			En el caso de los perros, se recomienda dar un buen cepillado el cual dependerá del pelo de tu mascota y del baño.
-	 			
-	 			“Es importante bañar a tu perro una vez al mes usando productos para él, pues su pH es diferente del tuyo.
-	 			
-	 			 Por su seguridad y bienestar no utilices con él productos para humanos: ni champú ni crema dental”.
-	 		</p>
-	  		<hr>
-	 	</article>
-	  
-	 	<article  >
-	 	
-	 		<h2> 2.- Alimentacion acorde para tu mascota. </h2>
-	 		<img th:src="@{/images/comida.png}"  width="150px" title="alimentacion" alt="consejos salud">
-			<p > Sea cual sea el tipo de comida que le vas a dar, asegúrate de elegirla con ayuda
-	 		de tu veterinario y de brindarle una alimentación sana y balanceada. Siempre 
-	 		debe tener agua fresca y limpia y es importante que laves sus platos diariamente.</p>
-	  		<hr>
-	 	</article>
-	  
-	 	<article >
-	 		<h2> 3.- Dale una identidad a tu mascota. </h2>
-	  		<img th:src= "@{/images/identidad.png}"  width="150px" title="identidad" alt="consejos salud">
-			<p> Asegúrate de identificar muy bien a tu peludito ya sea
-	 		con una placa que contenga el nombre de tu mascota y tus datos de contacto
-	 		o a través de opciones como el microchip, el cual es una cápsula 
-	 		pequeña (del tamaño de un grano de arroz) que se implanta debajo de la
-	  		piel y contiene un código único, que permite identificarlos con facilidad en el caso de que se extravie.</p>
-	  		<hr>
-	 	</article>
-	  
-	 	<article >
-	 		<h2> 4.- Ejercicio para peludos. </h2>
-	 		<img th:src= "@{/images/paseo.png}"  width="150px" title="paseo" alt="consejos salud">
-			<p>Independientemente de su raza todos los perros y gatos necesitan ejercicio, por
-	 		lo que es importante buscar opciones de diversión a su lado. En el caso 
-	 		de los perros, contempla opciones como trotar a su lado, jugar con la pelota o con 
-	 		un frisby… ¿Y los gatos? Una buena idea es darle juguetes llamativos (bolas 
-	 		de ping pong o ratones de tela) para que interactúen con ellos. </p>
-	  		<hr>
-	  	</article >
-	  	
-	  	<article >
-	  		<h2> 5.-Proporcionar un espacio exclusivo para el descanso de tu mascota.  </h2>
-	  		<img th:src= "@{/images/sueño.png}"  width="200px" title="descanso" alt="consejos salud">
-			<p> Así como los seres humanos necesitamos un hogar en el que podamos sentirnos cómodos y seguros, 
-	 		también lo necesitan nuestras mascotas. Es recomendable porporcionar una cama del tamaño adecuado para tu mascota.
+			<div class="container">
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-8 col-lg-8 col-xl-12 col-xxl-12">
+                    <h2 class="tituloconsejo" >Consejos de salud para tu mascota</h2> 
+              <p id= "parrafo">Aquí encontraras algunos consejos utiles para el cuidado de tu mascota. </p> 
+                </div>
+            </div>
+            <a th:href="@{/nuevoConsejo}">Consejos Nuevos</a>
+            <div class="row" >
+                <div class="col-xs-8 col-sm-8 col-md-7 col-lg-7 col-xl-6 col-xxl-6" th:each = "cons: ${consejos}">
+                    <div class="card mx-6 mt-3" style="width: 35rem;">
+                          <img style="width: 150px;" class="card-img-top" alt="perro">
+                          <div class="card-body box">
+                            <h5 class="card-title" th:text="${cons.titulo}"></h5>
+                            <p class="card-text" th:text="${cons.consejo}"></p>
 
-	 		Consejo clave: las mascotas que son demasiado jóvenes o ya tienen varios años encima pierden su
- 	 		capacidad para regular la temperatura corporal eficientemente. Es importante ofrecerles una manta y
- 	 		una cama que les proporcione confort y calor. Sobre todo en las horas de la noche.</p>
-	  		<hr>
-	  	</article>
-	  	
-	  	<article >
-	  		<h2> 6.- Aplica las vacunas a tiempo. </h2>
-	  		<img th:src= "@{/images/vacuna2.png}"  width="150px" title="vacuna" alt="consejos salud">
 
-			<p> Poco después de llegar a tu hogar, la primera salida debe ser al veterinario. Acto seguido se 
-     		establecerá un calendario de vacunación para tu pequeño cachorro o gatito. Esto, con el objetivo de
-     		protegerlos de enfermedades como la rabia o el moquillo en el caso de los perros. Los gatos también
-     		se benefician de las vacunas que previenen el virus del herpes felino, la leucemia felina y la rabia.
 
-     		Consejo clave: si adoptaste una mascota en edad avanzada, asegúrate de que también esté 
-     		protegido. Las vacunas necesitan renovación y no son solo para mascotas jóvenes.</p>
-	  		<hr>
-	  	</article>
-	  	
-	  	<article >
-	  		<h2> 7.- Busca juguetes seguros. </h2>
-	  		<img th:src= "@{/images/juguetes.jpeg}"  width="200px" title="juegos" alt="consejos salud">
-			<p> Desecha y reemplaza los juguetes que estén gastados. Los juguetes chillones pueden proporcionar 
-	 		mucho entretenimiento para tu perro. Es importante que el dispositivo que proporciona el sonido no
-	 		se pueda arrancar del juguete. Este objeto puede ser ingerido fácilmente, causando que termines por
-	 		visitar el veterinario. Asimismo, no olvides eliminar los juguetes con partes sueltas que puedan
-	 		presentar peligro de asfixia y bordes duros o afilados que podrían causar lesiones.
-
-	 		Consejo clave: Evita los juguetes demasiado pequeños, estos pueden tragarse fácilmente o alojarse 
-	 		en la garganta. Los juguetes de peluche son buenos para varios propósitos. En ocasiones suelen ser de
-	 		gran utilidad para incluirlos como recompensa en un esquema de entrenamiento; sin embargo, estos 
-	 		deben utilizarse con precaución. </p>
-	  		<hr>
-	  	</article>
-	  		   
-	  	<article >
-	  		<h2> 8.- Buscar un veterianrio de confianza. </h2>
-	  		<img th:src= "@{/images/veterinario.png}"  width="200px" title="veterinariogato" alt="consejos salud">
-	  		<p> Tener una mascota de manera responsable comienza con visitas regulares al veterinario. Dada su 
-	 		esperanza de vida, tu perrito mínimo deberían hacerse un chequeo una o dos veces al año. Pero el
-	 		establecer y mantener la buena salud de tu mascota significa mantenerse al día con las visitas al 
-	 		veterinario a medida que envejecen. 
-	 		Es importante que busques un profesional que se encargue del cuidado y la salud de tu mascota, se recomienda
-	 		buscar un veterinario profesional y con experiencia comprobada. Es importante que el veterinario atienda en una zona cercana 
-	 		a la vivienda de la mascota y que se pueda tener acceso y comunicación con él de manera permanente.
-
-	 		Consejo clave: antes de salir camino hacia el veterinario, sácalos de paseo. Esto se hace para que no
-	 		asocien entrar al carro con ir al veterinario.</p>
-	   		<hr>
-	  	</article>
-	  	
-	</section>
-	<section class="paseo">
-	  		<p class="centrado" ><a th:href="@{/nuevoConsejo}">Consejos Nuevos</a></p>
-		  		<table border=1>
-		  			<tr>
-		  				<th>Tiitulo</th>
-		  				<th>Consejos</th>
-		  				<th>Acciones</th>
-		  			</tr>
-		  			<tr th:each = "cons: ${consejos}">
-		  				<td th:text="${cons.titulo}"></td>
-		  				<td th:text="${cons.consejo}">
-		  				<td>
-		  					<a class="EditElim" th:href="@{/consejos/modificar/}+${cons.titulo}">Editar</a>
-		  					<a class="EditElim" th:href="@{/consejos/eliminar/}+${cons.titulo}">Eliminar</a>
-		  				</td>
-		
-		  			</tr>
-		  			
-		  		</table>
-		  		<br><br>
-  		  		
-  	</section>
+                       </div>
+                        <a class="EditElim" th:href="@{/consejos/modificar/}+${cons.titulo}">Editar</a>
+                              <a class="EditElim" th:href="@{/consejos/eliminar/}+${cons.titulo}">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+	  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-3  col-xxl-3 container-fluid mt-3 border  border-solid text-center content">
 	  
-	  <aside id = "asidep">
-	  	<h4>¿SABIAS QUE algunos perros no ladran?</h4>
-	  	<p>En concreto, una raza originaria del este de Basenji, muy empleado para la caza. Tiene la peculiaridad de no ladrar, pero sí emite un curioso sonido (parecido a un canto tirolés).</p>
-	  </aside>
-	  
+	  	<aside>
+	  		<h4>¿SABIAS QUE algunos perros no ladran?</h4>
+	  		<p>En concreto, una raza originaria del este de Basenji, muy empleado para la caza. Tiene la peculiaridad de no ladrar, pero sí emite un curioso sonido (parecido a un canto tirolés).</p>
+	  	</aside>
+	  </div>
 	  <br>
 	  <br>
 	  

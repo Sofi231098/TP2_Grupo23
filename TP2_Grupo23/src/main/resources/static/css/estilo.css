@@ -8,74 +8,20 @@
 body{
 	background-color: #EDE2DB;
 }
+
 /* Encabezado y menu principal 
 	Trabajo en equipo desde linea 13 hasta 68 */
+	
 .navbar-brand h1{
 	font-family:'Gorditas', sans-serif;
-	font-size: 30px;
+	font-size: 40px;
+	
 }	
 
-.nav-item{
-	font-family:'Gorditas', sans-serif;
+.nav-item {
+    font-family: 'Gorditas', sans-serif;
 }
 
-/*.menu{
-	font-family:'Gorditas', sans-serif;
-	color:#734d26;
-	background:#ccad99;
-	text-align:left;
-	background-size: contain;
-}
-.menu{
-	width:100%;
-}
-.menu img {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0;
-
-}
-.menu h1{
-	display: inline-block;
-  	vertical-align: baseline;
-  	background:#ccad99;
-  	height:150px;
-  	margin-left: 20px
- 	
-}
-
-.menu nav{
-	position: absolute;
-  	top: 35px;
-  	right: 0;
-	height:100px;
-	border-bottom: 1px;
-	
-}
-
-.menu ul li{
-	float: left;
-	list-style: none;
-	margin: 10px;
-	line-height: 50px;
-	list-style: none;
- 	padding: 0;
- 	display: flex;
-}
-
-.menu a{
-	font-family: 'Urbanist', sans-serif;
-	font-size: 20px;
-	font-style:inherit;
-	color:#64483c;
-
-	text-decoration:none;
-}
-
-.menu a:hover{
-	color:#f0e7db;
-	text-decoration: underline;
-}*/
 
 /* Realizado por: Sofia Trinida Yañez
    Usuario git: Sofi231098
@@ -186,48 +132,6 @@ p.imgcentrado{
    Usuario git: NaimaFarja
    Trabajo: desde linea 153 hasta linea 237 */
 
-/*.menuProductos{
-/* Adapata el menu al tamaño de la pantalla 
-	background-size: contain;
-    width: 950px;
-	margin:0 auto;
-    padding: 50px;
-}
-.menuProductos ul li{
-	margin: 10px;
-	line-height: 50px;
-	list-style: none;
- 	padding: 0;
- 	display: flex;
-	list-style: none;
-    text-align:center;
-    width: 100%;
-}
-.menuProductos a {
-
-	font-family:'Urbanist', sans-serif;
-	font-size: 30px;
-	text-decoration: none;
-	color:#64483c;
-	width:100%;
-    padding: 30px 20px;
-    box-sizing: border-box;
-    border-radius: 20px;
-    background-color: #ccad99;
-    border: 2px solid #64483c;
-    
-}
-.menuProductos li a:hover{
-	border-color: #bc9d8f;
-    width: 150%;
-}
-.menuProductos h2{
-	font-family:'Gorditas', sans-serif;
-	text-align: center;
-    font-size: 60px;
-    font-weight: bold;
-    color:#64483c
-}*/
 /* lista de articulos */
 /*Estillo css para productos*/
 .titulo{
@@ -267,78 +171,6 @@ p.imgcentrado{
   margin-left: auto;
   margin-right: auto;
 }
-.articulos li{
- 	display: inline-table;
- 	width:20%;
-    margin: 0 1.5%;
-    padding:40px 30px 10px;
-    box-sizing: border-box;
-
-}
-.articulos h2{
-	display:flex;
-	box-sizing: border-box;
-    border-radius: 20px;
-    background-color: #64483c;
-    border: 2px solid ;
-	font-family:'Gorditas', sans-serif;
-	font-size:30px;
-	align-items:center;
-	justify-content:center;
-	text-align:	center;
-	margin-top:10px;
-	height:50px;
-	color:#f0e7db;
-	line-height: 20px;
-}
-.articulos h3{
-	font-family:'Gorditas', sans-serif;
-	font-size:20px;
-	text-align:	center;
-	margin-top:10px;
-	color:#64483c;
-}
-.articulos p{
-	font-family:'Urbanist', sans-serif;
-	color:#64483c;
-}
- .articulos strong{
- 	text-align:left;
-	font-size: 20px;
-	font-family:'Urbanist', sans-serif;
-	display:flex;
-	box-sizing: border-box;
-    border-radius: 20px;
-    background-color: #f0e7db;
-    border: 2px solid ;
-	font-size:20px;
-	align-items:center;
-	justify-content:center;
-	text-align:	center;
-	margin-top:10px;
-	height:30px;
-	color:#64483c;
-	line-height: 20px;
-    
- }
-#asidep{
-	text-align: center;
-	clear:both;
-	border-radius: 30px;
-	background:#975942;
-	padding: 40px;
-}
-#asidep h4{
-	font-family:'Gorditas', sans-serif;
-	color:#f0e7db;
-	font-size: 30px;
-}
-#asidep p{
-	font-family: 'Urbanist', sans-serif;
-	
-	font-size: 20px;	
-}
-
 /* Realizado por: Luis Alberto Guerrero Erazo
    Usuario git: Lguerrero2023
    Trabajo: desde linea 243 hasta linea 301 */
@@ -944,4 +776,3 @@ p.imgForm2{
 	color:#734d26;
 	font-size: 18px;
 }
-

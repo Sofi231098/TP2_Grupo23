@@ -13,7 +13,7 @@
 	<div>
 	
 		<section>
-		<div class="col-8 col-lg-10">
+		<div class="col-8 col-lg-10 objForm container">
 			<div class="container-fluid parte2 mt-4 mb-3 text-center ">
 			<form th:action="${edicion}?@{/productos/modificar}:@{/productos/guardar}" th:object="${producto}" method="post">			
 				<h3 class="titnuevsuc" th:text="${edicion}?'Modificar Producto' : 'Producto Nuevos'">PRODUCTOS NUEVOS</h3>
@@ -29,6 +29,11 @@
 					<input class="inputForm" type="text" id="nombre" name="producto_nombre" th:field="*{nombre}">
 					<div class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
 				</div><br><br>
+				
+				<label for="descripcion" class="label"> Descripcion </label><br>
+                    <textarea class="inputForm" rows="5" cols="37" id="descripcion" name="producto_descripcion" th:field="*{descripcion}"></textarea>
+                    <div class="text-danger" th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}"></div>
+                    <br><br>
 				
 				<label for="precio" class="label">Precio</label>
 				<div>
@@ -72,4 +77,4 @@
 	
 </body>
 
-</html>	
+</html>

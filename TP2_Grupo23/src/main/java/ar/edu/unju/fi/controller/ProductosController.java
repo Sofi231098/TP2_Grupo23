@@ -109,6 +109,7 @@ public class ProductosController {
 			if(prod.getCodigo().equals(producto.getCodigo())) {
     		prod.setNombre(producto.getNombre());
     		prod.setPrecio(producto.getPrecio());
+    		prod.setDescripcion(producto.getDescripcion());
     		prod.setDescuento(producto.getDescuento());
     		prod.setCategoria(producto.getCategoria());
     		break;
