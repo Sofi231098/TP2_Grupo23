@@ -95,7 +95,7 @@ public class ServiciosController {
 	 */
 	@GetMapping("/modificar/{paseador}")
 	public String getModificarServicioPage (Model model ,@PathVariable(value="paseador")String paseador) {
-		Servicios servicioEncontrado = new Servicios();
+		Servicios servicioEncontrado = servicioService.getBy(paseador);
 		boolean edicion=true;
 		
 		model.addAttribute("servicio",servicioEncontrado);
