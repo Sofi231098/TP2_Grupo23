@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import ar.edu.unju.fi.listas.ListaProductos;
 import ar.edu.unju.fi.model.Producto;
+import ar.edu.unju.fi.service.ICommonService;
+import ar.edu.unju.fi.service.IProductoService;
 import jakarta.validation.Valid;
 
 /**
@@ -24,10 +25,10 @@ import jakarta.validation.Valid;
 public class ProductosController {
 	
 	@Autowired
-	private ListaProductos listaProductos;
+	private IProductoService productoService;
 	
 	@Autowired
-	private Producto producto;
+	private ICommonService commonService;
 	
 	@GetMapping("/productos")
     public String getProductosPage() {
@@ -41,7 +42,7 @@ public class ProductosController {
      */
 	@GetMapping("/productos/lista")
     public String getListaProductospage(Model model){
-    	model.addAttribute("productos", listaProductos.getProductos());
+    	model.addAttribute("productos", productoService.getLista());
     	return "productos";
 	}
 	/**
@@ -52,7 +53,8 @@ public class ProductosController {
     @GetMapping("/nuevo")
     public String getNuevoProducto(Model model) {
         boolean edicion = false;
-        model.addAttribute("producto", producto);
+        model.addAttribute("producto", productoService.getProducto());
+        model.addAttribute("categorias", commonService.getCategorias());
         model.addAttribute("edicion", edicion);
         return "producto_nuevo";
     }
@@ -69,71 +71,98 @@ public class ProductosController {
 		if (result.hasErrors()) {
 			modelView.setViewName("producto_nuevo");
 			modelView.addObject("producto", producto);
+			modelView.addObject("categorias", commonService.getCategorias());
 			return modelView;
 		}
-		listaProductos.getProductos().add(producto);
-		modelView.addObject("productos", listaProductos.getProductos());
+		productoService.guardar(producto);
+		modelView.addObject("productos", productoService.getLista());
 		return modelView;
 	}
 	
 	/**
-	 * Solicitud GET para mostrar el formulario para modificar un producto existente.
-	 * @param model el modelo utilizado para pasar datos a la vista
-	 * @param codigo el código del producto a modificar
-	 * @return la vista "producto_nuevo" que muestra el formulario para modificar un producto
+	 * Método controlador que devuelve la página con el formulario y los datos de un producto.
+	 * 
+	 * @param model se utiliza para agregar atributos al modelo
+	 * @param codigo busca el articulo atravez de el codigo para poder modificarlo
+	 * @return la página de modificación de producto
 	 */
-	@GetMapping("/productos/modificar/{nombre}")
-	public String getModicarProductosPage(Model model, @PathVariable(value="nombre")String nombre) {
-		Producto ProductoEncontrado = new Producto();
+	@GetMapping("/productos/modificar/{codigo}")
+	public String getModicarProductosPage(Model model, @PathVariable(value="codigo") String codigo) {
+		/*
+		 * Obtiene el producto correspondiente al código proporcionado llamando al método getBy del servicio de productos.
+		 */
+		Producto productoEncontrado = productoService.getBy(codigo);
+		
+		/*
+		 * Agrega el objeto Producto encontrado, las categorías y la bandera de edición al modelo para ser utilizados en la vista.
+		 */
 		boolean edicion = true;
-		for (Producto prod : listaProductos.getProductos()) {
-			if (prod.getNombre().equals(nombre)) {
-				ProductoEncontrado = prod;
-				break;
-			}
-		}
-		model.addAttribute("producto", ProductoEncontrado);
+		model.addAttribute("producto", productoEncontrado);
+		model.addAttribute("categorias", commonService.getCategorias()); 
 		model.addAttribute("edicion", edicion);
+		
+		/*
+		 * Devuelve la vista "producto_nuevo" que permite la modificación del producto.
+		 */
 		return "producto_nuevo";
 	}
+
 	
+	/**
+	 * Método controlador que maneja la modificación de un producto.
+	 * 
+	 * @param producto el objeto Producto con los datos modificados
+	 * @param result el objeto BindingResult que contiene los resultados de la validación de datos
+	 * @param model se utiliza para agregar atributos al modelo
+	 * @return una cadena que representa la vista a la que se redireccionará después de la modificación del producto
+	 */
 	@PostMapping("/productos/modificar")
 	public String modificarProductos(@Valid @ModelAttribute("producto") Producto producto, BindingResult result, Model model) {
+		/*
+		 * Verifica si hay errores de validación en el objeto producto.
+		 * Si hay errores, se muestra la página de edición de producto nuevamente con los mensajes de error.
+		 */
 		if (result.hasErrors()) {
-			boolean edicion=true;
+			boolean edicion = true;
 			model.addAttribute("edicion", edicion);
+			model.addAttribute("categorias", commonService.getCategorias());
 			return "producto_nuevo";			
 		}
 		
-		for (Producto prod: listaProductos.getProductos()) {
-			if(prod.getCodigo().equals(producto.getCodigo())) {
-    		prod.setNombre(producto.getNombre());
-    		prod.setPrecio(producto.getPrecio());
-    		prod.setDescripcion(producto.getDescripcion());
-    		prod.setDescuento(producto.getDescuento());
-    		prod.setCategoria(producto.getCategoria());
-    		break;
-			}
-		}
+		/*
+		 * Llama al método modificar del servicio de productos para actualizar el producto en la base de datos.
+		 */
+		productoService.modificar(producto);
+		
+		/*
+		 * Redirecciona a la página de lista de productos después de la modificación del producto.
+		 */
 		return "redirect:/productos/lista";
-		}
+	}
+
 	
 	/**
-	 * Solicitud GET para eliminar un producto existente.
-	 * @param model el modelo utilizado para pasar datos a la vista
+	 * Método controlador que maneja la eliminación de un producto.
+	 * 
 	 * @param codigo el código del producto a eliminar
-	 * @return la vista redirect:/productos/lista 
+	 * @return la pagina a la que se redireccionará después de la eliminación del producto
 	 */
-	@GetMapping("/productos/eliminar/{nombre}")
-    public String eliminarProductos(@PathVariable(value="nombre")String nombre) {
-        for(Producto prod: listaProductos.getProductos()) {
-            if(prod.getNombre().equals(nombre)) {
-                listaProductos.getProductos().remove(prod);
-                break;
+	@GetMapping("/productos/eliminar/{codigo}")
+	public String eliminarProductos(@PathVariable(value="codigo") String codigo) {
+		/*
+		 * Obtiene el producto correspondiente al código proporcionado llamando al método getBy del servicio de productos.
+		 */
+		Producto productoEncontrado = productoService.getBy(codigo);
+		
+		/*
+		 * Llama al método eliminar de la capa service de productos para eliminar el producto.
+		 */
+		productoService.eliminar(productoEncontrado);
+		
+		/*
+		 * Redirecciona a la página de lista de productos después de la eliminación del producto.
+		 */
+		return "redirect:/productos/lista";
+	}
 
-            }
-        }
-        return "redirect:/productos/lista";
-
-    }
 }

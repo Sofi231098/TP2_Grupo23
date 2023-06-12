@@ -29,7 +29,7 @@ public interface ICommonService {
      *
      * @return Lista de categorías.
      */
-	/*List<String> getCategorias();*/
+	List<String> getCategorias();
 	
 	
 	
