@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unju.fi.listas.ListaCategorias;
+import ar.edu.unju.fi.listas.ListaDias;
+import ar.edu.unju.fi.listas.ListaHorarioServ;
 import ar.edu.unju.fi.listas.ListaHorarioSuc;
 import ar.edu.unju.fi.listas.ListaProvincia;
 import ar.edu.unju.fi.service.ICommonService;
@@ -48,34 +50,34 @@ public class CommonServiceImp implements ICommonService{
 	}
 	
 	
-	/*
+	
 	@Autowired
-	private ListaDias listaDia;*/
+	private ListaDias listaDia;
 	
 	/**
      * Obtiene la lista de días.
      * 
      * @return lista de días
      */
-	/*@Override
+	@Override
 	public List<String> getDias() {
 		return listaDia.getDias();
-	}*/
+	}
 	
 	
-	/*
+	
 	@Autowired
-	private ListaHorarioServ listaHorarioServi;*/
+	private ListaHorarioServ listaHorarioServi;
 	
 	/**
      * Obtiene la lista de horarios de servicio.
      * 
      * @return lista de horarios de servicio
      */
-	/*@Override
+	@Override
 	public List<String> getHorarioServ() {
-		return listaHorarioServ.getHorarioServ();
-	}*/
+		return listaHorarioServi.getHorarioServ();
+	}
 	
 	
 	

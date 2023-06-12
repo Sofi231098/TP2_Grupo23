@@ -39,7 +39,7 @@ public interface ICommonService {
      *
      * @return Lista de días.
      */
-	/*List<String> getDias();*/
+	List<String> getDias();
 	
 	
 	
@@ -49,5 +49,5 @@ public interface ICommonService {
      *
      * @return Lista de horarios de servicio.
      */
-	/*List<String> getHorarioServ();*/
+	List<String> getHorarioServ();
 }
