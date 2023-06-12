@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ar.edu.unju.fi.listas.ListaCategorias;
 import ar.edu.unju.fi.listas.ListaHorarioSuc;
 import ar.edu.unju.fi.listas.ListaProvincia;
 import ar.edu.unju.fi.service.ICommonService;
@@ -78,18 +79,18 @@ public class CommonServiceImp implements ICommonService{
 	
 	
 	
-	/*@Autowired 
-	private ListaCategorias listaCategoria;*/
+	@Autowired 
+	private ListaCategorias listaCategoria;
 	
 	/**
      * Obtiene la lista de categorías.
      * 
      * @return lista de categorías
      */
-	/*@Override
+	@Override
 	public List<String> getCategorias() {
 		return listaCategoria.getCategorias();
-	}*/
+	}
 	
 	
 	
