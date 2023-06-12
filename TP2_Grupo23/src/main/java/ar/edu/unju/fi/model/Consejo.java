@@ -12,7 +12,7 @@ public class Consejo {
 	private String Consejo;
 
 	public Consejo() {
-		// TODO Auto-generated constructor stub
+	
 	}
 
 	public Consejo(String titulo, String consejo) {
