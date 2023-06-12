@@ -28,8 +28,8 @@
                             <p class="card-text" th:text="${prod.descripcion}"></p>
                             <strong> Comprar <a href="https://www.mercadopago.com.ar/" class="btn btn-primary" th:text="${prod.preciodescuento}"></a></strong>
                         </div>
-                        <a class= "EditElim" th:href="@{/productos/modificar/}+${prod.nombre}">Editar</a>
-		  				<a class= "EditElim" th:href="@{/productos/eliminar/}+${prod.nombre}">Eliminar</a>
+                        <a class= "EditElim" th:href="@{/productos/modificar/}+${prod.codigo}">Editar</a>
+		  				<a class= "EditElim" th:href="@{/productos/eliminar/}+${prod.codigo}">Eliminar</a>
                     </div>
                 </div>
             </div>

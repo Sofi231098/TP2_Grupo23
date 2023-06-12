@@ -50,17 +50,9 @@
 				
 				<label for="categoria" class="label">Categoria</label>
 				<div>
-					<select class="inputForm" id="categoria" name="Categoria" aria-label="default select example" th:field="*{categoria}">
-					<option value="" selected>Seleccione una opcion</option>
-					<option value="Alimento perro adulto">Alimento perro adulto</option>
-					<option value="Alimento gato adulto">Alimento gato adulto</option>
-					<option value="Alimento para cachorro">Alimento perro cachorro</option>
-					<option value="Alimento gato cachorro">Alimento gato chachorro</option>
-					<option value="Accesorios">Accesorios</option>
-					<option value="Cuidados">Cuidados</option>
-					<option value="Juguetes">Juguetes</option>
-					<option value="Vestimenta">Vestimenta</option>
-					
+				 <select class="inputForm" id="categoria" name="Categoria" aria-label="default select example" th:field="*{categoria}">
+					<option value="" selected>Seleccione una categoria</option>
+					<option th:each="categoria : ${categorias}" th:value="${categoria}" th:text="${categoria}">
 				</select>
 				<div class="text-danger" th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></div>
 				<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
