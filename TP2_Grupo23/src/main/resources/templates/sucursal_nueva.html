@@ -59,9 +59,10 @@
 									<!-- Menú desplegable para seleccionar la provincia -->
 									<select  id="provincia" name="sucursal_provincia" class="form-control" th:field="*{provincia}">
 									<option value="" selected>Seleccione una opción</option>
-									<option value="JUJUY">Jujuy</option>
+									<option th:each="provincia : ${provincias}" th:value="${provincia}" th:text="${provincia}" >
+									<!--  option value="JUJUY">Jujuy</option>
 									<option value="SALTA">Salta</option>
-									<option value="TUCUMAN">Tucumán</option>
+									<option value="TUCUMAN">Tucumán</option>-->
 								</select>
 								<!-- Mostrar errores de validación si existen -->
 								<div class="text-danger" th:if="${#fields.hasErrors('provincia')}" th:errors="*{provincia}"></div>
@@ -97,8 +98,10 @@
 									<!-- Menú desplegable para seleccionar el horario de atención -->
 									<select  id="horario de atencion" name="sucursal_horario" class="form-control" th:field="*{horario}">
 									<option value="" selected>Seleccione una opción</option>
-									<option value="Lunes a Sábado 9 a 21 hs">Lunes a Sábado 9 a 21 hs</option>
-									<option value="Lunes a Sábado 9 a 13hs y 17 a 21 hs">Lunes a Sábado 9 a 13hs y 17 a 21 hs</option>
+									<option th:each="horario : ${horarios}" th:value="${horario}" th:text="${horario}" >
+									
+									<!--  <option value="Lunes a Sábado 9 a 21 hs">Lunes a Sábado 9 a 21 hs</option>
+									<option value="Lunes a Sábado 9 a 13hs y 17 a 21 hs">Lunes a Sábado 9 a 13hs y 17 a 21 hs</option>-->
 									</select>
 									<!-- Mostrar errores de validación si existen -->
 									<div class="text-danger" th:if="${#fields.hasErrors('horario')}" th:errors="*{horario}"></div>
