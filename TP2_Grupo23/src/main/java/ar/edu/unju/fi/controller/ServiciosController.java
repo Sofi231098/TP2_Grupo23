@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import ar.edu.unju.fi.listas.ListaServicios;
+
 import ar.edu.unju.fi.model.Servicios;
+import ar.edu.unju.fi.service.ICommonService;
+import ar.edu.unju.fi.service.IServicioService;
 import jakarta.validation.Valid;
 
 @Controller
@@ -20,10 +22,11 @@ import jakarta.validation.Valid;
 public class ServiciosController {
 
 	@Autowired
-	ListaServicios listaServicios;
+	private ICommonService commonService;
+	
 	
 	@Autowired
-	private Servicios servicio;
+	private IServicioService servicioService;
 	
 	/** 
 	 * 
@@ -35,7 +38,7 @@ public class ServiciosController {
 	
 	@GetMapping("/lista") 
 	public String getListaServiciosPage(Model model) {
-		model.addAttribute("servicios",listaServicios.getServicios());
+		model.addAttribute("servicios",servicioService.getLista());
 		return "servicios";
 	}
 	
@@ -48,8 +51,12 @@ public class ServiciosController {
 	@GetMapping("/nuevo")
 	public String getNuevoServiciosPage(Model model) {
 		boolean edicion=false; /** Esta variable se utiliza para indicar si la vista de "servicio_nuevo" está en modo de edición o no. */
-		model.addAttribute("servicio" ,servicio);/**  Agrega el atributo "servicio" al modelo y le asigna el valor de la variable "servicio"*/
+		model.addAttribute("servicio" ,servicioService.getServicio());/**  Agrega el atributo "servicio" al modelo y le asigna el valor de la variable "servicio"*/
 		model.addAttribute("edicion",edicion);/**  Agrega el atributo "edicion" al modelo y le asigna el valor de la variable "edicion".*/
+		
+		model.addAttribute("dias", commonService.getDias());
+		
+		model.addAttribute("horariosserv", commonService.getHorarioServ());
 		return "servicio_nuevo";
 	}
 	/**
@@ -68,10 +75,13 @@ public class ServiciosController {
 		if(resultado.hasErrors()){
 			modelView.setViewName("servicio_nuevo");
 			modelView.addObject("servicio",servicios);
+			
+			modelView.addObject("dias", commonService.getDias());
+			modelView.addObject("horariosserv", commonService.getHorarioServ());
 			return modelView;
 		}
-		listaServicios.getServicios().add(servicios);
-		modelView.addObject("servicios",listaServicios.getServicios());
+		servicioService.guardar(servicios);
+		modelView.addObject("servicios",servicioService.getLista());
 		return modelView;
 	}
 	/**
@@ -87,16 +97,12 @@ public class ServiciosController {
 	public String getModificarServicioPage (Model model ,@PathVariable(value="paseador")String paseador) {
 		Servicios servicioEncontrado = new Servicios();
 		boolean edicion=true;
-		for(Servicios serv : listaServicios.getServicios()) {
-			
-			if(serv.getPaseador().equals(paseador)) {
-				servicioEncontrado = serv;
-				break;
-			}
-		}
+		
 		model.addAttribute("servicio",servicioEncontrado);
 		model.addAttribute("edicion",edicion);
 		
+		model.addAttribute("dias", commonService.getDias());
+		model.addAttribute("horariosserv", commonService.getHorarioServ()); 
 		return "servicio_nuevo";
 	}
 	/**
@@ -111,17 +117,13 @@ public class ServiciosController {
 	 */
 	@PostMapping("/modificar")
 	public String modificarServicio(@Valid @ModelAttribute("servicio")Servicios servicio, BindingResult resultado,Model model) {
+		servicioService.modificar(servicio);
+		model.addAttribute("dias", commonService.getDias());
+		model.addAttribute("horariosserv", commonService.getHorarioServ());
 		if(resultado.hasErrors()){
 			boolean edicion=true;/**  Esta variable se utiliza para indicar que la vista "servicio_nuevo" está en modo de edición. */
 			model.addAttribute("edicion",edicion);
 			return "servicio_nuevo"; /**  Si hay errores de validación, se devuelve la vista "servicio_nuevo" en modo de edición. */
-		}
-		for( Servicios serv: listaServicios.getServicios()) { /**  Se itera sobre la lista de servicios (listaServicios.getServicios()) para buscar el servicio que coincida con el objeto servicio que se está modificando. */
-			if(serv.getPaseador().equals(servicio.getPaseador())) { /**  Se compara el valor del atributo "paseador" de cada servicio con el valor del atributo "paseador" del objeto servicio que se está modificando.*/
-				serv.setTelefono(servicio.getTelefono());/** Si se encuentra el servicio correspondiente, se actualizan los datos del servicio */
-				serv.setDias(servicio.getDias());
-				serv.setHorarios(servicio.getHorarios());
-			}
 		}
 		return "redirect:/servicios/lista";
 	}
@@ -134,12 +136,8 @@ public class ServiciosController {
 	 */
 	@GetMapping("/eliminar/{paseador}")
 	public String eliminarServicio(@PathVariable(value="paseador")String paseador) {
-		for(Servicios serv:listaServicios.getServicios()) {
-			if(serv.getPaseador().equals(paseador)) {
-				listaServicios.getServicios().remove(serv);
-				break;
-			}
-		}
+		Servicios servicioEncontrado = servicioService.getBy(paseador);
+		servicioService.eliminar(servicioEncontrado);
 		return "redirect:/servicios/lista";
 	}
 	
