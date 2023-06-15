@@ -58,6 +58,7 @@
 			<thead class="table-light">
 				<tr>
 					<th scope="col" class="txt" >Código Sucursal</th>
+					<th scope="col" class="txt" >Fecha de Inicio</th>
 					<th scope="col" class="txt">Sucursal</th>
 					<th scope="col" class="txt">Provincia</th>
 					<th scope="col" class="txt">Dirección</th>
@@ -72,6 +73,7 @@
 				<tr  th:each="suc: ${sucursales}">
 						
 					<td class="txt" th:text="${suc.codigo}"></td>
+					<td class="txt" th:text="${suc.fechaInicio}"></td>
 					<td class="txt" th:text="${suc.nombre}"></td>
 					<td class="txt" th:text="${suc.provincia}"></td>
 					<td class="txt" th:text="${suc.direccion}"></td>

@@ -1,9 +1,14 @@
 package ar.edu.unju.fi.model;
 
+import java.time.LocalDate;
+
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 
@@ -22,6 +27,11 @@ public class Sucursal {
 	
 	@Positive(message="Debe ingresar un número válido.")
 	/**Representa el código de la sucursal*/private String codigo;
+	@Past(message="")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@NotNull(message="Este campo no puede quedar sin una fecha.")
+	@Past(message="La fecha debe ser menor a la fecha actual.")
+	/**Representa la fecha de inicio de la sucursal*/private LocalDate fechaInicio;
 	@NotEmpty(message="El nombre no puede quedar vacío.")
 	/**Representa el nombre de la sucursal*/private String nombre;
 	@NotBlank(message="Debe seleccionar una provincia.")
@@ -48,6 +58,7 @@ public class Sucursal {
 	/**
 	 * Constructor Paramétrizado
 	 * @param codigo es el código de la sucursal
+	 * @param fechaInicio es la fecha de inicio de la sucursal
 	 * @param nombre es el nombre de la sucursal
 	 * @param provincia es la provincia de la sucursal
 	 * @param direccion es la dirección de la sucursal
@@ -55,16 +66,18 @@ public class Sucursal {
 	 * @param horario es el horario de la sucursal
 	 */
 	
-	public Sucursal(String codigo, String nombre, String provincia, String direccion, String telefono, String horario) {
-		super();
+	public Sucursal(String codigo, LocalDate fechaInicio, String nombre, String provincia, String direccion, String telefono, String horario) {
+		
 		this.codigo = codigo;
+		this.fechaInicio = fechaInicio;
 		this.nombre = nombre;
 		this.provincia = provincia;
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.horario = horario;
+		
 	}
-
+	
 /**
  * Getters y Setters
  * @return
@@ -79,6 +92,16 @@ public class Sucursal {
 	public String getNombre() {
 		return nombre;
 	}
+	public LocalDate getFechaInicio() {
+		return fechaInicio;
+	}
+
+
+	public void setFechaInicio(LocalDate fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
+
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -106,6 +129,11 @@ public class Sucursal {
 	public void setHorario(String horario) {
 		this.horario = horario;
 	}
+
+
+	
+	
+	
 	
 	
 	
