@@ -601,7 +601,7 @@ p.imgForm2{
 
 /* Estilo login*/
 .formLogin{
-	background:#ccad99 ;
+	background:#ccad99;
 	text-align: center;
 	margin-top: 150px;
 	margin-left: 500px;
@@ -611,6 +611,7 @@ p.imgForm2{
 	font-family:'Gorditas', sans-serif;
 	color:#734d26 ;
 }
+
 .labelLogin{
 	font-family: 25px;
 	font-family:'Gorditas', sans-serif;
@@ -687,7 +688,7 @@ p.imgForm2{
   .custom-container {
     width: 530px !important;
     margin-top: 150px;
-    background:#ccad99;
+  background:#ccad99;
     border-radius: 20px; 
   }
 }
@@ -713,7 +714,8 @@ p.imgForm2{
 @media (max-width: 540px) {
   .custom-container {
     width: 100% !important;
-    margin-top: 150px;background:#ccad99;
+    margin-top: 150px;
+    background:#ccad99;
   }
 }
 /*Estilo de tablas*/
