@@ -151,18 +151,22 @@ p.imgcentrado{
     line-height: 20px;
 }
 .box{
-    background-color: #EDE2DB;
+    background-color:#FEF5EE;
 }
 .box h5{
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: #D9C0A1;
+    border: 2px solid ;
     font-family:'Gorditas', sans-serif;
     text-align: center;
     font-size: 25px;
-    color:#BF6C71;
+    color:#FEF5EE;
 }
 
 .box p{
     font-family: 'Urbanist', sans-serif;
-    color:#734d26;
+    color:#000000;
     font-size: 12px;
 }
 
