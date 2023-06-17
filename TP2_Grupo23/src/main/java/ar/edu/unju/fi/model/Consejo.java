@@ -9,16 +9,17 @@ public class Consejo {
 	@NotEmpty(message="debe poner un titulo")
 	private String titulo;
 	@NotEmpty(message="debe poner un consejo")
-	private String Consejo;
+	private String consejo;
 
 	public Consejo() {
 	
 	}
 
-	public Consejo(String titulo, String consejo) {
+	public Consejo(@NotEmpty(message = "debe poner un titulo") String titulo,
+			@NotEmpty(message = "debe poner un consejo") String consejo) {
 		super();
 		this.titulo = titulo;
-		Consejo = consejo;
+		this.consejo = consejo;
 	}
 
 	public String getTitulo() {
@@ -30,14 +31,11 @@ public class Consejo {
 	}
 
 	public String getConsejo() {
-		return Consejo;
+		return consejo;
 	}
 
 	public void setConsejo(String consejo) {
-		Consejo = consejo;
+		this.consejo = consejo;
 	}
-	
-	
-	
 
 }
