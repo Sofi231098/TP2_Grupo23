@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
@@ -55,10 +55,13 @@
 					<option th:each="categoria : ${categorias}" th:value="${categoria}" th:text="${categoria}">
 				</select>
 				<div class="text-danger" th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></div>
-				<button class="form-element"  type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>
 				</div>
-							
+				<div class="modal-dialog modal-sm">
+				
+				</div>
+				<button class="form-element" data-bs-toggle="modal" data-bs-target="#exampleModal" type="submit" th:text="${edicion}?'Modificar':'Guardar'"></button>	
 			</form>
+
 			</div>
 		</div>
 		</section>

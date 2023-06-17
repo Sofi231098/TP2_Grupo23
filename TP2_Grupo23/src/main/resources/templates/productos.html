@@ -26,10 +26,12 @@
                           <div class="card-body box">
                             <h5 class="card-title" th:text="${prod.nombre}"></h5>
                             <p class="card-text" th:text="${prod.descripcion}"></p>
-                            <strong> Comprar <a href="https://www.mercadopago.com.ar/" class="btn btn-primary" th:text="${prod.preciodescuento}"></a></strong>
+                            <strong> Comprar <a href="https://www.mercadopago.com.ar/" class="btn" style= background-color:#1E90FF th:text="${prod.preciodescuento}"></a></strong>
                         </div>
-                        <a class= "EditElim" th:href="@{/productos/modificar/}+${prod.codigo}">Editar</a>
-		  				<a class= "EditElim" th:href="@{/productos/eliminar/}+${prod.codigo}">Eliminar</a>
+                        <div class="d-grid gap-2 d-md-block">
+							<a class= "EditElim" th:href="@{/productos/modificar/}+${prod.codigo}">Editar</a>
+			  				<a class= "EditElim" th:href="@{/productos/eliminar/}+${prod.codigo}">Eliminar</a>
+						</div>
                     </div>
                 </div>
             </div>

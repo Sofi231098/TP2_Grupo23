@@ -24,7 +24,7 @@
 			<!-- Título de la tarjeta -->
 			<h3 class="card-header" id="subtsuc" th:text="${edicion}?'Modificar Sucursal':'Nueva Sucursal'"></h3>
 			<div class="card-body">
-					<p class="parraf">NOTA: Al modificar una Sucursal NO se debe cambiar ni Código Sucursal ni Nombre.</p>
+					<p class="parraf">NOTA: Al modificar una Sucursal NO se debe cambiar Código Sucursal, Fecha de Inicio, ni Nombre.</p>
 						<!-- Formulario con acción y método -->
 						<form  th:action="${edicion}?@{/sucursales/modificar}:@{/sucursales/guardar}" th:object="${sucursal}" method="post">
 							
@@ -38,6 +38,16 @@
 									<div class="text-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></div>
 								</div>
 								
+							</div>
+							
+							<!-- Campo Fecha de Inicio -->
+							<div class="row mb-3">
+								<label for="fechaInicio" class="col-sm-2 col-form-label ">Fecha de Incio</label>
+								<div class="col-sm-10">
+									<input type="date" id="fecha" name="fecha_inicio" class="form-control"  th:field="*{fechaInicio}" th:readonly="${edicion}?'readonly'">
+									<!-- Mostrar errores de validación si existen -->
+									<div class="text-danger" th:if="${#fields.hasErrors('fechaInicio')}" th:errors="*{fechaInicio}"></div>
+								</div>
 							</div>
 							
 							<!-- Campo Nombre -->

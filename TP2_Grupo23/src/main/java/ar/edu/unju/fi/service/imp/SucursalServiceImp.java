@@ -1,3 +1,6 @@
+/**
+Esta clase implementa la interfaz ISucursalService y proporciona los métodos necesarios para manipular las sucursales.
+*/
 package ar.edu.unju.fi.service.imp;
 
 import java.util.List;
@@ -18,14 +21,33 @@ public class SucursalServiceImp implements ISucursalService {
 	@Autowired
 	private Sucursal sucursal;
 	
+	
+	/**
+	 * Devuelve la lista de sucursales.
+	 * 
+	 * @return lista de sucursales.
+	 */
 	public List<Sucursal> getLista() {
 		return listaSucursales.getSucursales();
 	}
 	
+	
+	/**
+	 * Agrega una sucursal a la lista de sucursales.
+	 * 
+	 * @param sucursal la sucursal a guardar.
+	 */
 	public void guardar (@Valid Sucursal sucursal) {
 		listaSucursales.getSucursales().add(sucursal);
 	}
 	
+	
+	/**
+	 * Obtiene una sucursal por su código.
+	 * 
+	 * @param codigo el código de la sucursal a buscar.
+	 * @return la sucursal encontrada o null si no se encuentra.
+	 */
 	public Sucursal getBy(String codigo) {
 		Sucursal sucursalEncontrada = null;
 		for(Sucursal sucu : listaSucursales.getSucursales()) {
@@ -37,6 +59,13 @@ public class SucursalServiceImp implements ISucursalService {
 		return sucursalEncontrada;
 	}
 	
+	
+	
+	/**
+	 * Modifica una sucursal existente.
+	 * 
+	 * @param sucursal la sucursal modificada.
+	 */
 	public void modificar(Sucursal sucursal) {
 		for(Sucursal sucu: listaSucursales.getSucursales()) {
 			if(sucu.getNombre().equals(sucursal.getNombre())) {
@@ -49,11 +78,22 @@ public class SucursalServiceImp implements ISucursalService {
 	}
 	
 	
+	
+	/**
+	 * Elimina una sucursal de la lista de sucursales.
+	 * 
+	 * @param sucursal la sucursal a eliminar.
+	 */
 	public void eliminar(Sucursal sucursal) {
 		listaSucursales.getSucursales().remove(sucursal);
 	}
 	
 	
+	/**
+	 * Obtiene la sucursal actual.
+	 * 
+	 * @return la sucursal actual.
+	 */
 	@Override
 	public Sucursal getSucursal() {
 		return sucursal;
