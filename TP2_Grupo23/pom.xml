@@ -57,14 +57,28 @@
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-validation</artifactId>
-		    </dependency>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-parent</artifactId>
+		    <version>3.1.0</version>
+		    <type>pom</type>
+		</dependency>
+
 		    
+		  	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+ 			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.33</version>
+		</dependency>
+		
 		    
 	</dependencies>
 	
 	
-
-		
 	<build>
 		<plugins>
 			<plugin>
