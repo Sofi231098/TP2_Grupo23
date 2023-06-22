@@ -16,17 +16,17 @@ import jakarta.validation.constraints.NotNull;
 @Component
 public class Producto {
 	
-	@NotEmpty(message="Debe ingresar el codigo del articulo")
-	/**Representa el codigo del articulo*/private String codigo;
-	@NotEmpty(message="Este campo no puede estar vacio")
+	@NotNull(message="El ID del artículo debe ser registrado")
+	/**Representa el ID del articulo*/private Long id;
+	@NotEmpty(message="El nombre del artículo no puede estar vacío")
 	/**Representa el nombre del articulo*/private String nombre;
-	@NotEmpty(message="Debe agregar una descripcion breve del producto")
+	@NotEmpty(message="Debe agregar una descripción breve del producto")
 	/**Representa la descripcion del articulo*/ private String descripcion;
-	@NotNull(message="El valor debe ser un numero positivo")
+	@NotNull(message="Se requiere proporcionar un valor para el precio del articulo")
 	/**Representa el precio del articulo*/private Double precio;
-	@NotNull(message="El descuento debe ser de entre 0% y 50%")
+	@NotNull(message="El campo descuento no puede ser nulo debe ser entre 0% y 50%")
 	/**Representa el descuento que se va a realizar en el articulo*/private Integer descuento;
-    @NotBlank(message="Debe elegir una categoria")
+    @NotBlank(message="Debe elegir una categoría")
     /**Representa la categoria del articulo*/private String  categoria;
     
     //----------Constructores--------------
@@ -48,14 +48,14 @@ public class Producto {
      * @param categoria es la categoria del articulo
      */	
 	
-	public Producto(@NotEmpty(message = "Debe ingresar el codigo del articulo") String codigo,
+	public Producto(@NotNull(message = "Debe ingresar el codigo del articulo") Long id,
 			@NotEmpty(message = "Este campo no puede estar vacio") String nombre,
 			@NotEmpty(message = "Debe agregar una descripcion breve del producto") String descripcion,
 			@NotNull(message = "El valor debe ser un numero positivo") Double precio,
 			@NotNull(message = "El descuento debe ser de entre 0% y 50%") Integer descuento,
 			@NotBlank(message = "Debe elegir una categoria") String categoria) {
 		super();
-		this.codigo = codigo;
+		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.precio = precio;
@@ -69,17 +69,18 @@ public class Producto {
 	 * @return
 	 */
 
-	public String getCodigo() {
-		return codigo;
+	public Long getId() {
+		return id;
 	}
 
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
