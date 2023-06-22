@@ -7,10 +7,9 @@ package ar.edu.unju.fi.service.imp;
 	import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.stereotype.Service;
 
-	import ar.edu.unju.fi.listas.ListaServicios;
-	import ar.edu.unju.fi.model.Servicios;
-
-	import ar.edu.unju.fi.service.IServicioService;
+import ar.edu.unju.fi.entity.Servicios;
+import ar.edu.unju.fi.listas.ListaServicios;
+import ar.edu.unju.fi.service.IServicioService;
 	import jakarta.validation.Valid;
 
 	/**
