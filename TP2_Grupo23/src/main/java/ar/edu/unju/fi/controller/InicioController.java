@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import ar.edu.unju.fi.entity.IndexModel;
 import ar.edu.unju.fi.listas.ListaIndex;
-import ar.edu.unju.fi.model.IndexModel;
 import jakarta.validation.Valid;
 
 import org.springframework.web.servlet.ModelAndView;

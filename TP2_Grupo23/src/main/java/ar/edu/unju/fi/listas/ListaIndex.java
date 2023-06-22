@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import ar.edu.unju.fi.model.IndexModel;
+import ar.edu.unju.fi.entity.IndexModel;
 
 /**
  * @author Sofia Trinidad Yañez

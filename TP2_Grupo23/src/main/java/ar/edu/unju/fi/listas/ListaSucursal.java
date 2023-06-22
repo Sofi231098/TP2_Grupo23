@@ -8,9 +8,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import ar.edu.unju.fi.entity.Sucursal;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
-import ar.edu.unju.fi.model.Sucursal;
 
 
 @Component
