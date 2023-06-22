@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import ar.edu.unju.fi.model.Servicios;
+import ar.edu.unju.fi.entity.Servicios;
 
 /**
  * Clase que representa una lista de servicios.
