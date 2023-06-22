@@ -2,8 +2,8 @@ package ar.edu.unju.fi.service;
 
 	import java.util.List;
 
-	import ar.edu.unju.fi.model.Servicios;
-	import jakarta.validation.Valid;
+import ar.edu.unju.fi.entity.Servicios;
+import jakarta.validation.Valid;
 
 	/**
 	 * Esta interfaz define el contrato para gestionar objetos Sucursal.
