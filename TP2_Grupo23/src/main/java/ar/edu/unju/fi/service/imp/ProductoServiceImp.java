@@ -50,7 +50,7 @@ public class ProductoServiceImp implements IProductoService {
 	 * @param codigo el código del producto a buscar
 	 * @return el objeto Producto encontrado o null si no se encuentra ningún producto con el código especificado
 	 */
-	public Producto getBy(Long id) {
+	public Producto getBy(String codigo) {
 		/*
 		 * Recorre la lista de productos y compara el código de cada producto con el código especificado.
 		 * Si se encuentra un producto con el código buscado, se devuelve ese producto.
@@ -58,7 +58,7 @@ public class ProductoServiceImp implements IProductoService {
 		 */
 		Producto productoEncontrado = null;
 		for (Producto prod : listaProductos.getProductos()) {
-			if (prod.getId().equals(id)) {
+			if (prod.getCodigo().equals(codigo)) {
 				productoEncontrado = prod;
 				break;
 			}
@@ -78,7 +78,7 @@ public class ProductoServiceImp implements IProductoService {
 		 * Si no se encuentra ningún producto con el mismo código, no se realiza ninguna modificación.
 		 */
 		for (Producto prod : listaProductos.getProductos()) {
-			if (prod.getId().equals(producto.getId())) {
+			if (prod.getCodigo().equals(producto.getCodigo())) {
 				prod.setNombre(producto.getNombre());
 				prod.setPrecio(producto.getPrecio());
 				prod.setDescripcion(producto.getDescripcion());

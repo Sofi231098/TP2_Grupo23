@@ -86,12 +86,12 @@ public class ProductosController {
 	 * @param codigo busca el articulo atravez de el codigo para poder modificarlo
 	 * @return la página de modificación de producto
 	 */
-	@GetMapping("/productos/modificar/{id}")
-	public String getModicarProductosPage(Model model, @PathVariable(value="id") Long id) {
+	@GetMapping("/productos/modificar/{codigo}")
+	public String getModicarProductosPage(Model model, @PathVariable(value="codigo") String codigo) {
 		/*
 		 * Obtiene el producto correspondiente al código proporcionado llamando al método getBy del servicio de productos.
 		 */
-		Producto productoEncontrado = productoService.getBy(id);
+		Producto productoEncontrado = productoService.getBy(codigo);
 		
 		/*
 		 * Agrega el objeto Producto encontrado, las categorías y la bandera de edición al modelo para ser utilizados en la vista.
@@ -147,12 +147,12 @@ public class ProductosController {
 	 * @param codigo el código del producto a eliminar
 	 * @return la pagina a la que se redireccionará después de la eliminación del producto
 	 */
-	@GetMapping("/productos/eliminar/{id}")
-	public String eliminarProductos(@PathVariable(value="id") Long id) {
+	@GetMapping("/productos/eliminar/{codigo}")
+	public String eliminarProductos(@PathVariable(value="codigo") String codigo) {
 		/*
 		 * Obtiene el producto correspondiente al código proporcionado llamando al método getBy del servicio de productos.
 		 */
-		Producto productoEncontrado = productoService.getBy(id);
+		Producto productoEncontrado = productoService.getBy(codigo);
 		
 		/*
 		 * Llama al método eliminar de la capa service de productos para eliminar el producto.

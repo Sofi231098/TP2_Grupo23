@@ -30,7 +30,7 @@ public interface IProductoService {
 	 * @param codigo el código del producto a buscar
 	 * @return el objeto Producto encontrado o null si no se encuentra ningún producto con el código especificado
 	 */
-	public Producto getBy(Long id);
+	public Producto getBy(String codigo);
 	
 	/**
 	 * Modifica un producto existente.

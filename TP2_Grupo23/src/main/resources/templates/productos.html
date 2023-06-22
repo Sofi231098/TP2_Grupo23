@@ -29,8 +29,8 @@
                             <strong> Comprar <a href="https://www.mercadopago.com.ar/" class="btn" style= background-color:#1E90FF th:text="${prod.preciodescuento}"></a></strong>
                         </div>
                         <div class="d-grid gap-2 d-md-block">
-							<a class= "EditElim" th:href="@{/productos/modificar/}+${prod.id}">Editar</a>
-			  				<a class= "EditElim" th:href="@{/productos/eliminar/}+${prod.id}">Eliminar</a>
+							<a class= "EditElim" th:href="@{/productos/modificar/}+${prod.codigo}">Editar</a>
+			  				<a class= "EditElim" th:href="@{/productos/eliminar/}+${prod.codigo}">Eliminar</a>
 						</div>
                     </div>
                 </div>
