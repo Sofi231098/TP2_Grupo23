@@ -5,6 +5,12 @@ import java.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -23,25 +29,55 @@ import jakarta.validation.constraints.Size;
 
 
 @Component
+@Entity
+@Table(name="sucursales")
 public class Sucursal {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="suc_id")
+	private long id;
+	
+	
+	@Column(name="suc_codigo",nullable = false)
 	@Positive(message="Debe ingresar un número válido.")
 	/**Representa el código de la sucursal*/private String codigo;
-	@Past(message="")
+	
+	
+	@Column(name="suc_fechaInicio",nullable = false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	@NotNull(message="Este campo no puede quedar sin una fecha.")
 	@Past(message="La fecha debe ser menor a la fecha actual.")
 	/**Representa la fecha de inicio de la sucursal*/private LocalDate fechaInicio;
+	
+	
+	@Column(name="suc_nombre",length = 20, nullable = false)
 	@NotEmpty(message="El nombre no puede quedar vacío.")
 	/**Representa el nombre de la sucursal*/private String nombre;
+	
+	
+	@Column(name="suc_provincia",nullable = false)
 	@NotBlank(message="Debe seleccionar una provincia.")
 	/**Representa la provincia de la sucursal*/private String provincia;
+	
+	
+	@Column(name="suc_direccion",nullable = false)
 	@Size(min=5, max=100, message="La dirección debe tener entre 5 y 100 caracteres.")
 	/**Representa la dirección de la sucursal*/private String direccion;
+	
+	
+	@Column(name="suc_telefono",nullable = false)
 	@NotEmpty(message="Debe ingresar un número de teléfono.")  //opcional creo yo no todos tienen telefono por ej si es nueva la sucursal.
 	/**Representa el teléfono de la sucursal*/private String telefono;
+	
+	
+	@Column(name="horario",nullable = false)
 	@NotBlank(message="Debe seleccionar un horario de atención.")
 	/**Representa el horario de la sucursal*/private String horario;
+	
+	
+	@Column(name="suc_estado")
+	private boolean estado;
 	
 	
 	
@@ -131,12 +167,25 @@ public class Sucursal {
 	}
 
 
-	
-	
-	
-	
-	
-	
+	public long getId() {
+		return id;
+	}
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+	public boolean isEstado() {
+		return estado;
+	}
+
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+
 	
 	
 	

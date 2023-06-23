@@ -1,6 +1,7 @@
 /**
 Esta clase implementa la interfaz ISucursalService y proporciona los métodos necesarios para manipular las sucursales.
 */
+
 package ar.edu.unju.fi.service.imp;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import ar.edu.unju.fi.service.ISucursalService;
 import jakarta.validation.Valid;
 
 
-@Service
+@Service("sucursalServiceImp")
 public class SucursalServiceImp implements ISucursalService {
 	@Autowired
 	private ListaSucursal listaSucursales;
@@ -90,7 +91,7 @@ public class SucursalServiceImp implements ISucursalService {
 	
 	
 	/**
-	 * Obtiene la sucursal actual.
+	 * Retorna la sucursal actual.
 	 * 
 	 * @return la sucursal actual.
 	 */
@@ -99,4 +100,18 @@ public class SucursalServiceImp implements ISucursalService {
 		return sucursal;
 	}
 	
-}	
+	
+
+	/**
+     * Retorna una sucursal que coincide con el ID especificado.
+     *
+     * @param id el ID de la sucursal a buscar
+     * @return una sucursal que coincide con el ID especificado
+     */
+	@Override
+	public Sucursal getBy(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}
