@@ -19,18 +19,37 @@ public class ServiciosServiceMysqlImp implements IServicioService {
 	@Autowired
 	private Servicio servicio;
 	
+	/**
+	 * Retorna una lista de Servicios que tienen un estado activo.
+	 *
+	 * @return una lista de servicios activos
+	 */
+	
 	@Override
 	public List<Servicio> getLista() {
 		// TODO Auto-generated method stub
 		return servicioRepository.findByEstado(true) ;
 	}
 
+	/**
+	 * Guarda un servicio en la base de datos.
+	 *
+	 * @param servicio el servicio a guardar
+	 */
+	
 	@Override
 	public void guardar(@Valid Servicio servicio) {
 		// TODO Auto-generated method stub
 		servicioRepository.save(servicio);
 
 	}
+	
+	/**
+	 * Obtiene un servicio por su ID.
+	 *
+	 * @param id el ID del servicio a obtener
+	 * @return el servicio correspondiente al ID
+	 */
 
 	@Override
 	public Servicio getBy(Long id) {
@@ -38,6 +57,12 @@ public class ServiciosServiceMysqlImp implements IServicioService {
 		return servicioRepository.findById(id).get();
 	}
 
+	/**
+	 * Modifica un servicio existente en la base de datos.
+	 *
+	 * @param servicio el servicio a modificar
+	 */
+	
 	@Override
 	public void modificar(@Valid Servicio servicio) {
 		// TODO Auto-generated method stub
@@ -45,6 +70,12 @@ public class ServiciosServiceMysqlImp implements IServicioService {
 		servicioRepository.save(servicio);
 	}
 
+	/**
+	 * Elimina un servicio estableciendo su estado como inactivo en la base de datos.
+	 *
+	 * @param servicioEncontrada el servicio a eliminar
+	 */
+	
 	@Override
 	public void eliminar(Servicio servicioEncontrada) {
 		// TODO Auto-generated method stub
@@ -52,6 +83,12 @@ public class ServiciosServiceMysqlImp implements IServicioService {
 		servicioRepository.save(servicioEncontrada);
 	}
 
+	/**
+	 * Retorna el servicio actual.
+	 *
+	 * @return el servicio actual
+	 */
+	
 	@Override
 	public Servicio getServicio() {
 		// TODO Auto-generated method stub

@@ -74,6 +74,8 @@ public class Servicio {
 	 * @param telefono es el telefono del servicio
 	 * @param dias es el dia del servicio
 	 * @param horarios es el horario del servicio
+	 * @param estado es para acicnale un valor booleano en Mysql
+	 * @param id se una en Mysql para poder general un id a cada paseador que solo se vera en la Base de datos 
 	 */
 	
 	
