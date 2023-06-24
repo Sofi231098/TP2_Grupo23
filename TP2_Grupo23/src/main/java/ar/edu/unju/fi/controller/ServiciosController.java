@@ -1,6 +1,9 @@
 package ar.edu.unju.fi.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,7 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import ar.edu.unju.fi.entity.Servicios;
+
+import ar.edu.unju.fi.entity.Servicio;
 import ar.edu.unju.fi.service.ICommonService;
 import ar.edu.unju.fi.service.IServicioService;
 import jakarta.validation.Valid;
@@ -23,8 +27,11 @@ public class ServiciosController {
 	@Autowired
 	private ICommonService commonService;
 	
+	@Autowired
+	Servicio servicios;
 	
 	@Autowired
+	@Qualifier("serviciosServiceMysql")
 	private IServicioService servicioService;
 	
 	/** 
@@ -37,7 +44,8 @@ public class ServiciosController {
 	
 	@GetMapping("/lista") 
 	public String getListaServiciosPage(Model model) {
-		model.addAttribute("servicios",servicioService.getLista());
+		List<Servicio> listaServicio = servicioService.getLista();
+		model.addAttribute("servicio",listaServicio);
 		return "servicios";
 	}
 	
@@ -69,7 +77,7 @@ public class ServiciosController {
 	 * @return retorna un objeto ModelAndView con la vista y los datos apropiados.
 	 */
 	@PostMapping("/guardar")
-	public ModelAndView getGuardarServiciosPage(@Valid @ModelAttribute("servicio")Servicios servicios, BindingResult resultado) {
+	public ModelAndView getGuardarServiciosPage(@Valid @ModelAttribute("servicio")Servicio servicios, BindingResult resultado) {
 		ModelAndView modelView = new ModelAndView ("servicios");
 		if(resultado.hasErrors()){
 			modelView.setViewName("servicio_nuevo");
@@ -79,8 +87,9 @@ public class ServiciosController {
 			modelView.addObject("horariosserv", commonService.getHorarioServ());
 			return modelView;
 		}
+		servicios.setEstado(true);
 		servicioService.guardar(servicios);
-		modelView.addObject("servicios",servicioService.getLista());
+		modelView.addObject("servicio",servicioService.getLista());
 		return modelView;
 	}
 	/**
@@ -92,17 +101,18 @@ public class ServiciosController {
 	 * @param paseador el valor del parámetro "paseador" de la ruta.
 	 * @return retorna a la pagina de  servicio_nuevo.html.
 	 */
-	@GetMapping("/modificar/{paseador}")
-	public String getModificarServicioPage (Model model ,@PathVariable(value="paseador")String paseador) {
-		Servicios servicioEncontrado = servicioService.getBy(paseador);
+	@GetMapping("/modificar/{id}")
+	public ModelAndView getModificarServicioPage (Model model ,@PathVariable(value="id")Long id) {
+		ModelAndView modelView = new ModelAndView("servicio_nuevo");
+		Servicio servicioEncontrado = servicioService.getBy(id);
 		boolean edicion=true;
 		
-		model.addAttribute("servicio",servicioEncontrado);
-		model.addAttribute("edicion",edicion);
+		modelView.addObject("servicio",servicioEncontrado);
+		modelView.addObject("edicion",edicion);
 		
-		model.addAttribute("dias", commonService.getDias());
-		model.addAttribute("horariosserv", commonService.getHorarioServ()); 
-		return "servicio_nuevo";
+		modelView.addObject("dias", commonService.getDias());
+		modelView.addObject("horariosserv", commonService.getHorarioServ()); 
+		return modelView;
 	}
 	/**
 	 * Maneja la solicitud POST para la ruta "/modificar" y redirige a la ruta "/servicios/lista".
@@ -115,8 +125,8 @@ public class ServiciosController {
 	 * @return la redirección a la ruta "/servicios/lista"
 	 */
 	@PostMapping("/modificar")
-	public String modificarServicio(@Valid @ModelAttribute("servicio")Servicios servicio, BindingResult resultado,Model model) {
-		servicioService.modificar(servicio);
+	public String modificarServicio(@Valid @ModelAttribute("servicio")Servicio servicio, BindingResult resultado,Model model) {
+		
 		model.addAttribute("dias", commonService.getDias());
 		model.addAttribute("horariosserv", commonService.getHorarioServ());
 		if(resultado.hasErrors()){
@@ -124,6 +134,7 @@ public class ServiciosController {
 			model.addAttribute("edicion",edicion);
 			return "servicio_nuevo"; /**  Si hay errores de validación, se devuelve la vista "servicio_nuevo" en modo de edición. */
 		}
+		servicioService.modificar(servicio);
 		return "redirect:/servicios/lista";
 	}
 	/**
@@ -133,9 +144,9 @@ public class ServiciosController {
 	 * @param paseador el valor del parámetro "paseador" de la ruta
 	 * @return la redirección a la ruta "/servicios/lista"
 	 */
-	@GetMapping("/eliminar/{paseador}")
-	public String eliminarServicio(@PathVariable(value="paseador")String paseador) {
-		Servicios servicioEncontrado = servicioService.getBy(paseador);
+	@GetMapping("/eliminar/{id}")
+	public String eliminarServicio(@PathVariable(value="id") Long id) {
+		Servicio servicioEncontrado = servicioService.getBy(id);
 		servicioService.eliminar(servicioEncontrado);
 		return "redirect:/servicios/lista";
 	}

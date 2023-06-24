@@ -1,6 +1,13 @@
 package ar.edu.unju.fi.entity;
 
 import org.springframework.stereotype.Component;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
@@ -8,24 +15,47 @@ import jakarta.validation.constraints.Size;
 /**
  * Representa una sucursal del sistema
  * @author Flores Fabricio A 
- * @version 1.0 date: 01/06/23
+ * @version 2.0 date: 01/06/23
  *
  */
 
 
 @Component
-public class Servicios {
+@Entity
+@Table(name="servicios")
+public class Servicio {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="serv_id")
+	private Long id;
+	
 	@NotEmpty(message="El nombre no puede quedar vacío.")
 	@Size(min=10,max=50,message ="Ingrese su nombre completo")
-	/**Representa el nombre del paseador*/ private String paseador;
-	@NotEmpty(message="El nombre no puede quedar vacío.")
-	@Size(min=10,max=20,message ="Ingrese un numero valido. Ej: 388-4123456")
-	/**Representa el numero de telefono del paseador*/private String telefono;
-	@NotBlank(message="Este campo es obligatorio.")
-	/**Representa los dias de paseo que tiene el paseador*/private String dias;
-	@NotBlank(message="Este campo es obligatorio.")
-	/**Representa los horarios de paseo que tiene el paseador*/private String horarios;
+	/**Representa el nombre del paseador*/
 	
+	@Column (name="serv_paseador",length = 50, nullable = false)
+	private String paseador;
+	
+	/**@NotEmpty(message="El nombre no puede quedar vacío.")*/
+	@Size(min=10,max=20,message ="Ingrese un numero valido. Ej: 388-4123456")
+	
+	/**Representa el numero de telefono del paseador*/
+	@Column(name="serv_telefono",length = 20, nullable = false)
+	private String telefono;
+	
+	@NotBlank(message="Este campo es obligatorio.")
+	/**Representa los dias de paseo que tiene el paseador*/
+	@Column(name="serv_dias")
+	private String dias;
+	
+	@NotBlank(message="Este campo es obligatorio.")
+	/**Representa los horarios de paseo que tiene el paseador*/
+	@Column(name="serv_horarios")
+	private String horarios;
+	
+	@Column(name="serv_estado")
+	private boolean estado;
 	
 	//--------------Constructores-------------------
 	
@@ -34,7 +64,7 @@ public class Servicios {
 		 */
 	
 	
-	public Servicios() {
+	public Servicio() {
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -48,12 +78,14 @@ public class Servicios {
 	
 	
 
-	public Servicios(String paseador, String telefono, String dias, String horarios) {
+	public Servicio( Long id,String paseador, String telefono, String dias, String horarios,boolean estado) {
 		super();
+		this.id =id;
 		this.paseador = paseador;
 		this.telefono = telefono;
 		this.dias = dias;
 		this.horarios = horarios;
+		this.estado = estado;
 	}
 
 	/**
@@ -61,6 +93,15 @@ public class Servicios {
 	 * @return
 	 */
 	
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getPaseador() {
 		return paseador;
 	}
@@ -93,4 +134,11 @@ public class Servicios {
 		this.horarios = horarios;
 	}
 	
+	public boolean isEstado() {
+		return estado;
+	}
+
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
 }

@@ -7,9 +7,10 @@ package ar.edu.unju.fi.service.imp;
 	import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.stereotype.Service;
 
-import ar.edu.unju.fi.entity.Servicios;
-import ar.edu.unju.fi.listas.ListaServicios;
-import ar.edu.unju.fi.service.IServicioService;
+	import ar.edu.unju.fi.entity.Servicio;
+
+	import ar.edu.unju.fi.repository.IServicioRepository;
+	import ar.edu.unju.fi.service.IServicioService;
 	import jakarta.validation.Valid;
 
 	/**
@@ -19,18 +20,19 @@ import ar.edu.unju.fi.service.IServicioService;
 	@Service
 	public class ServiciosServiceImp implements IServicioService {
 
+		@Autowired
+		private IServicioRepository servicioRepository;
+	  
 	    @Autowired
-	    private ListaServicios listaServicios;
-	    @Autowired
-	    private Servicios servicio;
+	    private Servicio servicio;
 	    
 	    /**
 	     * Obtiene una lista de todas las servicios.
 	     *
 	     * @return la lista de servicios
 	     */
-	    public List<Servicios> getLista() {
-	        return listaServicios.getServicios();
+	    public List<Servicio> getLista() {
+	        return servicioRepository.findByEstado(true);
 	    }
 	    
 	    /**
@@ -38,8 +40,8 @@ import ar.edu.unju.fi.service.IServicioService;
 	     *
 	     * @param servicos la servicio a guardar
 	     */
-	    public void guardar(@Valid Servicios servicio) {
-	        listaServicios.getServicios().add(servicio);
+	    public void guardar(@Valid Servicio servicio) {
+	        servicioRepository.save(servicio);
 	    }
 	    
 	    /**
@@ -48,16 +50,8 @@ import ar.edu.unju.fi.service.IServicioService;
 	     * @param nombre el nombre de la servicios
 	     * @return la servicios con el nombre especificado
 	     */
-	    public Servicios getBy(String paseador) {
-	        Servicios servicioEncontrado = null;
-	        for(Servicios serv : listaServicios.getServicios()) {
-				
-				if(serv.getPaseador().equals(paseador)) {
-					servicioEncontrado = serv;
-					break;
-				}
-			}
-	        return servicioEncontrado;
+	    public Servicio getBy(Long id) {
+	        return servicioRepository.findById(id).get() ;
 	    }
 	    
 	    /**
@@ -65,16 +59,9 @@ import ar.edu.unju.fi.service.IServicioService;
 	     *
 	     * @param sucursal la servicios actualizada
 	     */
-	    public void modificar(@Valid Servicios servicio) {
-	        for (Servicios serv : listaServicios.getServicios()) {
-	            if (serv.getPaseador().equals(servicio.getPaseador())) {
-	            	serv.setTelefono(servicio.getTelefono());
-	            	serv.setDias(servicio.getDias());
-					serv.setHorarios(servicio.getHorarios());
-	                
-	            }
-	        }
-	  
+	    public void modificar(@Valid Servicio servicio) {
+	        servicio.setEstado(true);
+	        servicioRepository.save(servicio);
 	    }
 	    
 	    /**
@@ -82,8 +69,9 @@ import ar.edu.unju.fi.service.IServicioService;
 	     *
 	     * @param sucursal la sucursal a eliminar
 	     */
-	    public void eliminar(Servicios servicio) {
-	        listaServicios.getServicios().remove(servicio);
+	    public void eliminar(Servicio servicio) {
+	        servicio.setEstado(false);
+	    	servicioRepository.save(servicio);
 	    }
 	    
 	    /**
@@ -92,7 +80,7 @@ import ar.edu.unju.fi.service.IServicioService;
 	     * @return la sucursal actual
 	     */
 	    @Override
-	    public Servicios getServicio() {
+	    public Servicio getServicio() {
 	        return servicio;
 	    }
 	

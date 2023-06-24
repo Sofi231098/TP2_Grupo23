@@ -23,6 +23,10 @@
 						<form th:action= "${edicion}?@{/servicios/modificar}:@{/servicios/guardar}" th:object="${servicio}" method="post">
 							<!-- Campos del formulario -->
 							<div class="row mb-3">
+							  <div hidden>
+							  <label>id:</label>
+							  <input  th:readonly="${edicion}?'readonly'" placeholder="Ingrese Nombre del Paseador" class="form-control" type="text" id="paseador" name="servicio_paseador" th:field="*{id}"><br>
+							  </div>
 								<label for= "paseador"  class="col-sm-2 col-form-label "> Nombre Del Paseador</label>
 									<div class="col-sm-10">
 										<input  th:readonly="${edicion}?'readonly'" placeholder="Ingrese Nombre del Paseador" class="form-control" type="text" id="paseador" name="servicio_paseador" th:field="*{paseador}"><br>
