@@ -14,7 +14,7 @@ import jakarta.validation.Valid;
  * @author Farja Naima Blanca
  * Implementación de la interfaz IProductoService que define las operaciones relacionadas con los productos.
  */
-@Service
+@Service("productoServiceImp")
 public class ProductoServiceImp implements IProductoService {
 
 	@Autowired
@@ -41,7 +41,9 @@ public class ProductoServiceImp implements IProductoService {
 		/*
 		 * Agrega el producto a la lista de productos existente.
 		 */
+		producto.setEstado(true);
 		listaProductos.getProductos().add(producto);
+		
 	}
 
 	/**
@@ -50,7 +52,7 @@ public class ProductoServiceImp implements IProductoService {
 	 * @param codigo el código del producto a buscar
 	 * @return el objeto Producto encontrado o null si no se encuentra ningún producto con el código especificado
 	 */
-	public Producto getBy(Long id) {
+	public Producto getBy(String codigo) {
 		/*
 		 * Recorre la lista de productos y compara el código de cada producto con el código especificado.
 		 * Si se encuentra un producto con el código buscado, se devuelve ese producto.
@@ -58,7 +60,7 @@ public class ProductoServiceImp implements IProductoService {
 		 */
 		Producto productoEncontrado = null;
 		for (Producto prod : listaProductos.getProductos()) {
-			if (prod.getId().equals(id)) {
+			if (prod.getCodigo().equals(codigo)) {
 				productoEncontrado = prod;
 				break;
 			}
@@ -71,14 +73,14 @@ public class ProductoServiceImp implements IProductoService {
 	 * 
 	 * @param producto el objeto Producto con los datos modificados
 	 */
-	public void modificar(@Valid Producto producto) {
+	public void modificar(Producto producto) {
 		/*
 		 * Recorre la lista de productos y compara el código de cada producto con el código del producto especificado.
 		 * Si se encuentra un producto con el mismo código, se actualizan los datos del producto con los nuevos valores.
 		 * Si no se encuentra ningún producto con el mismo código, no se realiza ninguna modificación.
 		 */
 		for (Producto prod : listaProductos.getProductos()) {
-			if (prod.getId().equals(producto.getId())) {
+			if (prod.getCodigo().equals(producto.getCodigo())) {
 				prod.setNombre(producto.getNombre());
 				prod.setPrecio(producto.getPrecio());
 				prod.setDescripcion(producto.getDescripcion());
@@ -108,6 +110,17 @@ public class ProductoServiceImp implements IProductoService {
 	@Override
 	public Producto getProducto() {
 		return producto;
+	}
+	
+	/**
+	 * Devuelve el producto correspondiente al ID especificado.
+	 *
+	 * @param id el ID del producto que se desea obtener.
+	 * @return el producto correspondiente al ID especificado, o null si no se encuentra ningún producto con ese ID.
+	 */
+	@Override
+	public Producto getBy(Long id) {
+	    return null;
 	}
 
 }
