@@ -1,0 +1,10 @@
+INSERT INTO `sucursales` VALUES (1,'0001','Independecia esq Alberdi',_binary '','2003-12-03','Lunes a Sábado 9 a 21 hs','Centro','JUJUY','3886439281'),
+(2,'0002','Avenida Libertad 1090',_binary '','2004-06-13','Lun a Sáb 9hs a 21 hs','Palpalá','Jujuy','3885398765'),
+(3,'0003','Avenida Congreso 130',_binary '','2006-07-10','Lun a Sáb 9hs a 21 hs','Perico','Jujuy','3888563823'),
+(4,'0004','Rogelio Leach 152',_binary '','2007-05-31','Lun a Sáb 9hs a 21 hs','San Pedro','Jujuy','3883475284'),
+(5,'0005','Casero 676',_binary '','2008-12-01','Lun a Sáb 9hs a 21 hs','Salta Capital','Salta','3876540297'),
+(6,'0006','Leandro N. Alem 645',_binary '','2014-11-03','Lun a Sáb 9hs a 21 hs','Guemes','Salta','3876542093'),
+(7,'0007','Avenida Vicente Lopez y Planes 437',_binary '','2018-12-09','Lun a Sáb 9hs a 21 hs','Orán','Salta','3874359870'),
+(8,'0008','Avenida Ejército del Norte 1662',_binary '','2019-03-04','Lun a Sáb 9hs a 21 hs','San Miguel','Tucumán','3816283949'),
+(9,'0009','Avenida Aconquija 2016',_binary '','2022-12-18','Lun a Sáb 9hs a 21 hs','Yerba Buena','Tucumán','3817362983'),
+(10,'0010','Gral. Jose de San Martin 271',_binary '\0','2023-02-16','Lun a Sáb 9hs a 21 hs','Tafi Viejo','Tucumán','3817629012');

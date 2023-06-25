@@ -1,0 +1,8 @@
+ INSERT INTO `servicios` VALUES 
+ (15,'Lunes',_binary '','17:00 a 18:00','Maximiliano A. Flores','388-4265789')
+ (16,'Martes',_binary '','10:00 a 11:00','Luis G. Panduro','388-4256789')
+ (17,'Miércoles',_binary '','18:00 a 19:00','Maria J. Becerra','388-5123456')
+ (18,'Jueves',_binary '','15:00 a 16:00','Sofia B. Lopez','388-5123654')
+ (19,'Viernes',_binary '','22:00 a 23:00','Marcelo J. Perez','388-4343666')
+ (20,'Sábado',_binary '','11:00 a 12:00','Melanie A. Quevedo','388-5102300')
+ (21,'Domingo',_binary '','20:00 a 21:00','Angel E. Gallardo','3884-569820')
