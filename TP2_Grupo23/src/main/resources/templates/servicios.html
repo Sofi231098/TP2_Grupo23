@@ -37,14 +37,14 @@
 							<th>Horarios</th>
 							<th>Adiciones</th>
 						</tr>
-						<tr th:each="serv: ${servicios}">
+						<tr th:each="serv: ${servicio}">
 							<td th:text = "${serv.paseador}"></td>
 							<td th:text = "${serv.telefono}"></td>
 							<td th:text = "${serv.dias}"></td>
 							<td th:text = "${serv.horarios}"></td>
 							<td>
-								<a class= "EditElim" th:href="@{/servicios/modificar/}+${serv.paseador}">Editar</a>
-								<a class= "EditElim" th:href="@{/servicios/eliminar/}+${serv.paseador}">Eliminar</a>
+								<a class= "EditElim" th:href="@{/servicios/modificar/}+${serv.id}">Editar</a>
+								<a class= "EditElim" th:href="@{/servicios/eliminar/}+${serv.id}">Eliminar</a>
 							</td>
 							
 						</tr>
