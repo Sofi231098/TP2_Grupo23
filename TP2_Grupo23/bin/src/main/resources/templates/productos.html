@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximun-scale=1, user-scalable=no">
+		<title>Productos</title>
+		<link rel="styLesheet" th:href="@{/css/estilo.css}">
+		<link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet">
+		<link th:rel= "stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+
+	</head>
+<body>
+	<header th:replace ="~{layouts/header :: header}"></header>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-4 col-sm-4 col-md-8 col-lg-8 col-xl-12 col-xxl-12">
+					<h2 class="titulo">PRODUCTOS PARA TU MASCOTA</h2>
+				</div>
+			</div>
+			<a class="nuevoobj"th:href="@{/nuevo}">Productos Nuevos</a>
+			<div class="row" >
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4" th:each = "prod: ${productos}">
+                    <div class="card mx-6 mt-3" style="width: 20rem;">
+                          <img th:src="@{/images/logor.png}" style="width: 150px;" class="card-img-top" alt="perro">
+                          <div class="card-body box">
+                            <h5 class="card-title" th:text="${prod.nombre}"></h5>
+                            <p class="card-text" th:text="${prod.descripcion}"></p>
+                            <strong> Comprar <a href="https://www.mercadopago.com.ar/" class="btn" style= background-color:#1E90FF th:text="${prod.preciodescuento}"></a></strong>
+                        </div>
+                        <div class="d-grid gap-2 d-md-block">
+							<a class= "EditElim" th:href="@{/productos/modificar/}+${prod.id}">Editar</a>
+			  				<a class= "EditElim" th:href="@{/productos/eliminar/}+${prod.id}">Eliminar</a>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+	 <br> 
+	 <br>
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-3  col-xxl-3 container-fluid mt-3 border  border-solid text-center content">
+	 <aside>
+	 	<h4>¿SABIAS QUE los perros y gatos son capaces de detectar tus sentimientos?.</h4>
+		<p>Según diversos estudios, los perros pueden detectar cambios sutiles en nuestro olor, lo que les ayuda a comprender cómo nos sentimos (por ejemplo, si sudas, puede interpretar que estás nervioso o inquieto). También aseguran que las perras son capaces de detectar si un miembro de la familia está embarazada.</p>
+	</aside>
+	</div>
+	 <br>
+	 <br>
+	 
+	<footer th:replace="~{layouts/footer :: footer}" id="footerInicio"></footer>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	
+</body>
+</html>

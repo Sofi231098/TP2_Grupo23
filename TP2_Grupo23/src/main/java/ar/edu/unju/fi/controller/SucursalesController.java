@@ -2,6 +2,7 @@ package ar.edu.unju.fi.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -28,6 +29,7 @@ import jakarta.validation.Valid;
 public class SucursalesController {
 	
 		@Autowired
+		@Qualifier("sucursalServiceMysql")
 		private ISucursalService sucursalService;
 		@Autowired
 		private ICommonService commonService;
@@ -100,9 +102,9 @@ public class SucursalesController {
 		 * @param codigo código de la sucursal a modificar
 		 * @return nombre de la vista "sucursal_nueva"
 		 */
-		@GetMapping("/modificar/{codigo}")
-		public String getModificarSucursalPage(Model model, @PathVariable(value="codigo")String codigo) {
-			Sucursal sucursalEncontrada = sucursalService.getBy(codigo) ;
+		@GetMapping("/modificar/{id}")
+		public String getModificarSucursalPage(Model model, @PathVariable(value="id")Long id) {
+			Sucursal sucursalEncontrada = sucursalService.getBy(id) ;
 			boolean edicion=true;
 
 			model.addAttribute("sucursal", sucursalEncontrada);
@@ -126,7 +128,7 @@ public class SucursalesController {
 		 */
 		@PostMapping("/modificar")
 		public String modificarSucursal(@Valid @ModelAttribute("sucursal")Sucursal sucursal, BindingResult result, Model model) {
-			sucursalService.modificar(sucursal);
+			
 			model.addAttribute("provincias", commonService.getProvincias());
 			model.addAttribute("horarios", commonService.getHorarioSuc());
 			if (result.hasErrors()) {
@@ -134,6 +136,7 @@ public class SucursalesController {
 				model.addAttribute("edicion",edicion);
 				return "sucursal_nueva";
 			}
+			sucursalService.modificar(sucursal);
 			return "redirect:/sucursales/listado";
 		}
 		
@@ -146,9 +149,9 @@ public class SucursalesController {
 		 * @param codigo código de la sucursal a eliminar
 		 * @return redireccionamiento a "/sucursales/listado"
 		 */
-		@GetMapping("/eliminar/{codigo}")
-		public String eliminarSucursal(@PathVariable(value="codigo") String codigo) {
-			Sucursal sucursalEncontrada = sucursalService.getBy(codigo);
+		@GetMapping("/eliminar/{id}")
+		public String eliminarSucursal(@PathVariable(value="id") Long id) {
+			Sucursal sucursalEncontrada = sucursalService.getBy(id);
 			sucursalService.eliminar(sucursalEncontrada);
 			return "redirect:/sucursales/listado";
 		}

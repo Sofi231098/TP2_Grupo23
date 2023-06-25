@@ -1,6 +1,7 @@
 package ar.edu.unju.fi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -26,6 +27,7 @@ import jakarta.validation.Valid;
 public class ProductosController {
 	
 	@Autowired
+	@Qualifier("productoServiceMysqlImp")
 	private IProductoService productoService;
 	
 	@Autowired
@@ -119,6 +121,8 @@ public class ProductosController {
 	 */
 	@PostMapping("/productos/modificar")
 	public String modificarProductos(@Valid @ModelAttribute("producto") Producto producto, BindingResult result, Model model) {
+		
+		model.addAttribute("categorias", commonService.getCategorias());
 		/*
 		 * Verifica si hay errores de validación en el objeto producto.
 		 * Si hay errores, se muestra la página de edición de producto nuevamente con los mensajes de error.
@@ -126,15 +130,12 @@ public class ProductosController {
 		if (result.hasErrors()) {
 			boolean edicion = true;
 			model.addAttribute("edicion", edicion);
-			model.addAttribute("categorias", commonService.getCategorias());
 			return "producto_nuevo";			
 		}
-		
 		/*
 		 * Llama al método modificar del servicio de productos para actualizar el producto en la base de datos.
 		 */
 		productoService.modificar(producto);
-		
 		/*
 		 * Redirecciona a la página de lista de productos después de la modificación del producto.
 		 */

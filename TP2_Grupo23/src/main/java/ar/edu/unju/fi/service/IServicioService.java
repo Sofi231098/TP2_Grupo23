@@ -2,8 +2,8 @@ package ar.edu.unju.fi.service;
 
 	import java.util.List;
 
-import ar.edu.unju.fi.entity.Servicios;
-import jakarta.validation.Valid;
+	import ar.edu.unju.fi.entity.Servicio;
+	import jakarta.validation.Valid;
 
 	/**
 	 * Esta interfaz define el contrato para gestionar objetos Sucursal.
@@ -15,41 +15,41 @@ import jakarta.validation.Valid;
 	     *
 	     * @return la lista de sucursales
 	     */
-	    List<Servicios> getLista();
+	    List<Servicio> getLista();
 
 	    /**
 	     * Guarda una nueva sucursal.
 	     *
 	     * @param sucursal la sucursal a guardar
 	     */
-	    void guardar(@Valid Servicios servicio);
+	    void guardar(@Valid Servicio servicio);
 
 	    /**
-	     * Obtiene una sucursal especÃ­fica por su nombre.
+	     * Obtiene una sucursal espesifica por su nombre.
 	     *
 	     * @param nombre el nombre de la sucursal
 	     * @return la sucursal con el nombre especificado
 	     */
-	    Servicios getBy(String nombre);
+	    Servicio getBy(Long id);
 
 	    /**
 	     * Modifica una sucursal existente.
 	     *
 	     * @param servicio la servicio actualizada
 	     */
-	    void modificar(@Valid Servicios servicio);
+	    void modificar(@Valid Servicio servicio);
 
 	    /**
 	     * Elimina una sucursal.
 	     *
 	     * @param servicioEncontrada la sucursal a eliminar
 	     */
-	    void eliminar(Servicios servicioEncontrada);
+	    void eliminar(Servicio servicioEncontrada);
 
 	    /**
 	     * Obtiene la sucursal actual.
 	     *
 	     * @return la sucursal actual
 	     */
-	    Servicios getServicio();
+	    Servicio getServicio();
 }
