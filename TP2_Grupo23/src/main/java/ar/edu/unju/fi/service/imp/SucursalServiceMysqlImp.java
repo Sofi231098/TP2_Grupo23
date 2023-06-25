@@ -47,6 +47,7 @@ public class SucursalServiceMysqlImp implements ISucursalService {
      */
 	@Override
 	public void guardar(@Valid Sucursal sucursal) {
+		sucursal.setEstado(true);
 		sucursalRepository.save(sucursal);
 
 	}
