@@ -28,6 +28,12 @@
 						<!-- Formulario con acción y método -->
 						<form  th:action="${edicion}?@{/sucursales/modificar}:@{/sucursales/guardar}" th:object="${sucursal}" method="post">
 							
+							<div hidden="">
+								<label >Id</label>
+								<input class="inputForm" type="text" id="id" name="producto_codigo" th:field="*{id}" th:readonly="${edicion}?'readonly'">
+							</div>
+							
+							
 							<!-- Campo Código Sucursal -->
 							<div class="row mb-3">
 								<label for="codigo sucursal" class="col-sm-2 col-form-label ">Código Sucursal</label>
