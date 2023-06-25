@@ -17,10 +17,14 @@
 			<div class="container-fluid parte2 mt-4 mb-3 text-center ">
 			<form th:action="${edicion}?@{/productos/modificar}:@{/productos/guardar}" th:object="${producto}" method="post">			
 				<h3 class="titnuevsuc" th:text="${edicion}?'Modificar Producto' : 'Producto Nuevos'">PRODUCTOS NUEVOS</h3>
-				<label for="codigo" class="label" >Id del articulo</label>
+				<div hidden="">
+				<label >Id</label>
+				<input class="inputForm" type="text" id="id" name="producto_codigo" th:field="*{id}" th:readonly="${edicion}?'readonly'">
+				</div>
+				<label for="codigo" class="label" >Codigo del articulo</label>
 				<div >
-					<input class="inputForm" type="text" id="id" name="producto_codigo" th:field="*{id}" th:readonly="${edicion}?'readonly'">
-					<div class="text-danger" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></div>
+					<input class="inputForm" type="text" id="codigo" name="producto_codigo" th:field="*{codigo}" th:readonly="${edicion}?'readonly'">
+					<div class="text-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></div>
 				</div><br><br>
 				
 				
